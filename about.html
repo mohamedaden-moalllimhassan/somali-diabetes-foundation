@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | Somali Diabetes Foundation</title>
+  <meta name="description" content="Learn about the Somali Diabetes Foundation, our mission, vision, goals and commitment to diabetes prevention, awareness, care and advocacy in Somalia.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: #ffffff;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      height: 58px;
+      width: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2864d7;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2864d7, #174aa5);
+      color: white;
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 20px;
+      opacity: 0.95;
+    }
+
+    section {
+      padding: 70px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+      color: #174aa5;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .intro {
+      font-size: 18px;
+      max-width: 950px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      padding: 35px;
+      border-radius: 14px;
+      background: #f6f9ff;
+      border: 1px solid #e4ebf8;
+    }
+
+    .card h3 {
+      color: #174aa5;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .goals {
+      background: #f7f8fa;
+      max-width: none;
+    }
+
+    .goal-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .goal {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid #2864d7;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    .goal strong {
+      display: block;
+      color: #174aa5;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .values {
+      text-align: center;
+    }
+
+    .value-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .value {
+      padding: 14px 22px;
+      background: #eef4ff;
+      border-radius: 30px;
+      font-weight: 600;
+      color: #174aa5;
+    }
+
+    .story {
+      background: #2864d7;
+      color: white;
+      max-width: none;
+      text-align: center;
+    }
+
+    .story-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .story h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .story p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #174aa5;
+      padding: 13px 25px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer img {
+      height: 55px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 5px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .mission-grid,
+      .goal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">
+    <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation Logo" class="logo">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="index.html#research">Research</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>About the Somali Diabetes Foundation</h1>
+  <p>
+    Working toward a healthier Somalia through diabetes prevention,
+    awareness, management, research, advocacy and community support.
+  </p>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Who We Are</h2>
+  </div>
+
+  <p class="intro">
+    The Somali Diabetes Foundation (SDF) is a non-governmental,
+    non-profit and non-political organization committed to preventing,
+    raising awareness of, and managing diabetes in Somalia.
+    Through education, advocacy, research and direct healthcare
+    interventions, SDF works to improve the quality of life of
+    individuals affected by diabetes and promote a healthier future
+    for all.
+  </p>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Our Mission & Vision</h2>
+  </div>
+
+  <div class="mission-grid">
+
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To lead efforts in diabetes prevention, awareness, management
+        and advocacy across Somalia through education, support programs
+        and partnerships, ensuring better healthcare access and
+        outcomes for people living with diabetes.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To create a healthier Somali society with reduced diabetes
+        prevalence and improved quality of life for individuals living
+        with diabetes.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="goals">
+  <div class="section-title">
+    <h2>Our Core Goals</h2>
+    <p>
+      SDF works across multiple areas to strengthen diabetes prevention,
+      care and support in Somalia.
+    </p>
+  </div>
+
+  <div class="goal-grid">
+
+    <div class="goal">
+      <strong>1. Increase Public Awareness</strong>
+      Enhance community knowledge about diabetes causes, prevention,
+      symptoms and management.
+    </div>
+
+    <div class="goal">
+      <strong>2. Improve Diabetes Management</strong>
+      Support people living with diabetes through access to appropriate
+      care, resources and self-management information.
+    </div>
+
+    <div class="goal">
+      <strong>3. Strengthen Healthcare Capacity</strong>
+      Train and equip healthcare professionals with up-to-date knowledge
+      and skills in diabetes prevention and treatment.
+    </div>
+
+    <div class="goal">
+      <strong>4. Enhance Access to Medication</strong>
+      Advocate for affordable and accessible diabetes medications,
+      including insulin and essential medical supplies.
+    </div>
+
+    <div class="goal">
+      <strong>5. Promote Research & Data Collection</strong>
+      Conduct studies on diabetes prevalence, risk factors and
+      healthcare challenges to inform policies and interventions.
+    </div>
+
+    <div class="goal">
+      <strong>6. Policy Advocacy</strong>
+      Work with government authorities and stakeholders to strengthen
+      diabetes-related policies and healthcare services.
+    </div>
+
+    <div class="goal">
+      <strong>7. Support Community Initiatives</strong>
+      Engage communities in diabetes prevention through physical
+      activity, healthy lifestyle guidance and support groups.
+    </div>
+
+    <div class="goal">
+      <strong>8. Build Partnerships</strong>
+      Collaborate with local and international organizations,
+      healthcare institutions and humanitarian agencies.
+    </div>
+
+  </div>
+</section>
+
+<section class="values">
+  <div class="section-title">
+    <h2>Our Commitment</h2>
+    <p>
+      SDF is committed to a comprehensive response to diabetes that
+      connects communities, healthcare professionals, institutions
+      and partners.
+    </p>
+  </div>
+
+  <div class="value-list">
+    <span class="value">Prevention</span>
+    <span class="value">Awareness</span>
+    <span class="value">Early Detection</span>
+    <span class="value">Patient Support</span>
+    <span class="value">Research</span>
+    <span class="value">Advocacy</span>
+    <span class="value">Education</span>
+    <span class="value">Partnership</span>
+  </div>
+</section>
+
+<section class="story">
+  <div class="story-inner">
+    <h2>Our Founding Story</h2>
+
+    <p>
+      SDF began with an encounter that changed everything. A young
+      person's experience with diabetes and dialysis led to a question
+      about what could have been different through earlier education,
+      diagnosis, appropriate treatment and continuous support.
+    </p>
+
+    <p>
+      The idea was conceived on <strong>20 August 2024</strong> and the
+      Somali Diabetes Foundation was officially founded on
+      <strong>20 November 2024</strong>.
+    </p>
+
+    <a href="story.html" class="button">Read Our Full Story</a>
+  </div>
+</section>
+
+<footer>
+  <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation">
+
+  <p>
+    © 2026 Somali Diabetes Foundation (SDF). All rights reserved.
+  </p>
+
+  <p>
+    Mogadishu, Somalia · info@sdf.so
+  </p>
+</footer>
+
+</body>
+</html>

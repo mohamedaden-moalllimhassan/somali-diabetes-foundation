@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Founding Story | Somali Diabetes Foundation</title>
+  <meta name="description" content="Discover the founding history of the Somali Diabetes Foundation, from one encounter in Mogadishu to a vision for a healthier Somalia.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      height: 58px;
+      width: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2864d7;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2864d7, #174aa5);
+      color: white;
+      text-align: center;
+      padding: 90px 8%;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 20px;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 70px 6% 30px;
+    }
+
+    .intro h2 {
+      color: #174aa5;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 18px;
+    }
+
+    .timeline {
+      max-width: 1000px;
+      margin: 50px auto 80px;
+      padding: 0 30px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #2864d7;
+      transform: translateX(-50%);
+    }
+
+    .event {
+      width: 50%;
+      padding: 20px 40px;
+      position: relative;
+      margin-bottom: 35px;
+    }
+
+    .event:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .event:nth-child(even) {
+      left: 50%;
+    }
+
+    .event::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 18px;
+      height: 18px;
+      background: #2864d7;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 0 2px #2864d7;
+    }
+
+    .event:nth-child(odd)::after {
+      right: -9px;
+    }
+
+    .event:nth-child(even)::after {
+      left: -9px;
+    }
+
+    .event-card {
+      background: #f6f9ff;
+      border: 1px solid #e1e9f7;
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .date {
+      display: inline-block;
+      background: #2864d7;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .event h3 {
+      color: #174aa5;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .story-section {
+      max-width: 950px;
+      margin: auto;
+      padding: 30px 6% 80px;
+    }
+
+    .story-section h2 {
+      color: #174aa5;
+      font-size: 32px;
+      margin: 45px 0 15px;
+    }
+
+    .story-section p {
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      margin: 40px auto;
+      padding: 30px;
+      background: #eef4ff;
+      border-left: 6px solid #2864d7;
+      font-size: 23px;
+      font-weight: 600;
+      color: #174aa5;
+      text-align: center;
+    }
+
+    .vision {
+      background: #2864d7;
+      color: white;
+      padding: 75px 8%;
+      text-align: center;
+    }
+
+    .vision-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .vision h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .vision p {
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
+
+    .closing {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.8;
+      margin-top: 30px;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer img {
+      height: 55px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 5px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .timeline::before {
+        left: 15px;
+      }
+
+      .event,
+      .event:nth-child(even) {
+        width: 100%;
+        left: 0;
+        padding-left: 45px;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      .event::after,
+      .event:nth-child(odd)::after,
+      .event:nth-child(even)::after {
+        left: 6px;
+        right: auto;
+      }
+
+      .event-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">
+    <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation Logo" class="logo">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="story.html">Our Story</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="index.html#research">Research</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>From One Encounter to a National Vision</h1>
+  <p>
+    The founding story of the Somali Diabetes Foundation
+  </p>
+</section>
+
+<section class="intro">
+  <h2>From One Boy to a National Movement</h2>
+
+  <p>
+    Every organization has a beginning. For the Somali Diabetes Foundation
+    (SDF), that beginning was not a boardroom, a large grant, or a fully
+    funded project. It was an encounter with a young boy on an ordinary
+    night-shift commute.
+  </p>
+</section>
+
+<section class="timeline">
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">The Encounter</span>
+
+      <h3>The Encounter That Changed Everything</h3>
+
+      <p>
+        During a journey to a night-shift duty, the Founder, a medical
+        doctor, met a young boy who boarded a public minibus at Sey Biyano
+        Junction.
+      </p>
+
+      <p>
+        The Founder noticed gauze covering a central venous catheter in
+        the boy's neck. The boy explained that it was for dialysis and
+        that he was living with diabetes.
+      </p>
+
+      <p>
+        The conversation revealed that the boy had lost both his parents
+        and was living with his uncle in an internally displaced persons'
+        community around Mogadishu. His uncle struggled financially to
+        cover dialysis costs, and the boy sometimes missed dialysis
+        sessions because of this hardship.
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">The Question</span>
+
+      <h3>From One Patient to a National Problem</h3>
+
+      <p>
+        For the Founder, this was more than a conversation. It was a story
+        of vulnerability, loss, poverty, chronic illness and limited
+        access to essential healthcare.
+      </p>
+
+      <p>
+        One question remained:
+      </p>
+
+      <p>
+        <strong>
+          Could this young boy's life have been different if he had
+          received proper diabetes education, early diagnosis, appropriate
+          treatment, regular monitoring and comprehensive support before
+          his complications became severe?
+        </strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">20 August 2024</span>
+
+      <h3>The Birth of the Idea</h3>
+
+      <p>
+        On 20 August 2024, the idea that would become the Somali Diabetes
+        Foundation was born.
+      </p>
+
+      <p>
+        The conviction was simple: people living with diabetes in Somalia
+        deserve knowledge, care, support and the opportunity to live
+        healthier lives and avoid preventable complications.
+      </p>
+
+      <p>
+        The vision included awareness, prevention, early detection,
+        patient education, improved access to care, complication
+        prevention, professional education, advocacy, community
+        engagement, research and partnerships.
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">August–November 2024</span>
+
+      <h3>From an Idea to an Organization</h3>
+
+      <p>
+        The Founder began turning the vision into an organization,
+        addressing fundamental questions about its purpose, mission,
+        priorities and the communities it would serve.
+      </p>
+
+      <p>
+        SDF was envisioned as a platform bringing together patients,
+        families, healthcare professionals, communities, government,
+        civil society, universities, development partners and
+        international organizations.
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">20 November 2024</span>
+
+      <h3>Official Founding of SDF</h3>
+
+      <p>
+        The Somali Diabetes Foundation was officially founded on
+        <strong>20 November 2024</strong>.
+      </p>
+
+      <p>
+        SDF did not begin with abundant resources. It began with
+        determination. The Founder and early members contributed what
+        they could to establish the organization and begin its work.
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">Early Development</span>
+
+      <h3>Building SDF From the Ground Up</h3>
+
+      <p>
+        The early period focused on establishing SDF's organizational
+        identity, direction, collaborations and practical ways to reach
+        people who needed diabetes information and support.
+      </p>
+
+      <p>
+        Vulnerable communities, including internally displaced communities
+        around Mogadishu, became an early priority.
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">2025</span>
+
+      <h3>Expanding the Mission</h3>
+
+      <p>
+        During 2025, SDF continued expanding its work through diabetes
+        awareness, community outreach, screening, prevention, patient
+        education, advocacy, professional engagement, partnerships and
+        public diabetes campaigns.
+      </p>
+
+      <p>
+        SDF also participated in the Mogadishu Global Diabetes Walk,
+        connecting diabetes awareness in Somalia with a broader
+        international initiative.
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">Partnerships</span>
+
+      <h3>Strengthening Diabetes Care</h3>
+
+      <p>
+        As SDF developed, it began forming partnerships to strengthen
+        diabetes services. One important partnership was established
+        with Dr. Sumaid and Kaamil Specialist Hospital, through which
+        SDF began preparing to establish an SDF Diabetes Clinic at
+        Kaamil Specialist Hospital.
+      </p>
+
+      <p>
+        SDF also expanded engagement with educational institutions and
+        healthcare professionals, including a training program at
+        Hayat Medical University.
+      </p>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="event-card">
+      <span class="date">2026</span>
+
+      <h3>Toward a National Platform</h3>
+
+      <p>
+        By 2026, SDF had continued developing from a newly established
+        organization into an increasingly visible platform for diabetes
+        awareness, prevention, advocacy, education and community
+        engagement.
+      </p>
+
+      <p>
+        The journey continues to connect community needs with professional
+        knowledge and institutional action.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section class="story-section">
+
+  <h2>The Founder's Leadership</h2>
+
+  <p>
+    The Founder and CEO has been central to SDF's establishment and
+    development from its earliest days. The Foundation was created
+    without significant initial resources, with a commitment to begin
+    despite the challenges.
+  </p>
+
+  <p>
+    This experience shaped a leadership philosophy grounded in:
+  </p>
+
+  <div class="quote">
+    Service · Compassion · Persistence · Professionalism ·
+    Community Responsibility · Partnership · Impact
+  </div>
+
+  <h2>The Meaning of SDF</h2>
+
+  <p>
+    For the Founder, SDF represents more than an organization. It
+    represents a response to a problem witnessed firsthand and a belief
+    that people living with diabetes should not face devastating
+    consequences without adequate knowledge, care and support.
+  </p>
+
+  <p>
+    SDF's purpose is both medical and human: disease prevention and
+    treatment, but also dignity, knowledge, opportunity, advocacy and
+    hope.
+  </p>
+
+</section>
+
+<section class="vision">
+
+  <div class="vision-inner">
+
+    <h2>The Future — Toward a Healthier Somalia</h2>
+
+    <p>
+      SDF aspires to become a leading institution for diabetes prevention,
+      education, advocacy, research and care in Somalia while building
+      meaningful connections with regional and international diabetes
+      organizations.
+    </p>
+
+    <p>
+      SDF envisions a Somalia where diabetes awareness reaches every
+      community, people at risk can access prevention and early screening,
+      people living with diabetes can access continuous appropriate care,
+      and healthcare professionals receive continuing education and
+      training.
+    </p>
+
+    <p>
+      The Foundation also envisions stronger diabetes research,
+      evidence-based policy, patient representation and collaboration
+      among government, healthcare institutions, universities, civil
+      society, communities and international partners.
+    </p>
+
+    <div class="closing">
+      From one encounter came one idea.<br>
+      From one idea came one foundation.<br>
+      From one foundation comes a vision for a healthier Somalia.
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation">
+
+  <p>
+    © 2026 Somali Diabetes Foundation (SDF). All rights reserved.
+  </p>
+
+  <p>
+    Mogadishu, Somalia · info@sdf.so
+  </p>
+
+</footer>
+
+</body>
+</html>

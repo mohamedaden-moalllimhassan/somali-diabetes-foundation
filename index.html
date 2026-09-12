@@ -8,20 +8,32 @@
 
   <meta
     name="description"
-    content="Somali Diabetes Foundation (SDF) works to advance diabetes awareness, prevention, early detection, quality care, patient support, research and advocacy in Somalia."
+    content="Somali Diabetes Foundation — advancing diabetes awareness, prevention, screening, education, research and patient support for a healthier Somalia."
   >
 
+  <meta
+    name="keywords"
+    content="Somali Diabetes Foundation, SDF, diabetes Somalia, diabetes awareness, diabetes prevention, diabetes research, Mogadishu"
+  >
+
+  <meta name="theme-color" content="#063b68">
+
   <style>
+
     :root {
       --navy: #063b68;
+      --navy-dark: #042b4b;
       --blue: #159ed0;
+      --blue-light: #eaf7fc;
       --green: #18b957;
+      --green-dark: #119844;
       --light: #f4f9fb;
-      --white: #ffffff;
       --ink: #18313b;
-      --muted: #5f737c;
+      --muted: #637781;
+      --white: #ffffff;
       --border: #dce8ed;
       --shadow: 0 12px 35px rgba(6, 59, 104, 0.10);
+      --shadow-lg: 0 20px 50px rgba(6, 59, 104, 0.14);
     }
 
     * {
@@ -38,12 +50,19 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--ink);
       background: var(--white);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
     }
 
     img {
@@ -52,23 +71,25 @@
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1180px, 92%);
       margin: auto;
     }
 
-    /* ================= HEADER ================= */
+
+    /* ==================================================
+       HEADER
+    ================================================== */
 
     header {
-      background: rgba(255, 255, 255, 0.97);
+      background: rgba(255, 255, 255, 0.98);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(10px);
     }
 
     .nav {
-      min-height: 82px;
+      min-height: 86px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -78,300 +99,263 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      color: var(--navy);
-      white-space: nowrap;
+      gap: 14px;
+      flex-shrink: 0;
     }
 
-    .brand img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
+    .brand-logo {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #eeeeee;
+      border: 1px solid #e1e1e1;
     }
 
     .brand-text {
-      font-size: 16px;
-      line-height: 1.15;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
     }
 
-    .brand-text span {
-      display: block;
+    .brand-name {
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .brand-acronym {
       color: var(--blue);
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-top: 3px;
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-top: 5px;
     }
 
     nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 8px;
+      gap: 2px;
+      flex-wrap: nowrap;
     }
 
     nav a {
-      padding: 9px 11px;
-      font-size: 14px;
-      font-weight: 600;
       color: var(--ink);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 10px 11px;
       border-radius: 8px;
+      white-space: nowrap;
       transition: 0.2s ease;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: var(--blue);
       background: var(--light);
     }
 
-    nav .donate-link {
-      color: white;
+    nav a.donate {
+      color: var(--white);
       background: var(--green);
-      padding: 10px 16px;
+      padding: 13px 20px;
+      margin-left: 6px;
     }
 
-    nav .donate-link:hover {
-      color: white;
-      background: #119b48;
+    nav a.donate:hover {
+      color: var(--white);
+      background: var(--green-dark);
+      transform: translateY(-1px);
     }
 
-    /* ================= HERO ================= */
+
+    /* ==================================================
+       HERO
+    ================================================== */
 
     .hero {
       background:
         linear-gradient(
-          135deg,
-          rgba(6, 59, 104, 0.97),
+          110deg,
+          rgba(6, 59, 104, 0.98),
           rgba(21, 158, 208, 0.90)
         );
-      color: white;
-      padding: 95px 0 100px;
+
+      color: var(--white);
+      overflow: hidden;
     }
 
-    .hero-grid {
+    .hero-inner {
+      min-height: 650px;
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1.08fr 0.92fr;
       align-items: center;
-      gap: 60px;
+      gap: 55px;
+      padding: 70px 0;
+    }
+
+    .hero-content {
+      max-width: 720px;
     }
 
     .eyebrow {
       display: inline-block;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
+      color: #bcefd0;
+      font-weight: 900;
       text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
       margin-bottom: 18px;
-      opacity: 0.9;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 6vw, 70px);
-      line-height: 1.05;
-      margin-bottom: 24px;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.03;
       letter-spacing: -2px;
+      margin-bottom: 25px;
     }
 
-    .hero p {
-      max-width: 700px;
+    .hero h1 span {
+      color: #bcefd0;
+    }
+
+    .hero-description {
+      color: #eaf7fb;
       font-size: 19px;
-      opacity: 0.95;
-      margin-bottom: 30px;
+      max-width: 680px;
+      margin-bottom: 32px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 13px;
     }
 
     .btn {
       display: inline-block;
-      padding: 13px 21px;
-      border-radius: 8px;
-      font-weight: 700;
-      border: 2px solid transparent;
+      padding: 14px 23px;
+      border-radius: 9px;
+      font-weight: 800;
       transition: 0.2s ease;
     }
 
     .btn-primary {
       background: var(--green);
-      color: white;
+      color: var(--white);
     }
 
     .btn-primary:hover {
-      background: #119b48;
-      transform: translateY(-1px);
+      background: var(--green-dark);
+      transform: translateY(-2px);
     }
 
     .btn-light {
-      background: white;
+      background: var(--white);
       color: var(--navy);
     }
 
     .btn-light:hover {
-      background: #eef8fb;
-      transform: translateY(-1px);
+      background: #edf7fa;
+      transform: translateY(-2px);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.12);
+    .hero-visual {
+      min-height: 440px;
       border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 18px;
-      padding: 32px;
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.10);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 45px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.10);
     }
 
-    .hero-card img {
-      width: 170px;
-      height: 170px;
-      object-fit: contain;
-      margin: 0 auto 22px;
-      background: white;
-      border-radius: 18px;
-      padding: 10px;
+    .hero-logo-frame {
+      background: var(--white);
+      padding: 18px;
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
     }
 
-    .hero-card h3 {
-      text-align: center;
-      font-size: 20px;
-      margin-bottom: 8px;
+    .hero-logo {
+      width: 310px;
+      height: 310px;
+      object-fit: cover;
+      border-radius: 14px;
     }
 
-    .hero-card p {
-      text-align: center;
-      font-size: 15px;
-      margin: 0;
+
+    /* ==================================================
+       INTRO / STATS
+    ================================================== */
+
+    .intro-section {
+      padding: 75px 0;
+      background: var(--white);
     }
 
-    /* ================= GENERAL ================= */
-
-    section {
-      padding: 85px 0;
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
     }
 
-    .section-light {
-      background: var(--light);
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
     }
 
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 45px;
-    }
-
-    .section-heading .eyebrow {
-      color: var(--blue);
-      margin-bottom: 8px;
-    }
-
-    .section-heading h2 {
+    .section-title {
       color: var(--navy);
       font-size: clamp(32px, 4vw, 46px);
       line-height: 1.15;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    /* ================= ABOUT ================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      color: var(--navy);
-      font-size: 23px;
-      margin-bottom: 14px;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    .text-link {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--blue);
-      font-weight: 700;
-    }
-
-    .text-link:hover {
-      text-decoration: underline;
-    }
-
-    /* ================= PROGRAMS ================= */
-
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .program {
-      padding: 28px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      transition: 0.2s ease;
-    }
-
-    .program:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .program-number {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #e7f6fb;
-      color: var(--blue);
-      font-weight: 800;
       margin-bottom: 18px;
     }
 
-    .program h3 {
-      color: var(--navy);
-      font-size: 19px;
-      margin-bottom: 9px;
-    }
-
-    .program p {
+    .section-text {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 17px;
+      margin-bottom: 22px;
     }
 
-    /* ================= GLANCE ================= */
+    .text-link {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .text-link:hover {
+      color: var(--green);
+    }
+
+    .intro-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .intro-card h3 {
+      color: var(--navy);
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .intro-card p {
+      color: var(--muted);
+    }
 
     .glance {
-      background: var(--navy);
-      color: white;
-    }
-
-    .glance .section-heading h2,
-    .glance .section-heading p {
-      color: white;
-    }
-
-    .glance .section-heading p {
-      opacity: 0.8;
+      padding: 65px 0;
+      background: var(--light);
     }
 
     .glance-grid {
@@ -380,118 +364,355 @@
       gap: 18px;
     }
 
-    .glance-item {
-      padding: 25px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.06);
+    .glance-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
     }
 
-    .glance-item strong {
-      display: block;
-      font-size: 25px;
+    .glance-number {
+      color: var(--navy);
+      font-size: 28px;
+      font-weight: 900;
       margin-bottom: 5px;
     }
 
-    .glance-item span {
-      opacity: 0.78;
+    .glance-label {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+
+    /* ==================================================
+       PROGRAMS
+    ================================================== */
+
+    .programs {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .program-card {
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 27px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .program-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
+
+    .program-card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 9px;
+    }
+
+    .program-card p {
+      color: var(--muted);
       font-size: 14px;
     }
 
-    /* ================= STORY ================= */
+
+    /* ==================================================
+       IMPACT
+    ================================================== */
+
+    .impact {
+      padding: 80px 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .impact .section-label {
+      color: #bcefd0;
+    }
+
+    .impact .section-title {
+      color: var(--white);
+    }
+
+    .impact-text {
+      color: #d9e9ef;
+      font-size: 17px;
+    }
+
+    .impact-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .impact-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 13px;
+      padding: 18px;
+    }
+
+    .impact-check {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .impact-item h3 {
+      font-size: 17px;
+      margin-bottom: 3px;
+    }
+
+    .impact-item p {
+      color: #c9dfe7;
+      font-size: 14px;
+    }
+
+
+    /* ==================================================
+       FOUNDING STORY
+    ================================================== */
 
     .story-banner {
-      background: linear-gradient(135deg, #eaf8fb, #f4fbf6);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 45px;
+      padding: 80px 0;
+      background:
+        linear-gradient(
+          135deg,
+          #eaf7fc,
+          #f7fbfc
+        );
+    }
+
+    .story-card {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 45px;
       align-items: center;
-      gap: 35px;
     }
 
-    .story-banner h2 {
+    .story-date {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 20px;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 35px;
+    }
+
+    .story-date strong {
+      display: block;
+      font-size: 43px;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .story-date span {
+      color: #bcefd0;
+      font-weight: 800;
+    }
+
+    .story-content h2 {
       color: var(--navy);
-      font-size: 34px;
+      font-size: 36px;
       line-height: 1.2;
-      margin-bottom: 13px;
+      margin-bottom: 15px;
     }
 
-    .story-banner p {
+    .story-content p {
       color: var(--muted);
-      max-width: 760px;
+      font-size: 17px;
+      margin-bottom: 20px;
     }
 
-    /* ================= RESEARCH ================= */
+
+    /* ==================================================
+       RESEARCH
+    ================================================== */
+
+    .research {
+      padding: 80px 0;
+      background: var(--white);
+    }
 
     .research-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 25px;
     }
 
-    .research-list {
-      list-style: none;
-      margin-top: 15px;
-    }
-
-    .research-list li {
-      padding: 10px 0 10px 22px;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .research-list li::before {
-      content: "•";
-      position: absolute;
-      left: 2px;
-      color: var(--green);
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    /* ================= ACTIVITIES ================= */
-
-    .activities-box {
-      border: 2px dashed #b9d6df;
-      background: #fbfdfe;
+    .research-card {
+      border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 55px 30px;
-      text-align: center;
+      padding: 32px;
+      background: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .activities-box h3 {
+    .research-card h3 {
       color: var(--navy);
-      font-size: 26px;
+      font-size: 23px;
       margin-bottom: 12px;
     }
 
-    .activities-box p {
-      max-width: 700px;
-      margin: 0 auto 20px;
+    .research-card p {
       color: var(--muted);
+      margin-bottom: 17px;
     }
 
-    /* ================= GET INVOLVED ================= */
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .research-tag {
+      background: var(--light);
+      color: var(--navy);
+      border-radius: 20px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+
+    /* ==================================================
+       ACTIVITIES
+    ================================================== */
+
+    .activities {
+      padding: 80px 0;
+      background: var(--light);
+    }
+
+    .activity-highlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .activity-visual {
+      min-height: 330px;
+      background:
+        linear-gradient(
+          rgba(6,59,104,0.88),
+          rgba(6,59,104,0.88)
+        ),
+        url("sdf-logo.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .activity-visual h3 {
+      font-size: 30px;
+      line-height: 1.15;
+    }
+
+    .activity-content {
+      padding: 35px 35px 35px 0;
+    }
+
+    .activity-content h2 {
+      color: var(--navy);
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .activity-content p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+
+    /* ==================================================
+       GET INVOLVED
+    ================================================== */
+
+    .involve {
+      padding: 80px 0;
+      background: var(--white);
+    }
 
     .involve-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .involve-card {
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 17px;
       padding: 30px;
-      background: white;
+      box-shadow: var(--shadow);
     }
 
     .involve-card h3 {
       color: var(--navy);
-      margin-bottom: 10px;
+      font-size: 21px;
+      margin-bottom: 8px;
     }
 
     .involve-card p {
@@ -499,39 +720,58 @@
       font-size: 15px;
     }
 
-    /* ================= DONATE ================= */
+
+    /* ==================================================
+       DONATE
+    ================================================== */
 
     .donate {
-      background: linear-gradient(135deg, var(--green), #12a7a0);
-      color: white;
+      padding: 80px 0;
+      background: var(--light);
+    }
+
+    .donate-box {
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          #0a638f
+        );
+      color: var(--white);
+      border-radius: 22px;
+      padding: 60px 45px;
       text-align: center;
+      box-shadow: var(--shadow-lg);
     }
 
-    .donate h2 {
-      font-size: clamp(32px, 4vw, 48px);
-      margin-bottom: 15px;
+    .donate-box h2 {
+      font-size: 40px;
+      margin-bottom: 13px;
     }
 
-    .donate p {
-      max-width: 720px;
-      margin: 0 auto 25px;
+    .donate-box p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      color: #e0eef3;
       font-size: 17px;
-      opacity: 0.95;
     }
 
-    /* ================= FOOTER ================= */
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
 
     footer {
-      background: #042b4c;
-      color: white;
+      background: #03263f;
+      color: #d8e8ee;
       padding: 55px 0 25px;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-columns: 1.25fr 0.75fr 0.75fr;
       gap: 45px;
-      margin-bottom: 40px;
+      margin-bottom: 38px;
     }
 
     .footer-brand {
@@ -541,37 +781,42 @@
       margin-bottom: 15px;
     }
 
-    .footer-brand img {
+    .footer-logo {
       width: 58px;
       height: 58px;
-      object-fit: contain;
-      background: white;
-      border-radius: 10px;
-      padding: 5px;
+      object-fit: cover;
+      border-radius: 9px;
     }
 
-    footer h3 {
-      margin-bottom: 14px;
+    .footer-brand strong {
+      color: var(--white);
       font-size: 17px;
     }
 
-    footer p,
-    footer li,
-    footer a {
-      color: rgba(255,255,255,0.78);
+    footer p {
+      color: #b9ced7;
       font-size: 14px;
     }
 
-    footer ul {
-      list-style: none;
+    footer h3 {
+      color: var(--white);
+      font-size: 17px;
+      margin-bottom: 14px;
     }
 
-    footer li {
-      margin-bottom: 8px;
+    .footer-links {
+      display: grid;
+      gap: 8px;
     }
 
-    footer a:hover {
-      color: white;
+    .footer-links a {
+      color: #b9ced7;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
     }
 
     .footer-bottom {
@@ -583,59 +828,127 @@
       flex-wrap: wrap;
     }
 
-    /* ================= RESPONSIVE ================= */
+    .footer-bottom p {
+      font-size: 13px;
+    }
 
-    @media (max-width: 900px) {
+
+    /* ==================================================
+       RESPONSIVE
+    ================================================== */
+
+    @media (max-width: 1100px) {
 
       .nav {
-        flex-direction: column;
-        padding: 15px 0;
+        gap: 18px;
       }
 
-      nav {
-        justify-content: center;
+      .brand-name {
+        font-size: 17px;
       }
 
-      .hero-grid,
-      .about-grid,
-      .research-grid {
-        grid-template-columns: 1fr;
+      nav a {
+        font-size: 13px;
+        padding: 9px 7px;
+      }
+
+      nav a.donate {
+        padding: 11px 15px;
       }
 
       .program-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
+    }
+
+
+    @media (max-width: 900px) {
+
+      .nav {
+        min-height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-inner,
+      .intro-grid,
+      .impact-grid,
+      .story-card,
+      .research-grid,
+      .activity-highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        padding: 65px 0;
+      }
+
+      .hero-content {
+        text-align: center;
+        margin: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        min-height: 350px;
+      }
+
+      .hero-logo {
+        width: 240px;
+        height: 240px;
+      }
+
       .glance-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .involve-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .story-banner {
-        grid-template-columns: 1fr;
+      .activity-content {
+        padding: 0 30px 35px;
       }
 
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
+
     }
+
 
     @media (max-width: 600px) {
 
-      .brand-text {
-        font-size: 14px;
+      .container {
+        width: 94%;
       }
 
-      .brand img {
-        width: 48px;
-        height: 48px;
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .brand-acronym {
+        font-size: 15px;
       }
 
       nav {
-        gap: 3px;
+        gap: 2px;
       }
 
       nav a {
@@ -643,16 +956,36 @@
         padding: 7px 7px;
       }
 
-      .hero {
-        padding: 65px 0 70px;
+      nav a.donate {
+        padding: 9px 12px;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 55px 0;
       }
 
       .hero h1 {
-        font-size: 43px;
+        font-size: 42px;
+        letter-spacing: -1px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .hero-visual {
+        min-height: 290px;
+        padding: 25px;
+      }
+
+      .hero-logo-frame {
+        padding: 12px;
+      }
+
+      .hero-logo {
+        width: 210px;
+        height: 210px;
       }
 
       section {
@@ -660,27 +993,44 @@
       }
 
       .program-grid,
-      .glance-grid,
-      .footer-grid {
+      .involve-grid,
+      .footer-grid,
+      .glance-grid {
         grid-template-columns: 1fr;
       }
 
-      .story-banner {
-        padding: 30px;
+      .section-title {
+        font-size: 31px;
       }
 
-      .card,
-      .program,
-      .involve-card {
-        padding: 24px;
+      .story-date {
+        min-height: 210px;
       }
+
+      .donate-box {
+        padding: 45px 25px;
+      }
+
+      .donate-box h2 {
+        font-size: 31px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ================= HEADER ================= -->
+
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
 
   <header>
 
@@ -691,18 +1041,27 @@
         <img
           src="sdf-logo.jpg"
           alt="Somali Diabetes Foundation logo"
+          class="brand-logo"
         >
 
-        <div class="brand-text">
-          Somali Diabetes Foundation
-          <span>SDF</span>
-        </div>
+        <span class="brand-text">
+
+          <span class="brand-name">
+            Somali Diabetes Foundation
+          </span>
+
+          <span class="brand-acronym">
+            SDF
+          </span>
+
+        </span>
 
       </a>
 
+
       <nav>
 
-        <a href="index.html">
+        <a href="index.html" class="active">
           Home
         </a>
 
@@ -726,7 +1085,6 @@
           Research
         </a>
 
-        <!-- UPDATED: Activities now opens activities.html -->
         <a href="activities.html">
           Activities
         </a>
@@ -735,8 +1093,12 @@
           Get Involved
         </a>
 
-        <a href="#donate" class="donate-link">
+        <a href="#donate" class="donate">
           Donate
+        </a>
+
+        <a href="contact.html">
+          Contact
         </a>
 
       </nav>
@@ -746,58 +1108,119 @@
   </header>
 
 
-  <!-- ================= HERO ================= -->
+  <!-- ==================================================
+       HERO
+  ================================================== -->
 
   <main>
 
     <section class="hero">
 
-      <div class="container hero-grid">
+      <div class="container hero-inner">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            Somali Diabetes Foundation · SDF
+          </span>
+
+          <h1>
+            Better diabetes care.
+            <span>Stronger communities.</span>
+          </h1>
+
+          <p class="hero-description">
+            The Somali Diabetes Foundation works to advance diabetes
+            awareness, prevention, screening, education, research and
+            patient support across Somalia.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="#programs"
+              class="btn btn-primary"
+            >
+              Explore Our Programs
+            </a>
+
+            <a
+              href="about.html"
+              class="btn btn-light"
+            >
+              Learn About SDF
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+          <div class="hero-logo-frame">
+
+            <img
+              src="sdf-logo.jpg"
+              alt="Somali Diabetes Foundation"
+              class="hero-logo"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         INTRODUCTION
+    ================================================== -->
+
+    <section class="intro-section">
+
+      <div class="container intro-grid">
 
         <div>
 
-          <div class="eyebrow">
-            Somali Diabetes Foundation · SDF
+          <div class="section-label">
+            Who We Are
           </div>
 
-          <h1>
-            Better diabetes care.<br>
-            Stronger communities.
-          </h1>
+          <h2 class="section-title">
+            A national vision for a healthier Somalia
+          </h2>
 
-          <p>
-            We work to advance diabetes awareness, prevention, early detection,
-            quality care, patient support, research and advocacy in Somalia.
+          <p class="section-text">
+            Somali Diabetes Foundation is a nonprofit organization
+            dedicated to addressing the growing challenge of diabetes
+            in Somalia through awareness, prevention, screening,
+            education, research, advocacy and patient support.
           </p>
 
-          <div class="buttons">
-
-            <a href="#programs" class="btn btn-primary">
-              Explore our work
-            </a>
-
-            <a href="story.html" class="btn btn-light">
-              Read our story
-            </a>
-
-          </div>
+          <a
+            href="about.html"
+            class="text-link"
+          >
+            Discover more about SDF →
+          </a>
 
         </div>
 
 
-        <div class="hero-card">
-
-          <img
-            src="sdf-logo.jpg"
-            alt="Somali Diabetes Foundation SDF"
-          >
+        <div class="intro-card">
 
           <h3>
-            Health · Care · Hope
+            Our approach
           </h3>
 
           <p>
-            Working toward a healthier Somalia.
+            We bring together communities, healthcare professionals,
+            institutions, researchers, partners and supporters to
+            strengthen diabetes prevention and care while contributing
+            to a stronger health system.
           </p>
 
         </div>
@@ -807,64 +1230,77 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
+    <!-- ==================================================
+         SDF AT A GLANCE
+    ================================================== -->
 
-    <section id="about">
+    <section class="glance">
 
       <div class="container">
 
         <div class="section-heading">
 
-          <div class="eyebrow">
-            Who we are
+          <div class="section-label">
+            SDF at a Glance
           </div>
 
-          <h2>
-            Building a stronger response to diabetes in Somalia
+          <h2 class="section-title">
+            Building a foundation for sustainable impact
           </h2>
-
-          <p>
-            The Somali Diabetes Foundation (SDF) is a non-governmental,
-            non-profit and non-political organization committed to preventing,
-            raising awareness of, and managing diabetes in Somalia.
-          </p>
 
         </div>
 
 
-        <div class="about-grid">
+        <div class="glance-grid">
 
-          <div class="card">
+          <div class="glance-card">
 
-            <h3>
-              Our Mission
-            </h3>
+            <div class="glance-number">
+              20 Nov 2024
+            </div>
 
-            <p>
-              To lead efforts in diabetes prevention, awareness, management
-              and advocacy across Somalia through education, support programs
-              and partnerships, ensuring better healthcare access and outcomes
-              for people living with diabetes.
-            </p>
-
-            <a href="about.html" class="text-link">
-              Learn more about SDF →
-            </a>
+            <div class="glance-label">
+              Official Founding
+            </div>
 
           </div>
 
 
-          <div class="card">
+          <div class="glance-card">
 
-            <h3>
-              Our Vision
-            </h3>
+            <div class="glance-number">
+              7
+            </div>
 
-            <p>
-              To create a healthier Somali society with reduced diabetes
-              prevalence and improved quality of life for individuals living
-              with diabetes.
-            </p>
+            <div class="glance-label">
+              Core Activity Areas
+            </div>
+
+          </div>
+
+
+          <div class="glance-card">
+
+            <div class="glance-number">
+              Somalia
+            </div>
+
+            <div class="glance-label">
+              National Focus
+            </div>
+
+          </div>
+
+
+          <div class="glance-card">
+
+            <div class="glance-number">
+              Nonprofit
+            </div>
+
+            <div class="glance-label">
+              Organization
+            </div>
 
           </div>
 
@@ -875,25 +1311,30 @@
     </section>
 
 
-    <!-- ================= PROGRAMS ================= -->
+    <!-- ==================================================
+         PROGRAMS
+    ================================================== -->
 
-    <section id="programs" class="section-light">
+    <section
+      class="programs"
+      id="programs"
+    >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <div class="eyebrow">
-            What we do
+          <div class="section-label">
+            What We Do
           </div>
 
-          <h2>
-            Our priority areas
+          <h2 class="section-title">
+            Our Core Programs
           </h2>
 
           <p>
-            Our work brings together prevention, care, education, research,
-            advocacy and community engagement.
+            SDF works across interconnected areas to improve diabetes
+            prevention, awareness, care, knowledge and community support.
           </p>
 
         </div>
@@ -901,10 +1342,11 @@
 
         <div class="program-grid">
 
-          <div class="program">
 
-            <div class="program-number">
-              01
+          <div class="program-card">
+
+            <div class="program-icon">
+              ◉
             </div>
 
             <h3>
@@ -912,17 +1354,18 @@
             </h3>
 
             <p>
-              Community education on diabetes causes, prevention, symptoms,
-              healthy lifestyles and management.
+              Raising awareness about diabetes, risk factors,
+              prevention, healthy lifestyles and the importance
+              of early diagnosis and appropriate care.
             </p>
 
           </div>
 
 
-          <div class="program">
+          <div class="program-card">
 
-            <div class="program-number">
-              02
+            <div class="program-icon">
+              +
             </div>
 
             <h3>
@@ -930,17 +1373,17 @@
             </h3>
 
             <p>
-              Promoting risk assessment, screening, early detection and timely
-              referral for intervention.
+              Supporting screening, early detection and prevention
+              initiatives for diabetes and its related complications.
             </p>
 
           </div>
 
 
-          <div class="program">
+          <div class="program-card">
 
-            <div class="program-number">
-              03
+            <div class="program-icon">
+              +
             </div>
 
             <h3>
@@ -948,17 +1391,17 @@
             </h3>
 
             <p>
-              Supporting training, workshops and continuing education to
-              strengthen diabetes care capacity.
+              Supporting healthcare professionals through education,
+              training and knowledge-sharing related to diabetes care.
             </p>
 
           </div>
 
 
-          <div class="program">
+          <div class="program-card">
 
-            <div class="program-number">
-              04
+            <div class="program-icon">
+              ⚕
             </div>
 
             <h3>
@@ -966,17 +1409,17 @@
             </h3>
 
             <p>
-              Working with stakeholders to strengthen diabetes-related
-              policies, services and access to care.
+              Promoting stronger policies, systems and partnerships
+              to improve diabetes prevention and management.
             </p>
 
           </div>
 
 
-          <div class="program">
+          <div class="program-card">
 
-            <div class="program-number">
-              05
+            <div class="program-icon">
+              ⌕
             </div>
 
             <h3>
@@ -984,17 +1427,17 @@
             </h3>
 
             <p>
-              Supporting research and data collection that can inform policy,
-              programs and improved diabetes care.
+              Supporting research, data collection and evidence-based
+              approaches to better understand diabetes in Somalia.
             </p>
 
           </div>
 
 
-          <div class="program">
+          <div class="program-card">
 
-            <div class="program-number">
-              06
+            <div class="program-icon">
+              ♥
             </div>
 
             <h3>
@@ -1002,17 +1445,17 @@
             </h3>
 
             <p>
-              Supporting people and families through community engagement,
-              peer support, counselling and health education.
+              Promoting patient and family support while engaging
+              communities in diabetes prevention and care.
             </p>
 
           </div>
 
 
-          <div class="program">
+          <div class="program-card">
 
-            <div class="program-number">
-              07
+            <div class="program-icon">
+              ↗
             </div>
 
             <h3>
@@ -1020,8 +1463,26 @@
             </h3>
 
             <p>
-              Mobilizing resources and building partnerships to support
-              sustainable diabetes-focused initiatives.
+              Mobilizing resources and building partnerships that
+              enable sustainable diabetes programs and services.
+            </p>
+
+          </div>
+
+
+          <div class="program-card">
+
+            <div class="program-icon">
+              ◎
+            </div>
+
+            <h3>
+              Collaboration & Partnerships
+            </h3>
+
+            <p>
+              Connecting with government agencies, health facilities,
+              humanitarian organizations, institutions and partners.
             </p>
 
           </div>
@@ -1033,80 +1494,123 @@
     </section>
 
 
-    <!-- ================= IMPACT ================= -->
+    <!-- ==================================================
+         IMPACT
+    ================================================== -->
 
-    <section id="impact" class="glance">
+    <section
+      class="impact"
+      id="impact"
+    >
 
-      <div class="container">
+      <div class="container impact-grid">
 
-        <div class="section-heading">
+        <div>
 
-          <div class="eyebrow">
-            SDF at a glance
+          <div class="section-label">
+            Our Commitment
           </div>
 
-          <h2>
-            From commitment to action
+          <h2 class="section-title">
+            Turning awareness into action
           </h2>
 
-          <p>
-            SDF is committed to transparent reporting of verified program
-            results as our work grows.
+          <p class="impact-text">
+            SDF is committed to addressing diabetes through a
+            comprehensive approach that connects prevention,
+            early detection, quality care, education, research
+            and community engagement.
           </p>
 
         </div>
 
 
-        <div class="glance-grid">
+        <div class="impact-list">
 
-          <div class="glance-item">
+          <div class="impact-item">
 
-            <strong>
-              20 Nov 2024
-            </strong>
+            <div class="impact-check">
+              ✓
+            </div>
 
-            <span>
-              Official founding date
-            </span>
+            <div>
 
-          </div>
+              <h3>
+                Prevention
+              </h3>
 
+              <p>
+                Promoting healthier communities and reducing
+                preventable diabetes risk.
+              </p>
 
-          <div class="glance-item">
-
-            <strong>
-              7
-            </strong>
-
-            <span>
-              Core activity areas
-            </span>
+            </div>
 
           </div>
 
 
-          <div class="glance-item">
+          <div class="impact-item">
 
-            <strong>
-              Somalia
-            </strong>
+            <div class="impact-check">
+              ✓
+            </div>
 
-            <span>
-              Primary country focus
-            </span>
+            <div>
+
+              <h3>
+                Early Detection
+              </h3>
+
+              <p>
+                Supporting screening and early identification
+                of diabetes and complications.
+              </p>
+
+            </div>
 
           </div>
 
 
-          <div class="glance-item">
+          <div class="impact-item">
 
-            <strong>
-              Non-profit
-            </strong>
+            <div class="impact-check">
+              ✓
+            </div>
 
-            <span>
-              Organizational status
-            </span>
+            <div>
+
+              <h3>
+                Better Care
+              </h3>
+
+              <p>
+                Supporting improved diabetes knowledge,
+                management and patient-centered care.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="impact-item">
+
+            <div class="impact-check">
+              ✓
+            </div>
+
+            <div>
+
+              <h3>
+                Knowledge & Evidence
+              </h3>
+
+              <p>
+                Building research and data capacity to inform
+                better health decisions.
+              </p>
+
+            </div>
 
           </div>
 
@@ -1117,42 +1621,64 @@
     </section>
 
 
-    <!-- ================= FOUNDING STORY ================= -->
+    <!-- ==================================================
+         FOUNDING STORY
+    ================================================== -->
 
-    <section>
+    <section class="story-banner">
 
-      <div class="container">
+      <div class="container story-card">
 
-        <div class="story-banner">
+        <div class="story-date">
 
           <div>
 
-            <div class="eyebrow">
-              Our founding story
-            </div>
+            <strong>
+              20
+            </strong>
 
-            <h2>
-              From one encounter to a national vision.
-            </h2>
+            <span>
+              NOVEMBER 2024
+            </span>
 
-            <p>
-              SDF began with an encounter that highlighted the human cost of
-              diabetes, poverty and limited access to care. The idea was
-              conceived on 20 August 2024 and the Foundation was officially
-              founded on 20 November 2024.
-            </p>
+            <br>
 
-            <p style="margin-top:15px;">
-              From one encounter came one idea. From one idea came one
-              foundation. From one foundation comes a vision for a healthier
-              Somalia.
-            </p>
+            <span>
+              OFFICIAL FOUNDING
+            </span>
 
           </div>
 
+        </div>
 
-          <a href="story.html" class="btn btn-primary">
-            Read the full founding history
+
+        <div class="story-content">
+
+          <div class="section-label">
+            Our Story
+          </div>
+
+          <h2>
+            From one encounter to a national vision
+          </h2>
+
+          <p>
+            The idea behind the Somali Diabetes Foundation began
+            with a powerful encounter that highlighted the human
+            cost of diabetes and limited access to essential care.
+          </p>
+
+          <p>
+            From that experience came a commitment to build an
+            organization focused on awareness, prevention,
+            screening, treatment, patient support and research.
+          </p>
+
+          <a
+            href="story.html"
+            class="text-link"
+          >
+            Read the full founding history →
           </a>
 
         </div>
@@ -1162,25 +1688,31 @@
     </section>
 
 
-    <!-- ================= RESEARCH ================= -->
+    <!-- ==================================================
+         RESEARCH
+    ================================================== -->
 
-    <section id="research" class="section-light">
+    <section
+      class="research"
+      id="research"
+    >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <div class="eyebrow">
-            Evidence & Learning
+          <div class="section-label">
+            Research & Knowledge
           </div>
 
-          <h2>
-            Research & knowledge
+          <h2 class="section-title">
+            Building evidence for better diabetes care
           </h2>
 
           <p>
-            SDF is committed to promoting research and data that can strengthen
-            diabetes prevention, care, policy and health programs in Somalia.
+            Research is an important part of SDF's mission.
+            We aim to contribute to knowledge that can strengthen
+            diabetes prevention, care and health policy in Somalia.
           </p>
 
         </div>
@@ -1188,61 +1720,67 @@
 
         <div class="research-grid">
 
-          <div class="card">
+          <div class="research-card">
 
             <h3>
-              Research priorities
+              Research Priorities
             </h3>
 
-            <ul class="research-list">
+            <p>
+              SDF is interested in research related to diabetes,
+              noncommunicable diseases, public health, clinical
+              care and health-system strengthening.
+            </p>
 
-              <li>
-                Diabetes prevention and awareness
-              </li>
+            <div class="research-tags">
 
-              <li>
-                Risk factors and early detection
-              </li>
+              <span class="research-tag">
+                Diabetes
+              </span>
 
-              <li>
-                Access to diabetes treatment and care
-              </li>
+              <span class="research-tag">
+                Hypertension
+              </span>
 
-              <li>
-                Diabetes complications and patient support
-              </li>
+              <span class="research-tag">
+                CKD
+              </span>
 
-              <li>
-                Community and health-system research
-              </li>
+              <span class="research-tag">
+                Cardiovascular Health
+              </span>
 
-              <li>
-                Evidence for policy and program development
-              </li>
+              <span class="research-tag">
+                Public Health
+              </span>
 
-            </ul>
+              <span class="research-tag">
+                Epidemiology
+              </span>
+
+            </div>
 
           </div>
 
 
-          <div class="card">
+          <div class="research-card">
 
             <h3>
-              Building an evidence base
+              Research Collaboration
             </h3>
 
             <p>
-              We aim to support responsible research, data collection,
-              collaboration with academic and health institutions, and
-              dissemination of findings that can contribute to better diabetes
-              outcomes.
+              We welcome opportunities to collaborate with
+              researchers, universities, healthcare institutions,
+              government agencies and organizations working to
+              improve health outcomes.
             </p>
 
             <a
-              href="mailto:info@sdf.so?subject=Research%20Partnership"
+              href="contact.html"
               class="text-link"
             >
-              Discuss a research partnership →
+              Discuss research collaboration →
             </a>
 
           </div>
@@ -1254,48 +1792,69 @@
     </section>
 
 
-    <!-- ================= ACTIVITIES PREVIEW ================= -->
+    <!-- ==================================================
+         ACTIVITIES
+    ================================================== -->
 
-    <section id="activities">
+    <section class="activities">
 
       <div class="container">
 
         <div class="section-heading">
 
-          <div class="eyebrow">
-            Our work in the community
+          <div class="section-label">
+            Activities & News
           </div>
 
-          <h2>
-            Activities & News
+          <h2 class="section-title">
+            SDF in the community
           </h2>
 
           <p>
-            Explore SDF campaigns, community activities, training, screening
-            initiatives, partnerships, events, photos and news.
+            Explore our awareness, screening, education,
+            partnership and community activities.
           </p>
 
         </div>
 
 
-        <div class="activities-box">
+        <div class="activity-highlight">
 
-          <h3>
-            Explore our activities
-          </h3>
+          <div class="activity-visual">
 
-          <p>
-            Visit the SDF Activities & News page to discover our community
-            work, campaigns, training activities, partnerships and photo
-            stories.
-          </p>
+            <div>
 
-          <a
-            href="activities.html"
-            class="btn btn-primary"
-          >
-            View Activities & News →
-          </a>
+              <h3>
+                Awareness.<br>
+                Screening.<br>
+                Community Action.
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="activity-content">
+
+            <h2>
+              Our Activities
+            </h2>
+
+            <p>
+              SDF activities bring diabetes awareness and
+              prevention closer to communities while supporting
+              healthcare education and institutional engagement.
+            </p>
+
+            <a
+              href="activities.html"
+              class="btn btn-primary"
+            >
+              View Activities & Photos
+            </a>
+
+          </div>
 
         </div>
 
@@ -1304,25 +1863,31 @@
     </section>
 
 
-    <!-- ================= GET INVOLVED ================= -->
+    <!-- ==================================================
+         GET INVOLVED
+    ================================================== -->
 
-    <section id="involve" class="section-light">
+    <section
+      class="involve"
+      id="involve"
+    >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <div class="eyebrow">
-            Get involved
+          <div class="section-label">
+            Get Involved
           </div>
 
-          <h2>
-            There is a role for everyone
+          <h2 class="section-title">
+            Be part of the mission
           </h2>
 
           <p>
-            Join SDF's efforts through partnership, volunteering, membership,
-            professional contribution or support.
+            Individuals, professionals, institutions and
+            organizations can contribute to the work of SDF
+            in different ways.
           </p>
 
         </div>
@@ -1330,24 +1895,17 @@
 
         <div class="involve-grid">
 
-
           <div class="involve-card">
 
             <h3>
-              Partner
+              Partner with SDF
             </h3>
 
             <p>
-              Collaborate with SDF on community programs, research, training,
-              advocacy or health-system initiatives.
+              Collaborate with us on programs, health initiatives,
+              community activities, research and institutional
+              strengthening.
             </p>
-
-            <a
-              href="mailto:info@sdf.so?subject=Partnership%20with%20SDF"
-              class="text-link"
-            >
-              Partner with us →
-            </a>
 
           </div>
 
@@ -1359,16 +1917,10 @@
             </h3>
 
             <p>
-              Contribute professional skills, community outreach, education,
-              communications or event support.
+              Contribute your time, skills and professional
+              experience to diabetes awareness, education and
+              community initiatives.
             </p>
-
-            <a
-              href="mailto:info@sdf.so?subject=Volunteer%20with%20SDF"
-              class="text-link"
-            >
-              Volunteer →
-            </a>
 
           </div>
 
@@ -1376,20 +1928,14 @@
           <div class="involve-card">
 
             <h3>
-              Membership
+              Research Collaboration
             </h3>
 
             <p>
-              SDF's organizational profile provides for ordinary, professional,
-              institutional and honorary membership categories.
+              Work with SDF on research, data collection,
+              scientific communication and evidence-based
+              health initiatives.
             </p>
-
-            <a
-              href="mailto:info@sdf.so?subject=SDF%20Membership"
-              class="text-link"
-            >
-              Ask about membership →
-            </a>
 
           </div>
 
@@ -1400,27 +1946,37 @@
     </section>
 
 
-    <!-- ================= DONATE ================= -->
+    <!-- ==================================================
+         DONATE
+    ================================================== -->
 
-    <section id="donate" class="donate">
+    <section
+      class="donate"
+      id="donate"
+    >
 
       <div class="container">
 
-        <h2>
-          Help us build a healthier Somalia.
-        </h2>
+        <div class="donate-box">
 
-        <p>
-          Support diabetes awareness, prevention, patient support, research,
-          education and community-focused initiatives.
-        </p>
+          <h2>
+            Help Build a Healthier Somalia
+          </h2>
 
-        <a
-          href="mailto:info@sdf.so?subject=Supporting%20SDF"
-          class="btn btn-light"
-        >
-          Donate / Support SDF
-        </a>
+          <p>
+            Your support can help advance diabetes awareness,
+            prevention, screening, education, patient support,
+            research and community health initiatives.
+          </p>
+
+          <a
+            href="contact.html"
+            class="btn btn-primary"
+          >
+            Contact SDF to Support Our Work
+          </a>
+
+        </div>
 
       </div>
 
@@ -1429,7 +1985,9 @@
   </main>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
 
   <footer>
 
@@ -1438,6 +1996,8 @@
       <div class="footer-grid">
 
 
+        <!-- BRAND -->
+
         <div>
 
           <div class="footer-brand">
@@ -1445,6 +2005,7 @@
             <img
               src="sdf-logo.jpg"
               alt="Somali Diabetes Foundation logo"
+              class="footer-logo"
             >
 
             <strong>
@@ -1454,93 +2015,84 @@
           </div>
 
           <p>
-            Advancing diabetes awareness, prevention, care, research,
-            advocacy and patient support in Somalia.
+            Advancing diabetes awareness, prevention, screening,
+            education, research and patient support for a healthier
+            Somalia.
           </p>
 
         </div>
 
 
+        <!-- QUICK LINKS -->
+
         <div>
 
           <h3>
-            Explore
+            Quick Links
           </h3>
 
-          <ul>
+          <div class="footer-links">
 
-            <li>
-              <a href="index.html">
-                Home
-              </a>
-            </li>
+            <a href="index.html">
+              Home
+            </a>
 
-            <li>
-              <a href="about.html">
-                About SDF
-              </a>
-            </li>
+            <a href="about.html">
+              About
+            </a>
 
-            <li>
-              <a href="story.html">
-                Our Founding Story
-              </a>
-            </li>
+            <a href="story.html">
+              Our Story
+            </a>
 
-            <li>
-              <a href="#programs">
-                Our Programs
-              </a>
-            </li>
+            <a href="activities.html">
+              Activities
+            </a>
 
-            <li>
-              <a href="#research">
-                Research
-              </a>
-            </li>
+            <a href="contact.html">
+              Contact
+            </a>
 
-            <li>
-              <a href="activities.html">
-                Activities & News
-              </a>
-            </li>
-
-            <li>
-              <a href="#involve">
-                Get Involved
-              </a>
-            </li>
-
-          </ul>
+          </div>
 
         </div>
 
 
+        <!-- CONTACT -->
+
         <div>
 
           <h3>
-            Contact
+            Contact SDF
           </h3>
 
-          <ul>
+          <div class="footer-links">
 
-            <li>
-              <a href="mailto:info@sdf.so">
-                info@sdf.so
-              </a>
-            </li>
+            <a href="mailto:info@sdf.so">
+              info@sdf.so
+            </a>
 
-            <li>
-              <a href="https://sdf.so">
-                sdf.so
-              </a>
-            </li>
+            <a href="tel:+252771817681">
+              +252 77 181 7681
+            </a>
 
-            <li>
-              Somalia
-            </li>
+            <a
+              href="https://maps.app.goo.gl/HjfJZLxNPZpREEMu5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mogadishu, Somalia
+            </a>
 
-          </ul>
+            <a
+              href="https://www.facebook.com/profile.php?id=61569013594389"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+
+          </div>
 
         </div>
 
@@ -1549,14 +2101,13 @@
 
       <div class="footer-bottom">
 
-        <div>
-          © 2026 Somali Diabetes Foundation (SDF).
-          All rights reserved.
-        </div>
+        <p>
+          © 2026 Somali Diabetes Foundation. All rights reserved.
+        </p>
 
-        <div>
-          Health · Care · Hope
-        </div>
+        <p>
+          Mogadishu, Somalia
+        </p>
 
       </div>
 

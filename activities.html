@@ -5,22 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Activities & News | Somali Diabetes Foundation</title>
-
-  <meta
-    name="description"
-    content="Explore activities, campaigns, community outreach, training, screening initiatives, partnerships and news from the Somali Diabetes Foundation."
-  >
+  <meta name="description" content="Activities, community outreach, diabetes awareness, screening, education, partnerships and events of the Somali Diabetes Foundation.">
 
   <style>
     :root {
       --navy: #063b68;
+      --navy-dark: #042d50;
       --blue: #159ed0;
       --green: #18b957;
       --light: #f4f9fb;
       --white: #ffffff;
       --ink: #18313b;
-      --muted: #5f737c;
-      --border: #dce8ed;
+      --muted: #637782;
+      --border: #e2edf1;
       --shadow: 0 12px 35px rgba(6, 59, 104, 0.10);
     }
 
@@ -42,421 +39,364 @@
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      width: 100%;
     }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    /* ================= HEADER ================= */
-
+    /* HEADER */
     header {
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      border-bottom: 1px solid #edf2f4;
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(10px);
     }
 
-    .nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+    .header-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 22px 25px 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      color: var(--navy);
-      white-space: nowrap;
+      gap: 18px;
+      margin-bottom: 20px;
     }
 
     .brand img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
     }
 
-    .brand-text {
-      font-size: 16px;
+    .brand-name {
+      color: var(--navy);
+      font-size: 28px;
+      font-weight: 800;
       line-height: 1.15;
     }
 
-    .brand-text span {
-      display: block;
+    .brand-short {
       color: var(--blue);
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-top: 3px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-top: 5px;
     }
 
     nav {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: flex-end;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 8px;
     }
 
     nav a {
-      padding: 9px 11px;
-      font-size: 14px;
-      font-weight: 600;
       color: var(--ink);
+      font-weight: 700;
+      padding: 12px 15px;
       border-radius: 8px;
       transition: 0.2s ease;
     }
 
-    nav a:hover {
-      color: var(--blue);
+    nav a:hover,
+    nav a.active {
+      color: var(--navy);
       background: var(--light);
     }
 
-    nav .active {
-      color: var(--blue);
-      background: var(--light);
-    }
-
-    nav .donate-link {
-      color: white;
+    nav a.donate {
       background: var(--green);
-      padding: 10px 16px;
-    }
-
-    nav .donate-link:hover {
       color: white;
-      background: #119b48;
+      padding: 13px 22px;
     }
 
-    /* ================= HERO ================= */
+    nav a.donate:hover {
+      background: #119e48;
+      color: white;
+    }
 
+    /* HERO */
     .hero {
       background:
-        linear-gradient(
-          135deg,
-          rgba(6, 59, 104, 0.97),
-          rgba(21, 158, 208, 0.90)
-        );
+        linear-gradient(135deg, rgba(6,59,104,0.96), rgba(21,158,208,0.88));
       color: white;
-      padding: 85px 0 90px;
+      padding: 85px 25px;
     }
 
-    .hero-content {
-      max-width: 800px;
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
     }
 
     .eyebrow {
       display: inline-block;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(40px, 6vw, 64px);
-      line-height: 1.08;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.1;
       margin-bottom: 20px;
-      letter-spacing: -1.5px;
     }
 
     .hero p {
-      max-width: 720px;
-      font-size: 18px;
-      opacity: 0.95;
+      max-width: 800px;
+      margin: auto;
+      font-size: 19px;
+      color: rgba(255,255,255,0.92);
     }
 
-    /* ================= SECTION ================= */
-
-    section {
-      padding: 80px 0;
+    /* INTRO */
+    .intro {
+      max-width: 1050px;
+      margin: auto;
+      padding: 70px 25px 30px;
+      text-align: center;
     }
 
-    .section-light {
-      background: var(--light);
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 42px;
-    }
-
-    .section-heading .eyebrow {
-      color: var(--blue);
-    }
-
-    .section-heading h2 {
+    .intro h2 {
       color: var(--navy);
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.15;
-      margin-bottom: 13px;
+      font-size: 34px;
+      margin-bottom: 15px;
     }
 
-    .section-heading p {
+    .intro p {
+      max-width: 850px;
+      margin: auto;
       color: var(--muted);
       font-size: 17px;
     }
 
-    /* ================= FEATURED ACTIVITY ================= */
-
-    .featured {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
+    /* SECTION */
+    .activity-section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 55px 25px;
     }
 
-    .featured-image {
-      min-height: 360px;
-      background:
-        linear-gradient(
-          135deg,
-          #e7f6fb,
-          #f1fbf5
-        );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 35px;
+    .section-heading {
+      margin-bottom: 28px;
     }
 
-    .featured-image .placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 290px;
-      border: 2px dashed #b8d6df;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--muted);
-      padding: 30px;
-    }
-
-    .featured-content {
-      padding: 45px;
-    }
-
-    .category {
-      display: inline-block;
-      color: var(--blue);
-      background: #e8f7fb;
-      border-radius: 30px;
-      padding: 5px 12px;
-      font-size: 12px;
+    .section-heading .label {
+      color: var(--green);
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      margin-bottom: 7px;
     }
 
-    .featured-content h2 {
+    .section-heading h2 {
       color: var(--navy);
-      font-size: 30px;
+      font-size: 34px;
       line-height: 1.2;
-      margin-bottom: 13px;
+      margin-bottom: 10px;
     }
 
-    .featured-content p {
+    .section-heading p {
+      max-width: 800px;
       color: var(--muted);
     }
 
-    .date {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    /* ================= ACTIVITY CARDS ================= */
-
-    .activity-grid {
+    /* PHOTO GRID */
+    .photo-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 22px;
     }
 
-    .activity-card {
+    .photo-card {
       background: white;
       border: 1px solid var(--border);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 5px 18px rgba(6, 59, 104, 0.05);
-      transition: 0.2s ease;
-    }
-
-    .activity-card:hover {
-      transform: translateY(-5px);
       box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
     }
 
-    .activity-image {
-      height: 220px;
-      background: #eef7fa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .photo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(6,59,104,0.16);
+    }
+
+    .photo-wrap {
+      height: 245px;
       overflow: hidden;
+      background: #eaf2f5;
     }
 
-    .activity-image img {
-      width: 100%;
+    .photo-wrap img {
       height: 100%;
       object-fit: cover;
+      transition: transform 0.35s ease;
     }
 
-    .image-placeholder {
-      padding: 25px;
-      text-align: center;
+    .photo-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .photo-info {
+      padding: 17px 18px 19px;
+    }
+
+    .photo-info h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .photo-info p {
       color: var(--muted);
       font-size: 14px;
     }
 
-    .activity-content {
-      padding: 25px;
-    }
-
-    .activity-content h3 {
-      color: var(--navy);
-      font-size: 20px;
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-
-    .activity-content p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* ================= EMPTY STATE ================= */
-
-    .empty-state {
-      text-align: center;
-      background: white;
-      border: 2px dashed #b9d6df;
-      border-radius: 18px;
-      padding: 60px 30px;
-    }
-
-    .empty-icon {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      background: #e9f7fb;
-      display: flex;
+    /* FEATURED PHOTO */
+    .featured {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
       align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 30px;
-      font-weight: bold;
+      background: var(--light);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 35px;
     }
 
-    .empty-state h2 {
+    .featured-image {
+      height: 390px;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .featured-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-content h3 {
       color: var(--navy);
-      margin-bottom: 12px;
+      font-size: 29px;
+      line-height: 1.25;
+      margin-bottom: 15px;
     }
 
-    .empty-state p {
-      max-width: 650px;
-      margin: auto;
+    .featured-content p {
       color: var(--muted);
+      margin-bottom: 15px;
     }
 
-    /* ================= CTA ================= */
+    .tag {
+      display: inline-block;
+      background: #e2f7eb;
+      color: #087b37;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 11px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
 
+    /* DIVIDER */
+    .divider {
+      max-width: 1130px;
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto;
+    }
+
+    /* CTA */
     .cta {
       background: var(--navy);
       color: white;
+      padding: 70px 25px;
+      margin-top: 35px;
+    }
+
+    .cta-inner {
+      max-width: 900px;
+      margin: auto;
       text-align: center;
     }
 
     .cta h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      margin-bottom: 13px;
+      font-size: 36px;
+      margin-bottom: 15px;
     }
 
     .cta p {
-      max-width: 700px;
+      color: rgba(255,255,255,0.85);
+      max-width: 720px;
       margin: 0 auto 25px;
-      opacity: 0.85;
     }
 
-    .btn {
+    .cta-button {
       display: inline-block;
-      padding: 13px 21px;
-      border-radius: 8px;
-      font-weight: 700;
-      border: 2px solid transparent;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
       background: var(--green);
       color: white;
+      padding: 14px 25px;
+      border-radius: 9px;
+      font-weight: 800;
     }
 
-    .btn-primary:hover {
-      background: #119b48;
-      transform: translateY(-1px);
+    .cta-button:hover {
+      background: #119e48;
     }
 
-    .btn-light {
-      background: white;
-      color: var(--navy);
-    }
-
-    .btn-light:hover {
-      background: #eef8fb;
-    }
-
-    /* ================= FOOTER ================= */
-
+    /* FOOTER */
     footer {
-      background: #042b4c;
+      background: var(--navy-dark);
       color: white;
-      padding: 55px 0 25px;
+      padding: 55px 25px 25px;
     }
 
-    .footer-grid {
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-columns: 1.2fr 1fr 1fr;
       gap: 45px;
-      margin-bottom: 40px;
     }
 
     .footer-brand {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
+      gap: 15px;
+      align-items: flex-start;
     }
 
     .footer-brand img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      background: white;
-      border-radius: 10px;
-      padding: 5px;
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+    }
+
+    .footer-brand h3 {
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
     }
 
     footer h3 {
@@ -464,19 +404,11 @@
       font-size: 17px;
     }
 
-    footer p,
-    footer li,
-    footer a {
-      color: rgba(255,255,255,0.78);
+    footer a,
+    footer p {
+      color: rgba(255,255,255,0.75);
       font-size: 14px;
-    }
-
-    footer ul {
-      list-style: none;
-    }
-
-    footer li {
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     footer a:hover {
@@ -484,83 +416,151 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 20px;
+      max-width: 1180px;
+      margin: 40px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.14);
       display: flex;
       justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
     }
 
-    /* ================= RESPONSIVE ================= */
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 30px;
+    }
 
+    .lightbox.show {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 18px;
+      right: 25px;
+      color: white;
+      font-size: 42px;
+      line-height: 1;
+      cursor: pointer;
+      font-weight: 300;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      right: 20px;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-
-      .nav {
-        flex-direction: column;
-        padding: 15px 0;
-      }
-
-      nav {
-        justify-content: center;
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .featured {
         grid-template-columns: 1fr;
       }
 
-      .activity-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-grid {
+      .footer-inner {
         grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+      .header-inner {
+        padding: 18px 16px;
+      }
 
-      .brand-text {
-        font-size: 14px;
+      .brand {
+        justify-content: center;
       }
 
       .brand img {
-        width: 48px;
-        height: 48px;
+        width: 70px;
+        height: 70px;
+      }
+
+      .brand-name {
+        font-size: 21px;
+      }
+
+      .brand-short {
+        font-size: 15px;
       }
 
       nav {
-        gap: 3px;
+        gap: 4px;
       }
 
       nav a {
-        font-size: 12px;
-        padding: 7px;
+        font-size: 14px;
+        padding: 9px 8px;
       }
 
       .hero {
-        padding: 60px 0 65px;
-      }
-
-      .hero h1 {
-        font-size: 42px;
+        padding: 60px 20px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
-      section {
-        padding: 60px 0;
+      .intro {
+        padding-top: 50px;
       }
 
-      .activity-grid,
-      .footer-grid {
+      .intro h2,
+      .section-heading h2 {
+        font-size: 28px;
+      }
+
+      .photo-grid {
         grid-template-columns: 1fr;
       }
 
-      .featured-content {
-        padding: 30px;
+      .photo-wrap {
+        height: 260px;
+      }
+
+      .featured {
+        padding: 15px;
+      }
+
+      .featured-image {
+        height: 270px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        display: block;
+      }
+
+      .footer-bottom p {
+        margin-bottom: 8px;
       }
     }
   </style>
@@ -568,598 +568,665 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-
+  <!-- HEADER -->
   <header>
-
-    <div class="container nav">
+    <div class="header-inner">
 
       <a href="index.html" class="brand">
-
-        <img
-          src="sdf-logo.jpg"
-          alt="Somali Diabetes Foundation logo"
-        >
-
-        <div class="brand-text">
-          Somali Diabetes Foundation
-          <span>SDF</span>
+        <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation logo">
+        <div>
+          <div class="brand-name">Somali Diabetes Foundation</div>
+          <div class="brand-short">SDF</div>
         </div>
-
       </a>
 
       <nav>
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="story.html">
-          Our Story
-        </a>
-
-        <a href="index.html#programs">
-          Programs
-        </a>
-
-        <a href="index.html#impact">
-          Impact
-        </a>
-
-        <a href="index.html#research">
-          Research
-        </a>
-
-        <a href="activities.html" class="active">
-          Activities
-        </a>
-
-        <a href="index.html#involve">
-          Get Involved
-        </a>
-
-        <a href="index.html#donate" class="donate-link">
-          Donate
-        </a>
-
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="story.html">Our Story</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#research">Research</a>
+        <a href="activities.html" class="active">Activities</a>
+        <a href="index.html#involve">Get Involved</a>
+        <a href="index.html#donate" class="donate">Donate</a>
       </nav>
 
     </div>
-
   </header>
 
 
-  <!-- ================= HERO ================= -->
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">OUR WORK IN THE COMMUNITY</div>
 
-  <main>
+      <h1>Activities &amp; News</h1>
 
-    <section class="hero">
-
-      <div class="container">
-
-        <div class="hero-content">
-
-          <div class="eyebrow">
-            Our Work in the Community
-          </div>
-
-          <h1>
-            Activities & News
-          </h1>
-
-          <p>
-            Discover the work of the Somali Diabetes Foundation through
-            community activities, awareness campaigns, screening initiatives,
-            training, partnerships, events and stories from across Somalia.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
+      <p>
+        A visual record of the Somali Diabetes Foundation's community
+        activities, awareness initiatives, screening programs, education,
+        partnerships and events.
+      </p>
+    </div>
+  </section>
 
 
-    <!-- ================= FEATURED ================= -->
+  <!-- INTRO -->
+  <section class="intro">
+    <h2>From Awareness to Action</h2>
 
-    <section>
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="eyebrow">
-            Featured activity
-          </div>
-
-          <h2>
-            Sharing our work with the community
-          </h2>
-
-          <p>
-            This page will become the growing public record of SDF activities,
-            programs and community engagement.
-          </p>
-
-        </div>
+    <p>
+      SDF works with communities, health professionals, partners and
+      institutions to advance diabetes awareness, prevention, early detection,
+      education and access to care across Somalia.
+    </p>
+  </section>
 
 
-        <div class="featured">
+  <!-- WORLD DIABETES DAY -->
+  <section class="activity-section">
 
-          <div class="featured-image">
+    <div class="section-heading">
+      <div class="label">Community Awareness</div>
+      <h2>World Diabetes Day 2025</h2>
 
-            <div class="placeholder">
+      <p>
+        Community participation and awareness activities promoting diabetes
+        prevention, healthy lifestyles and the importance of taking action
+        against diabetes.
+      </p>
+    </div>
 
-              <div>
-                <strong>
-                  Activity photo will appear here
-                </strong>
+    <div class="featured">
 
-                <br>
+      <div class="featured-image"
+           onclick="openLightbox(
+             'images/activities/1. world-diabetes-day-2025-volunteers.jpg.jpg',
+             'World Diabetes Day 2025 community activity'
+           )">
 
-                Add an SDF activity photo when available.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="featured-content">
-
-            <span class="category">
-              SDF Activity
-            </span>
-
-            <h2>
-              Somali Diabetes Foundation
-            </h2>
-
-            <p>
-              SDF is committed to bringing diabetes awareness, prevention,
-              screening, education, patient support, research and advocacy
-              closer to communities across Somalia.
-            </p>
-
-            <div class="date">
-              Activities will be added as programs and events take place.
-            </div>
-
-          </div>
-
-        </div>
+        <img
+          src="images/activities/1. world-diabetes-day-2025-volunteers.jpg.jpg"
+          alt="SDF volunteers during a World Diabetes Day 2025 community activity"
+          loading="lazy"
+        >
 
       </div>
 
-    </section>
+      <div class="featured-content">
 
+        <span class="tag">WORLD DIABETES DAY</span>
 
-    <!-- ================= ACTIVITY CATEGORIES ================= -->
-
-    <section class="section-light">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="eyebrow">
-            What we do
-          </div>
-
-          <h2>
-            Our activity areas
-          </h2>
-
-          <p>
-            SDF activities may include community outreach, diabetes screening,
-            health education, professional training, research, advocacy,
-            partnerships and patient support.
-          </p>
-
-        </div>
-
-
-        <div class="activity-grid">
-
-
-          <!-- ACTIVITY 01 -->
-
-          <article class="activity-card">
-
-            <div class="activity-image">
-
-              <div class="image-placeholder">
-                📸<br>
-                Community Activity Photo
-              </div>
-
-            </div>
-
-            <div class="activity-content">
-
-              <span class="category">
-                Awareness
-              </span>
-
-              <h3>
-                Diabetes Awareness
-              </h3>
-
-              <p>
-                Community education and awareness activities focused on
-                diabetes prevention, symptoms, healthy lifestyles and
-                management.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- ACTIVITY 02 -->
-
-          <article class="activity-card">
-
-            <div class="activity-image">
-
-              <div class="image-placeholder">
-                📸<br>
-                Screening Activity Photo
-              </div>
-
-            </div>
-
-            <div class="activity-content">
-
-              <span class="category">
-                Prevention
-              </span>
-
-              <h3>
-                Screening & Early Detection
-              </h3>
-
-              <p>
-                Activities supporting diabetes risk assessment, screening,
-                early detection and timely referral.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- ACTIVITY 03 -->
-
-          <article class="activity-card">
-
-            <div class="activity-image">
-
-              <div class="image-placeholder">
-                📸<br>
-                Training Photo
-              </div>
-
-            </div>
-
-            <div class="activity-content">
-
-              <span class="category">
-                Training
-              </span>
-
-              <h3>
-                Healthcare Professional Training
-              </h3>
-
-              <p>
-                Workshops, training and continuing education designed to
-                strengthen diabetes care capacity.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- ACTIVITY 04 -->
-
-          <article class="activity-card">
-
-            <div class="activity-image">
-
-              <div class="image-placeholder">
-                📸<br>
-                Community Outreach Photo
-              </div>
-
-            </div>
-
-            <div class="activity-content">
-
-              <span class="category">
-                Community
-              </span>
-
-              <h3>
-                Community Outreach
-              </h3>
-
-              <p>
-                Community engagement activities supporting people and families
-                affected by diabetes.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- ACTIVITY 05 -->
-
-          <article class="activity-card">
-
-            <div class="activity-image">
-
-              <div class="image-placeholder">
-                📸<br>
-                Partnership Photo
-              </div>
-
-            </div>
-
-            <div class="activity-content">
-
-              <span class="category">
-                Partnership
-              </span>
-
-              <h3>
-                Partnerships & Collaboration
-              </h3>
-
-              <p>
-                Collaboration with health institutions, government agencies,
-                humanitarian organizations and other partners.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- ACTIVITY 06 -->
-
-          <article class="activity-card">
-
-            <div class="activity-image">
-
-              <div class="image-placeholder">
-                📸<br>
-                Research Activity Photo
-              </div>
-
-            </div>
-
-            <div class="activity-content">
-
-              <span class="category">
-                Research
-              </span>
-
-              <h3>
-                Research & Evidence
-              </h3>
-
-              <p>
-                Research, data collection and knowledge-sharing activities
-                supporting better diabetes outcomes in Somalia.
-              </p>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= NEWS ARCHIVE ================= -->
-
-    <section>
-
-      <div class="container">
-
-        <div class="empty-state">
-
-          <div class="empty-icon">
-            +
-          </div>
-
-          <h2>
-            More activities coming soon
-          </h2>
-
-          <p>
-            This archive will grow as SDF conducts awareness campaigns,
-            screenings, training sessions, community programs, research
-            activities, partnerships and other initiatives across Somalia.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= SUBMIT ACTIVITY ================= -->
-
-    <section class="cta">
-
-      <div class="container">
-
-        <h2>
-          Have an SDF activity to share?
-        </h2>
+        <h3>Community Engagement &amp; Diabetes Awareness</h3>
 
         <p>
-          Send us the activity details and photos so they can be added to the
-          SDF activities and news archive.
+          SDF team members and community participants came together for
+          diabetes awareness and community engagement activities.
         </p>
 
-        <a
-          href="mailto:info@sdf.so?subject=Submit%20SDF%20Activity"
-          class="btn btn-light"
-        >
-          Submit an activity
-        </a>
+        <p>
+          These activities reflect SDF's commitment to making diabetes
+          prevention and awareness part of community life.
+        </p>
 
       </div>
 
-    </section>
-
-  </main>
+    </div>
 
 
-  <!-- ================= FOOTER ================= -->
+    <div class="photo-grid">
 
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/1. world-diabetes-day-2025-volunteers.jpg.jpg',
+        'World Diabetes Day 2025 volunteers'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/1. world-diabetes-day-2025-volunteers.jpg.jpg"
+            alt="World Diabetes Day 2025 volunteers"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>World Diabetes Day 2025</h3>
+          <p>SDF volunteers and community engagement.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/2. world-diabetes-day-2025-community.jpg.jpg',
+        'World Diabetes Day 2025 community'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/2. world-diabetes-day-2025-community.jpg.jpg"
+            alt="Community participants during World Diabetes Day 2025"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Community Participation</h3>
+          <p>Community members taking part in awareness activities.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/3. world-diabetes-day-2025-team.jpg.jpg',
+        'World Diabetes Day 2025 SDF team'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/3. world-diabetes-day-2025-team.jpg.jpg"
+            alt="SDF team during World Diabetes Day 2025"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>SDF Team</h3>
+          <p>Team members supporting community awareness.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="divider"></div>
+
+
+  <!-- BDASI -->
+  <section class="activity-section">
+
+    <div class="section-heading">
+      <div class="label">Awareness &amp; Screening</div>
+
+      <h2>
+        Banadir Diabetes Awareness and Screening Initiative
+        <span style="white-space: nowrap;">(BDASI)</span>
+      </h2>
+
+      <p>
+        Community-based diabetes awareness and screening activities implemented
+        by SDF, including health education, screening, assessment and
+        engagement with community members.
+      </p>
+    </div>
+
+
+    <div class="photo-grid">
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-clinical-screening-01.jpg.jpg',
+        'BDASI clinical screening activity'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-clinical-screening-01.jpg.jpg"
+            alt="BDASI clinical screening activity"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Diabetes Screening</h3>
+          <p>Community-based screening and health assessment.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-community-outreach-01.jpg.jpg',
+        'BDASI community outreach'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-community-outreach-01.jpg.jpg"
+            alt="BDASI community outreach activity"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Community Outreach</h3>
+          <p>Engaging communities through diabetes awareness.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-community-outreach-02.jpg.jpg',
+        'BDASI community awareness'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-community-outreach-02.jpg.jpg"
+            alt="BDASI community awareness activity"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Community Awareness</h3>
+          <p>Health education and community engagement.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-community-team.jpg.jpg',
+        'BDASI community team'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-community-team.jpg.jpg"
+            alt="BDASI community team"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Community Health Team</h3>
+          <p>SDF team members supporting the initiative.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-diabetes-assessment-01.jpg.jpg',
+        'BDASI diabetes assessment'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-diabetes-assessment-01.jpg.jpg"
+            alt="Diabetes assessment during BDASI"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Diabetes Assessment</h3>
+          <p>Community-level assessment and health support.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-health-team.jpg.jpg',
+        'BDASI health team'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-health-team.jpg.jpg"
+            alt="SDF health team during BDASI"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Health Team</h3>
+          <p>Health professionals participating in the initiative.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-patient-care-01.jpg.jpg',
+        'BDASI patient care'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-patient-care-01.jpg.jpg"
+            alt="Patient care during BDASI"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Patient Care</h3>
+          <p>Community-based health services and support.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-patient-care-02.jpg.jpg',
+        'BDASI patient care activity'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-patient-care-02.jpg.jpg"
+            alt="Patient care activity during BDASI"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Community Health Support</h3>
+          <p>Supporting individuals through community outreach.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/bdasi-team-group-photo.jpg.jpg',
+        'BDASI team group photo'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/bdasi-team-group-photo.jpg.jpg"
+            alt="BDASI team group photo"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>BDASI Team</h3>
+          <p>Team members supporting diabetes awareness and screening.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="divider"></div>
+
+
+  <!-- EDUCATION -->
+  <section class="activity-section">
+
+    <div class="section-heading">
+      <div class="label">Education &amp; Capacity Building</div>
+
+      <h2>Diabetes Education &amp; Training</h2>
+
+      <p>
+        SDF supports diabetes education, professional learning and community
+        health education as part of its broader commitment to strengthening
+        diabetes prevention and care.
+      </p>
+    </div>
+
+
+    <div class="photo-grid">
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/sdf-diabetes-education-01.jpg.jpg',
+        'SDF diabetes education'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/sdf-diabetes-education-01.jpg.jpg"
+            alt="SDF diabetes education activity"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Diabetes Education</h3>
+          <p>Education and knowledge sharing.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/sdf-diabetes-education-02.jpg.jpg',
+        'SDF diabetes education session'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/sdf-diabetes-education-02.jpg.jpg"
+            alt="SDF diabetes education session"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Education Session</h3>
+          <p>Promoting diabetes awareness and prevention.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/sdf-health-education-team.jpg.jpg',
+        'SDF health education team'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/sdf-health-education-team.jpg.jpg"
+            alt="SDF health education team"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Health Education Team</h3>
+          <p>Supporting health education and community learning.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="divider"></div>
+
+
+  <!-- PARTNERSHIPS -->
+  <section class="activity-section">
+
+    <div class="section-heading">
+      <div class="label">Partnerships</div>
+
+      <h2>Partnerships &amp; Institutional Engagement</h2>
+
+      <p>
+        Collaboration and partnership are important to SDF's work. These
+        activities reflect engagement with institutions and organizations to
+        advance diabetes-focused initiatives.
+      </p>
+    </div>
+
+
+    <div class="photo-grid">
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/sdf-partnership-meeting-01.jpg.jpg',
+        'SDF partnership meeting'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/sdf-partnership-meeting-01.jpg.jpg"
+            alt="SDF partnership meeting"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Partnership Meeting</h3>
+          <p>Institutional engagement and collaboration.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/sdf-mou-signing-01.jpg.jpg',
+        'SDF partnership agreement signing'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/sdf-mou-signing-01.jpg.jpg"
+            alt="SDF partnership agreement signing"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Partnership Agreement</h3>
+          <p>Strengthening collaboration through partnership.</p>
+        </div>
+      </div>
+
+
+      <div class="photo-card" onclick="openLightbox(
+        'images/activities/sdf-mou-signing-02.jpg.jpg',
+        'SDF partnership agreement'
+      )">
+        <div class="photo-wrap">
+          <img
+            src="images/activities/sdf-mou-signing-02.jpg.jpg"
+            alt="SDF partnership agreement"
+            loading="lazy"
+          >
+        </div>
+        <div class="photo-info">
+          <h3>Collaboration</h3>
+          <p>Building partnerships for diabetes-focused work.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="cta-inner">
+
+      <h2>Be Part of the Work</h2>
+
+      <p>
+        SDF welcomes partners, volunteers, professionals, organizations and
+        supporters who want to contribute to a healthier Somalia.
+      </p>
+
+      <a href="index.html#involve" class="cta-button">
+        Get Involved
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
   <footer>
 
-    <div class="container">
+    <div class="footer-inner">
 
-      <div class="footer-grid">
+      <div class="footer-brand">
 
+        <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation logo">
 
         <div>
-
-          <div class="footer-brand">
-
-            <img
-              src="sdf-logo.jpg"
-              alt="Somali Diabetes Foundation logo"
-            >
-
-            <strong>
-              Somali Diabetes Foundation
-            </strong>
-
-          </div>
-
+          <h3>Somali Diabetes Foundation</h3>
           <p>
             Advancing diabetes awareness, prevention, care, research,
             advocacy and patient support in Somalia.
           </p>
-
-        </div>
-
-
-        <div>
-
-          <h3>
-            Explore
-          </h3>
-
-          <ul>
-
-            <li>
-              <a href="index.html">
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a href="about.html">
-                About SDF
-              </a>
-            </li>
-
-            <li>
-              <a href="story.html">
-                Our Founding Story
-              </a>
-            </li>
-
-            <li>
-              <a href="index.html#programs">
-                Our Programs
-              </a>
-            </li>
-
-            <li>
-              <a href="index.html#research">
-                Research
-              </a>
-            </li>
-
-            <li>
-              <a href="activities.html">
-                Activities & News
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <div>
-
-          <h3>
-            Contact
-          </h3>
-
-          <ul>
-
-            <li>
-              <a href="mailto:info@sdf.so">
-                info@sdf.so
-              </a>
-            </li>
-
-            <li>
-              <a href="https://sdf.so">
-                sdf.so
-              </a>
-            </li>
-
-            <li>
-              Somalia
-            </li>
-
-          </ul>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-        <div>
-          © 2026 Somali Diabetes Foundation (SDF).
-          All rights reserved.
-        </div>
-
-        <div>
-          Health · Care · Hope
         </div>
 
       </div>
+
+
+      <div>
+        <h3>Explore</h3>
+
+        <p><a href="index.html">Home</a></p>
+        <p><a href="about.html">About SDF</a></p>
+        <p><a href="story.html">Our Founding Story</a></p>
+        <p><a href="activities.html">Activities &amp; News</a></p>
+      </div>
+
+
+      <div>
+        <h3>Contact</h3>
+
+        <p>
+          <a href="mailto:info@sdf.so">info@sdf.so</a>
+        </p>
+
+        <p>
+          <a href="https://sdf.so">sdf.so</a>
+        </p>
+
+        <p>Somalia</p>
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 Somali Diabetes Foundation (SDF). All rights reserved.
+      </p>
+
+      <p>
+        Health · Care · Hope
+      </p>
 
     </div>
 
   </footer>
 
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+
+    <span class="close-lightbox" onclick="closeLightbox(event)">
+      &times;
+    </span>
+
+    <img id="lightboxImage" src="" alt="">
+
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+
+  </div>
+
+
+  <script>
+
+    function openLightbox(image, caption) {
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+
+      lightboxImage.src = image;
+      lightboxImage.alt = caption;
+      lightboxCaption.textContent = caption;
+
+      lightbox.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+    }
+
+
+    function closeLightbox(event) {
+
+      if (
+        event.target.id === "lightbox" ||
+        event.target.classList.contains("close-lightbox")
+      ) {
+
+        document.getElementById("lightbox").classList.remove("show");
+
+        document.body.style.overflow = "";
+
+      }
+
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+
+        document.getElementById("lightbox").classList.remove("show");
+
+        document.body.style.overflow = "";
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>

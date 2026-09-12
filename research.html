@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research & Data | Somali Diabetes Foundation</title>
+
+  <meta
+    name="description"
+    content="Somali Diabetes Foundation Research & Data — supporting diabetes research, evidence generation and data-informed health action in Somalia."
+  >
+
+  <meta name="theme-color" content="#063b68">
+
+  <style>
+    :root {
+      --navy: #063b68;
+      --navy-dark: #042b4b;
+      --blue: #159ed0;
+      --blue-light: #eaf7fc;
+      --green: #18b957;
+      --green-dark: #119844;
+      --light: #f4f9fb;
+      --ink: #18313b;
+      --muted: #637781;
+      --white: #ffffff;
+      --border: #dce8ed;
+      --shadow: 0 12px 35px rgba(6, 59, 104, 0.10);
+      --shadow-lg: 0 20px 50px rgba(6, 59, 104, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 11px;
+      background: #eeeeee;
+      border: 1px solid #e1e1e1;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .brand-acronym {
+      color: var(--blue);
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    nav a {
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 9px 9px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--blue);
+      background: var(--light);
+    }
+
+    nav a.donate {
+      color: var(--white);
+      background: var(--green);
+      padding: 12px 18px;
+      margin-left: 5px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    nav a.donate:hover {
+      color: var(--white);
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .page-hero {
+      background:
+        linear-gradient(
+          110deg,
+          rgba(6, 59, 104, 0.98),
+          rgba(21, 158, 208, 0.92)
+        );
+
+      color: var(--white);
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #bcefd0;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(44px, 6vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .page-hero p {
+      color: #eaf7fb;
+      font-size: 19px;
+      max-width: 780px;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 80px 0 50px;
+      background: var(--white);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .intro-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .research-symbol {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .intro-card h3 {
+      color: var(--navy);
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .intro-card p {
+      font-size: 15px;
+    }
+
+    /* =========================
+       PRIORITIES
+    ========================= */
+
+    .priorities {
+      padding: 55px 0 85px;
+      background: var(--white);
+    }
+
+    .section-heading {
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .priority-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .priority-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .priority-number {
+      color: #dceef4;
+      font-size: 45px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .priority-card h2 {
+      color: var(--navy);
+      font-size: 23px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .priority-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .priority-card ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .priority-card li {
+      color: var(--ink);
+      font-size: 14px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .priority-card li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+    }
+
+    /* =========================
+       EVIDENCE
+    ========================= */
+
+    .evidence {
+      padding: 80px 0;
+      background: var(--light);
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .evidence-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .evidence-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .evidence-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* =========================
+       COLLABORATION
+    ========================= */
+
+    .collaboration {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .collaboration-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 22px;
+      padding: 50px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .collaboration-box .section-label {
+      color: #bcefd0;
+    }
+
+    .collaboration-box h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .collaboration-box p {
+      color: #d9e9ef;
+      font-size: 16px;
+    }
+
+    .collaboration-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .collaboration-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 15px 17px;
+      color: #e7f3f7;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #eaf7fc, #f7fbfc);
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 820px;
+      margin: auto;
+    }
+
+    .cta h2 {
+      color: var(--navy);
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 9px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.8fr 0.8fr;
+      gap: 45px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .footer-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #eeeeee;
+    }
+
+    .footer-brand-name {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .footer-acronym {
+      color: #8dd8f2;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .footer-about {
+      color: #c6d9e1;
+      font-size: 14px;
+      max-width: 460px;
+    }
+
+    .footer-column h3 {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #c6d9e1;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #9eb8c4;
+      font-size: 13px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1150px) {
+
+      .nav {
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 62px;
+        height: 62px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .brand-acronym {
+        font-size: 15px;
+      }
+
+      nav a {
+        font-size: 13px;
+        padding: 8px 7px;
+      }
+
+      nav a.donate {
+        padding: 11px 14px;
+      }
+    }
+
+    @media (max-width: 980px) {
+
+      .nav {
+        min-height: auto;
+        padding: 15px 0;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        width: 100%;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 3px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .priority-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .collaboration-box {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .container {
+        width: 94%;
+      }
+
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-acronym {
+        font-size: 14px;
+      }
+
+      nav a {
+        font-size: 13px;
+        padding: 7px 8px;
+      }
+
+      nav a.donate {
+        padding: 9px 14px;
+      }
+
+      .page-hero {
+        padding: 65px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 46px;
+      }
+
+      .collaboration-box {
+        padding: 30px;
+      }
+
+      .collaboration-box h2 {
+        font-size: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="container nav">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="sdf-logo.jpg"
+          alt="Somali Diabetes Foundation logo"
+          class="brand-logo"
+        >
+
+        <div class="brand-text">
+
+          <div class="brand-name">
+            Somali Diabetes Foundation
+          </div>
+
+          <div class="brand-acronym">
+            SDF
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <nav>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="story.html">
+          Our Story
+        </a>
+
+        <a href="programs.html">
+          Programs
+        </a>
+
+        <a href="index.html#impact">
+          Impact
+        </a>
+
+        <a href="research.html" class="active">
+          Research
+        </a>
+
+        <a href="activities.html">
+          Activities
+        </a>
+
+        <a href="index.html#involve">
+          Get Involved
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="index.html#donate" class="donate">
+          Donate
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Research &amp; Data · SDF
+        </div>
+
+        <h1>
+          Evidence for better diabetes care.
+        </h1>
+
+        <p>
+          SDF supports research and data collection to improve
+          understanding of diabetes, inform health interventions
+          and contribute to stronger diabetes policies and services
+          in Somalia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INTRO
+  ========================= -->
+
+  <section class="intro">
+
+    <div class="container intro-grid">
+
+      <div>
+
+        <div class="section-label">
+          Our Research Commitment
+        </div>
+
+        <h2 class="section-title">
+          Turning knowledge into meaningful action.
+        </h2>
+
+        <p>
+          Research is an important part of SDF's approach to
+          understanding the diabetes burden, identifying healthcare
+          challenges and generating evidence that can support
+          effective programs and decision-making.
+        </p>
+
+      </div>
+
+
+      <div class="intro-card">
+
+        <div class="research-symbol">
+          R
+        </div>
+
+        <h3>
+          Research &amp; Data Collection
+        </h3>
+
+        <p>
+          SDF aims to support research that can contribute to
+          better understanding of diabetes prevalence, risk factors,
+          healthcare challenges and opportunities for improving
+          diabetes care in Somalia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESEARCH PRIORITIES
+  ========================= -->
+
+  <section class="priorities">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="section-label">
+          Research Priorities
+        </div>
+
+        <h2 class="section-title">
+          Areas where evidence can strengthen the diabetes response.
+        </h2>
+
+        <p>
+          SDF's research and data agenda is aligned with its
+          organizational goals and the need for better information
+          to guide diabetes prevention, care and health-system
+          development.
+        </p>
+
+      </div>
+
+
+      <div class="priority-grid">
+
+
+        <!-- 01 -->
+
+        <article class="priority-card">
+
+          <div class="priority-number">
+            01
+          </div>
+
+          <h2>
+            Diabetes Epidemiology
+          </h2>
+
+          <p>
+            Improving understanding of diabetes within Somali
+            communities and identifying important patterns and
+            risk factors.
+          </p>
+
+          <ul>
+
+            <li>
+              Diabetes prevalence research.
+            </li>
+
+            <li>
+              Assessment of diabetes risk factors.
+            </li>
+
+            <li>
+              Community and population-level research.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="priority-card">
+
+          <div class="priority-number">
+            02
+          </div>
+
+          <h2>
+            Diabetes Risk &amp; Prevention
+          </h2>
+
+          <p>
+            Generating evidence that can support effective
+            prevention strategies and healthier communities.
+          </p>
+
+          <ul>
+
+            <li>
+              Identification of modifiable risk factors.
+            </li>
+
+            <li>
+              Research supporting prevention programs.
+            </li>
+
+            <li>
+              Evidence for community health education.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="priority-card">
+
+          <div class="priority-number">
+            03
+          </div>
+
+          <h2>
+            Healthcare Challenges
+          </h2>
+
+          <p>
+            Understanding challenges affecting access to diabetes
+            prevention, diagnosis, treatment and ongoing care.
+          </p>
+
+          <ul>
+
+            <li>
+              Healthcare access and service delivery.
+            </li>
+
+            <li>
+              Diabetes treatment challenges.
+            </li>
+
+            <li>
+              Health-system research.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="priority-card">
+
+          <div class="priority-number">
+            04
+          </div>
+
+          <h2>
+            Diabetes Data Systems
+          </h2>
+
+          <p>
+            Supporting improved collection and use of diabetes
+            information for planning, monitoring and decision-making.
+          </p>
+
+          <ul>
+
+            <li>
+              Strengthening diabetes data collection.
+            </li>
+
+            <li>
+              Exploring a national diabetes registry.
+            </li>
+
+            <li>
+              Supporting evidence-based planning.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EVIDENCE TO ACTION
+  ========================= -->
+
+  <section class="evidence">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="section-label">
+          From Evidence to Action
+        </div>
+
+        <h2 class="section-title">
+          Research should lead to better decisions.
+        </h2>
+
+        <p>
+          SDF aims to connect research findings with practical
+          improvements in diabetes awareness, prevention, healthcare
+          services and policy.
+        </p>
+
+      </div>
+
+
+      <div class="evidence-grid">
+
+
+        <div class="evidence-card">
+
+          <h3>
+            Generate Evidence
+          </h3>
+
+          <p>
+            Conduct and support research addressing important
+            diabetes questions and healthcare challenges.
+          </p>
+
+        </div>
+
+
+        <div class="evidence-card">
+
+          <h3>
+            Share Knowledge
+          </h3>
+
+          <p>
+            Communicate research findings and recommendations with
+            relevant healthcare, academic and policy stakeholders.
+          </p>
+
+        </div>
+
+
+        <div class="evidence-card">
+
+          <h3>
+            Inform Action
+          </h3>
+
+          <p>
+            Use evidence to help inform programs, interventions,
+            policies and improvements in diabetes care.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESEARCH COLLABORATION
+  ========================= -->
+
+  <section class="collaboration">
+
+    <div class="container">
+
+      <div class="collaboration-box">
+
+        <div>
+
+          <div class="section-label">
+            Research Collaboration
+          </div>
+
+          <h2>
+            Working together to build the evidence base.
+          </h2>
+
+          <p>
+            SDF welcomes opportunities for appropriate collaboration
+            with researchers, healthcare institutions, universities,
+            public health organizations and other partners interested
+            in diabetes research in Somalia.
+          </p>
+
+        </div>
+
+
+        <div class="collaboration-list">
+
+          <div class="collaboration-item">
+            Academic research collaboration
+          </div>
+
+          <div class="collaboration-item">
+            Healthcare institution partnerships
+          </div>
+
+          <div class="collaboration-item">
+            Public health research
+          </div>
+
+          <div class="collaboration-item">
+            Data and knowledge partnerships
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <div class="section-label">
+          Work With SDF
+        </div>
+
+        <h2>
+          Interested in diabetes research in Somalia?
+        </h2>
+
+        <p>
+          Contact SDF to discuss appropriate opportunities for
+          research collaboration, academic engagement and
+          evidence-based diabetes initiatives.
+        </p>
+
+        <a href="contact.html" class="btn btn-primary">
+          Contact SDF
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <div class="footer-brand">
+
+            <img
+              src="sdf-logo.jpg"
+              alt="Somali Diabetes Foundation"
+              class="footer-logo"
+            >
+
+            <div>
+
+              <div class="footer-brand-name">
+                Somali Diabetes Foundation
+              </div>
+
+              <div class="footer-acronym">
+                SDF
+              </div>
+
+            </div>
+
+          </div>
+
+          <p class="footer-about">
+            A nonprofit organization working to advance diabetes
+            awareness, prevention, screening, education, research
+            and patient support for a healthier Somalia.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Explore
+          </h3>
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="story.html">
+            Our Story
+          </a>
+
+          <a href="programs.html">
+            Programs
+          </a>
+
+          <a href="research.html">
+            Research
+          </a>
+
+          <a href="activities.html">
+            Activities
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Connect
+          </h3>
+
+          <a href="mailto:info@sdf.so">
+            info@sdf.so
+          </a>
+
+          <a href="tel:+252771817681">
+            +252 77 181 7681
+          </a>
+
+          <a href="contact.html">
+            Jale Siad Street, Danwadaagaha
+          </a>
+
+          <a href="contact.html">
+            Wadajir District, Mogadishu
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <div>
+          © 2026 Somali Diabetes Foundation. All rights reserved.
+        </div>
+
+        <div>
+          Prevention is Better Than Cure.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

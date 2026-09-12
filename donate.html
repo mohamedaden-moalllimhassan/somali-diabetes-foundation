@@ -285,31 +285,42 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 30px;
+      padding: 16px 20px 25px;
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       height: 100%;
+      overflow: hidden;
     }
 
-    .bank-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 13px;
+    /* =========================
+       BANK LOGO
+    ========================= */
+
+    .bank-logo-box {
+      width: 100%;
+      height: 125px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f5f7f9;
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--light);
-      color: var(--blue);
-      font-size: 24px;
-      font-weight: 900;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+    }
+
+    .bank-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .bank-card h3 {
       color: var(--navy);
       font-size: 23px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .bank-details {
@@ -379,6 +390,29 @@
     }
 
     /* =========================
+       NOTICE
+    ========================= */
+
+    .notice {
+      background: var(--light);
+      border: 1px solid #d7eaf5;
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-top: 35px;
+    }
+
+    .notice h3 {
+      color: var(--navy);
+      margin-bottom: 9px;
+      font-size: 20px;
+    }
+
+    .notice p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* =========================
        HOW TO DONATE
     ========================= */
 
@@ -420,30 +454,7 @@
     }
 
     /* =========================
-       NOTE
-    ========================= */
-
-    .notice {
-      background: var(--light);
-      border: 1px solid #d7eaf5;
-      border-radius: 18px;
-      padding: 28px 32px;
-      margin-top: 35px;
-    }
-
-    .notice h3 {
-      color: var(--navy);
-      margin-bottom: 9px;
-      font-size: 20px;
-    }
-
-    .notice p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* =========================
-       CONTACT CTA
+       CTA
     ========================= */
 
     .cta {
@@ -575,6 +586,7 @@
     ========================= */
 
     @media (max-width: 1100px) {
+
       nav a {
         padding-left: 7px;
         padding-right: 7px;
@@ -598,6 +610,7 @@
     }
 
     @media (max-width: 980px) {
+
       .nav {
         flex-wrap: wrap;
         padding: 12px 0 16px;
@@ -629,6 +642,7 @@
     }
 
     @media (max-width: 700px) {
+
       .container {
         width: min(100% - 28px, 1180px);
       }
@@ -658,6 +672,10 @@
         max-width: none;
       }
 
+      .bank-logo-box {
+        height: 140px;
+      }
+
       .steps {
         grid-template-columns: 1fr;
       }
@@ -679,6 +697,7 @@
     }
 
     @media (max-width: 500px) {
+
       .brand-logo {
         width: 58px;
         height: 58px;
@@ -710,7 +729,11 @@
       }
 
       .bank-card {
-        padding: 24px;
+        padding: 14px 18px 24px;
+      }
+
+      .bank-logo-box {
+        height: 125px;
       }
 
       .support-box {
@@ -730,6 +753,7 @@
     <div class="container nav">
 
       <a href="index.html" class="brand">
+
         <img
           src="sdf-logo.jpg"
           alt="Somali Diabetes Foundation logo"
@@ -740,9 +764,11 @@
           <span class="brand-name">Somali Diabetes Foundation</span>
           <span class="brand-acronym">SDF</span>
         </span>
+
       </a>
 
       <nav aria-label="Main navigation">
+
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="story.html">Our Story</a>
@@ -753,6 +779,7 @@
         <a href="get-involved.html">Get Involved</a>
         <a href="contact.html">Contact</a>
         <a href="donate.html" class="donate active">Donate</a>
+
       </nav>
 
     </div>
@@ -764,13 +791,16 @@
   ========================== -->
 
   <section class="hero">
+
     <div class="container">
 
       <div class="hero-inner">
 
         <span class="eyebrow">Support SDF</span>
 
-        <h1>Support better diabetes care in Somalia.</h1>
+        <h1>
+          Support better diabetes care in Somalia.
+        </h1>
 
         <p>
           Your contribution can help advance diabetes awareness,
@@ -781,6 +811,7 @@
       </div>
 
     </div>
+
   </section>
 
 
@@ -812,8 +843,8 @@
           </p>
 
           <p>
-            You can support SDF through any of the bank accounts listed
-            below.
+            You can support SDF through any of the official bank
+            accounts listed below.
           </p>
 
         </div>
@@ -847,11 +878,11 @@
 
       <div class="section-heading">
 
-        <h2>Donate by Bank Transfer</h2>
+        <h2>Official SDF Bank Accounts</h2>
 
         <p>
-          Please use one of the official Somali Diabetes Foundation
-          bank accounts below when making a donation.
+          You can support the Somali Diabetes Foundation through
+          any of the official bank accounts below.
         </p>
 
       </div>
@@ -860,19 +891,32 @@
       <div class="bank-grid">
 
 
-        <!-- PREMIER BANK -->
+        <!-- =====================
+             PREMIER BANK
+        ====================== -->
 
         <article class="bank-card">
 
-          <div class="bank-icon">₿</div>
+          <div class="bank-logo-box">
+
+            <img
+              src="images/banks/premier-bank.png"
+              alt="Premier Bank logo"
+              class="bank-logo"
+            >
+
+          </div>
 
           <h3>Premier Bank</h3>
 
           <div class="bank-details">
 
+
             <div class="detail">
 
-              <span class="detail-label">Branch</span>
+              <span class="detail-label">
+                Branch
+              </span>
 
               <span class="detail-value">
                 KM4 Branch
@@ -883,7 +927,9 @@
 
             <div class="detail">
 
-              <span class="detail-label">Account Name</span>
+              <span class="detail-label">
+                Account Name
+              </span>
 
               <span class="detail-value">
                 SOMALI DIABETES FOUNDATION (SDF)
@@ -894,7 +940,9 @@
 
             <div class="detail">
 
-              <span class="detail-label">IBAN</span>
+              <span class="detail-label">
+                IBAN
+              </span>
 
               <div class="copy-row">
 
@@ -917,7 +965,9 @@
 
             <div class="detail">
 
-              <span class="detail-label">SWIFT Code</span>
+              <span class="detail-label">
+                SWIFT Code
+              </span>
 
               <div class="copy-row">
 
@@ -942,11 +992,21 @@
         </article>
 
 
-        <!-- DAHABSHIIL BANK -->
+        <!-- =====================
+             DAHABSHIIL BANK
+        ====================== -->
 
         <article class="bank-card">
 
-          <div class="bank-icon">₿</div>
+          <div class="bank-logo-box">
+
+            <img
+              src="images/banks/dahabshiil-bank.png"
+              alt="Dahabshiil Bank logo"
+              class="bank-logo"
+            >
+
+          </div>
 
           <h3>Dahabshiil Bank</h3>
 
@@ -955,18 +1015,9 @@
 
             <div class="detail">
 
-              <span class="detail-label">Account Name</span>
-
-              <span class="detail-value">
-                SOMALI DIABETES FOUNDATION (SDF)
+              <span class="detail-label">
+                Account Number
               </span>
-
-            </div>
-
-
-            <div class="detail">
-
-              <span class="detail-label">Account Number</span>
 
               <div class="copy-row">
 
@@ -989,7 +1040,9 @@
 
             <div class="detail">
 
-              <span class="detail-label">IBAN</span>
+              <span class="detail-label">
+                IBAN
+              </span>
 
               <div class="copy-row">
 
@@ -1015,11 +1068,21 @@
         </article>
 
 
-        <!-- SALAAM SOMALI BANK -->
+        <!-- =====================
+             SALAAM SOMALI BANK
+        ====================== -->
 
         <article class="bank-card">
 
-          <div class="bank-icon">₿</div>
+          <div class="bank-logo-box">
+
+            <img
+              src="images/banks/salaam-bank.png"
+              alt="Salaam Somali Bank logo"
+              class="bank-logo"
+            >
+
+          </div>
 
           <h3>Salaam Somali Bank</h3>
 
@@ -1028,18 +1091,9 @@
 
             <div class="detail">
 
-              <span class="detail-label">Account Name</span>
-
-              <span class="detail-value">
-                SOMALI DIABETES FOUNDATION (SDF)
+              <span class="detail-label">
+                Account Number
               </span>
-
-            </div>
-
-
-            <div class="detail">
-
-              <span class="detail-label">Account Number</span>
 
               <div class="copy-row">
 
@@ -1062,7 +1116,9 @@
 
             <div class="detail">
 
-              <span class="detail-label">IBAN</span>
+              <span class="detail-label">
+                IBAN
+              </span>
 
               <div class="copy-row">
 
@@ -1091,7 +1147,9 @@
       </div>
 
 
-      <!-- TRANSPARENCY NOTICE -->
+      <!-- =====================
+           TRANSPARENCY
+      ====================== -->
 
       <div class="notice">
 
@@ -1136,9 +1194,13 @@
 
         <div class="step">
 
-          <div class="step-number">1</div>
+          <div class="step-number">
+            1
+          </div>
 
-          <h3>Choose a bank</h3>
+          <h3>
+            Choose a bank
+          </h3>
 
           <p>
             Select one of the official Somali Diabetes Foundation
@@ -1150,9 +1212,13 @@
 
         <div class="step">
 
-          <div class="step-number">2</div>
+          <div class="step-number">
+            2
+          </div>
 
-          <h3>Make your transfer</h3>
+          <h3>
+            Make your transfer
+          </h3>
 
           <p>
             Use the relevant account number or IBAN and follow your
@@ -1164,9 +1230,13 @@
 
         <div class="step">
 
-          <div class="step-number">3</div>
+          <div class="step-number">
+            3
+          </div>
 
-          <h3>Keep your receipt</h3>
+          <h3>
+            Keep your receipt
+          </h3>
 
           <p>
             Retain your transaction receipt. For donation-related
@@ -1194,7 +1264,9 @@
 
       <div class="cta-inner">
 
-        <h2>Have a question about supporting SDF?</h2>
+        <h2>
+          Have a question about supporting SDF?
+        </h2>
 
         <p>
           Contact the Somali Diabetes Foundation for donation,
@@ -1258,27 +1330,45 @@
           <ul>
 
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.html">
+                Home
+              </a>
             </li>
 
             <li>
-              <a href="about.html">About</a>
+              <a href="about.html">
+                About
+              </a>
             </li>
 
             <li>
-              <a href="story.html">Our Story</a>
+              <a href="story.html">
+                Our Story
+              </a>
             </li>
 
             <li>
-              <a href="programs.html">Programs</a>
+              <a href="programs.html">
+                Programs
+              </a>
             </li>
 
             <li>
-              <a href="research.html">Research</a>
+              <a href="impact.html">
+                Impact
+              </a>
             </li>
 
             <li>
-              <a href="activities.html">Activities</a>
+              <a href="research.html">
+                Research
+              </a>
+            </li>
+
+            <li>
+              <a href="activities.html">
+                Activities
+              </a>
             </li>
 
           </ul>
@@ -1367,7 +1457,9 @@
         })
         .catch(function () {
 
-          alert("Unable to copy. Please copy the details manually.");
+          alert(
+            "Unable to copy. Please copy the details manually."
+          );
 
         });
 

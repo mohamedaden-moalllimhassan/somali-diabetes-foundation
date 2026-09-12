@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Programs | Somali Diabetes Foundation</title>
+
+  <meta
+    name="description"
+    content="Explore the Somali Diabetes Foundation's programs in diabetes awareness, prevention, screening, healthcare professional training, advocacy, research, patient support and resource mobilization."
+  >
+
+  <meta name="theme-color" content="#063b68">
+
+  <style>
+    :root {
+      --navy: #063b68;
+      --navy-dark: #042b4b;
+      --blue: #159ed0;
+      --blue-light: #eaf7fc;
+      --green: #18b957;
+      --green-dark: #119844;
+      --light: #f4f9fb;
+      --ink: #18313b;
+      --muted: #637781;
+      --white: #ffffff;
+      --border: #dce8ed;
+      --shadow: 0 12px 35px rgba(6, 59, 104, 0.10);
+      --shadow-lg: 0 20px 50px rgba(6, 59, 104, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 11px;
+      background: #eeeeee;
+      border: 1px solid #e1e1e1;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .brand-acronym {
+      color: var(--blue);
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    nav a {
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 9px 9px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--blue);
+      background: var(--light);
+    }
+
+    nav a.donate {
+      color: var(--white);
+      background: var(--green);
+      padding: 12px 18px;
+      margin-left: 5px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    nav a.donate:hover {
+      color: var(--white);
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    /* ==================================================
+       PAGE HERO
+    ================================================== */
+
+    .page-hero {
+      background:
+        linear-gradient(
+          110deg,
+          rgba(6, 59, 104, 0.98),
+          rgba(21, 158, 208, 0.92)
+        );
+
+      color: var(--white);
+      padding: 90px 0;
+    }
+
+    .page-hero-content {
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #bcefd0;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(44px, 6vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .page-hero p {
+      color: #eaf7fb;
+      font-size: 19px;
+      max-width: 760px;
+    }
+
+    /* ==================================================
+       INTRO
+    ================================================== */
+
+    .intro {
+      padding: 75px 0 35px;
+      background: var(--white);
+    }
+
+    .intro-content {
+      max-width: 850px;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* ==================================================
+       PROGRAMS
+    ================================================== */
+
+    .programs {
+      padding: 45px 0 85px;
+      background: var(--white);
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .program-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .program-number {
+      position: absolute;
+      right: 24px;
+      top: 15px;
+      font-size: 55px;
+      font-weight: 900;
+      color: #edf5f8;
+      line-height: 1;
+    }
+
+    .program-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .program-card h2 {
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .program-card > p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .program-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .program-card li {
+      color: var(--ink);
+      font-size: 14px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .program-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    /* Full-width final program */
+    .program-card.full {
+      grid-column: 1 / -1;
+    }
+
+    /* ==================================================
+       APPROACH
+    ================================================== */
+
+    .approach {
+      padding: 80px 0;
+      background: var(--light);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+    }
+
+    .approach-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .approach-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .approach-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ==================================================
+       CTA
+    ================================================== */
+
+    .cta {
+      padding: 80px 0;
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          #0b6d99
+        );
+
+      color: var(--white);
+    }
+
+    .cta-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .cta-box p {
+      color: #d9edf4;
+      font-size: 17px;
+      margin-bottom: 27px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 9px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .btn-light:hover {
+      background: #edf7fa;
+      transform: translateY(-2px);
+    }
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    footer {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.8fr 0.8fr;
+      gap: 45px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .footer-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #eeeeee;
+    }
+
+    .footer-brand-name {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .footer-acronym {
+      color: #8dd8f2;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .footer-about {
+      color: #c6d9e1;
+      font-size: 14px;
+      max-width: 460px;
+    }
+
+    .footer-column h3 {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #c6d9e1;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #9eb8c4;
+      font-size: 13px;
+    }
+
+    /* ==================================================
+       RESPONSIVE
+    ================================================== */
+
+    @media (max-width: 1150px) {
+
+      .nav {
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 62px;
+        height: 62px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .brand-acronym {
+        font-size: 15px;
+      }
+
+      nav a {
+        font-size: 13px;
+        padding: 8px 7px;
+      }
+
+      nav a.donate {
+        padding: 11px 14px;
+      }
+    }
+
+    @media (max-width: 980px) {
+
+      .nav {
+        min-height: auto;
+        padding: 15px 0;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        width: 100%;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 3px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-card.full {
+        grid-column: auto;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .container {
+        width: 94%;
+      }
+
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-acronym {
+        font-size: 14px;
+      }
+
+      nav a {
+        font-size: 13px;
+        padding: 7px 8px;
+      }
+
+      nav a.donate {
+        padding: 9px 14px;
+      }
+
+      .page-hero {
+        padding: 65px 0;
+      }
+
+      .program-card {
+        padding: 27px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="sdf-logo.jpg"
+          alt="Somali Diabetes Foundation logo"
+          class="brand-logo"
+        >
+
+        <div class="brand-text">
+          <div class="brand-name">
+            Somali Diabetes Foundation
+          </div>
+
+          <div class="brand-acronym">
+            SDF
+          </div>
+        </div>
+
+      </a>
+
+      <nav>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="story.html">
+          Our Story
+        </a>
+
+        <a href="programs.html" class="active">
+          Programs
+        </a>
+
+        <a href="index.html#impact">
+          Impact
+        </a>
+
+        <a href="index.html#research">
+          Research
+        </a>
+
+        <a href="activities.html">
+          Activities
+        </a>
+
+        <a href="index.html#involve">
+          Get Involved
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="index.html#donate" class="donate">
+          Donate
+        </a>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ==================================================
+       PAGE HERO
+  ================================================== -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="page-hero-content">
+
+        <div class="eyebrow">
+          What We Do · SDF
+        </div>
+
+        <h1>
+          Our Programs
+        </h1>
+
+        <p>
+          SDF brings together awareness, prevention, screening,
+          education, advocacy, research, patient support and
+          resource mobilization to strengthen the diabetes response
+          in Somalia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       INTRODUCTION
+  ================================================== -->
+
+  <section class="intro">
+
+    <div class="container">
+
+      <div class="intro-content">
+
+        <div class="section-label">
+          Our Program Areas
+        </div>
+
+        <h2 class="section-title">
+          A comprehensive approach to diabetes.
+        </h2>
+
+        <p>
+          The Somali Diabetes Foundation's programs are designed
+          to address diabetes from prevention and early detection
+          through education, healthcare capacity, policy, research
+          and support for people living with diabetes and their
+          families.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       SEVEN PROGRAMS
+  ================================================== -->
+
+  <section class="programs">
+
+    <div class="container">
+
+      <div class="program-grid">
+
+
+        <!-- PROGRAM 1 -->
+
+        <article class="program-card">
+
+          <div class="program-number">
+            01
+          </div>
+
+          <div class="program-icon">
+            A
+          </div>
+
+          <h2>
+            Public Awareness &amp; Education
+          </h2>
+
+          <p>
+            Increasing community knowledge about diabetes,
+            prevention, healthy lifestyles and diabetes management.
+          </p>
+
+          <ul>
+
+            <li>
+              Awareness campaigns through radio, television and
+              social media.
+            </li>
+
+            <li>
+              Community outreach on healthy lifestyles and diabetes
+              care.
+            </li>
+
+            <li>
+              Educational materials in local languages.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- PROGRAM 2 -->
+
+        <article class="program-card">
+
+          <div class="program-number">
+            02
+          </div>
+
+          <div class="program-icon">
+            ✓
+          </div>
+
+          <h2>
+            Diabetes Screening &amp; Prevention
+          </h2>
+
+          <p>
+            Promoting risk assessment, early detection and
+            prevention of diabetes and its complications.
+          </p>
+
+          <ul>
+
+            <li>
+              Community-based diabetes screening programs.
+            </li>
+
+            <li>
+              Early detection and timely intervention.
+            </li>
+
+            <li>
+              Promotion of healthy eating and physical activity.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- PROGRAM 3 -->
+
+        <article class="program-card">
+
+          <div class="program-number">
+            03
+          </div>
+
+          <div class="program-icon">
+            +
+          </div>
+
+          <h2>
+            Healthcare Professional Training
+          </h2>
+
+          <p>
+            Strengthening the knowledge and skills of healthcare
+            professionals involved in diabetes prevention and care.
+          </p>
+
+          <ul>
+
+            <li>
+              Training sessions and workshops for doctors, nurses
+              and community health workers.
+            </li>
+
+            <li>
+              Continuing medical education opportunities.
+            </li>
+
+            <li>
+              Development of clinical guidelines and best practices.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- PROGRAM 4 -->
+
+        <article class="program-card">
+
+          <div class="program-number">
+            04
+          </div>
+
+          <div class="program-icon">
+            ⚖
+          </div>
+
+          <h2>
+            Policy Advocacy &amp; Health-System Strengthening
+          </h2>
+
+          <p>
+            Working with stakeholders to strengthen diabetes
+            policies, services and access to care.
+          </p>
+
+          <ul>
+
+            <li>
+              Engagement with government health agencies.
+            </li>
+
+            <li>
+              Advocacy for affordable and accessible diabetes
+              medications and treatment.
+            </li>
+
+            <li>
+              Supporting integration of diabetes care into primary
+              healthcare services.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- PROGRAM 5 -->
+
+        <article class="program-card">
+
+          <div class="program-number">
+            05
+          </div>
+
+          <div class="program-icon">
+            R
+          </div>
+
+          <h2>
+            Research &amp; Data Collection
+          </h2>
+
+          <p>
+            Generating and using evidence to better understand
+            diabetes and inform health policies and interventions.
+          </p>
+
+          <ul>
+
+            <li>
+              Epidemiological studies on diabetes prevalence and
+              risk factors.
+            </li>
+
+            <li>
+              Development of a national diabetes registry.
+            </li>
+
+            <li>
+              Publication of research findings and recommendations.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- PROGRAM 6 -->
+
+        <article class="program-card">
+
+          <div class="program-number">
+            06
+          </div>
+
+          <div class="program-icon">
+            ♥
+          </div>
+
+          <h2>
+            Patient Support &amp; Community Engagement
+          </h2>
+
+          <p>
+            Supporting people living with diabetes and their
+            families through education, guidance and community
+            engagement.
+          </p>
+
+          <ul>
+
+            <li>
+              Diabetes support groups for patients and families.
+            </li>
+
+            <li>
+              Peer mentoring for newly diagnosed patients.
+            </li>
+
+            <li>
+              Counselling and nutritional guidance.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- PROGRAM 7 -->
+
+        <article class="program-card full">
+
+          <div class="program-number">
+            07
+          </div>
+
+          <div class="program-icon">
+            $
+          </div>
+
+          <h2>
+            Fundraising &amp; Resource Mobilization
+          </h2>
+
+          <p>
+            Mobilizing resources and partnerships to support
+            sustainable diabetes programs and initiatives.
+          </p>
+
+          <ul>
+
+            <li>
+              Securing funding through grants, donations and
+              partnerships with international health organizations.
+            </li>
+
+            <li>
+              Organizing fundraising activities to support diabetes
+              programs and initiatives.
+            </li>
+
+            <li>
+              Developing mission-aligned income-generating
+              activities to strengthen financial sustainability.
+            </li>
+
+          </ul>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       OUR APPROACH
+  ================================================== -->
+
+  <section class="approach">
+
+    <div class="container">
+
+      <div style="max-width:780px; margin-bottom:40px;">
+
+        <div class="section-label">
+          Our Approach
+        </div>
+
+        <h2 class="section-title">
+          Collaboration is at the heart of our work.
+        </h2>
+
+      </div>
+
+
+      <div class="approach-grid">
+
+        <div class="approach-card">
+
+          <h3>
+            Communities
+          </h3>
+
+          <p>
+            We engage communities directly through awareness,
+            screening, education and support, with particular
+            attention to people who face barriers to healthcare.
+          </p>
+
+        </div>
+
+
+        <div class="approach-card">
+
+          <h3>
+            Healthcare Professionals
+          </h3>
+
+          <p>
+            We support healthcare professionals through training,
+            education and collaboration to strengthen diabetes care.
+          </p>
+
+        </div>
+
+
+        <div class="approach-card">
+
+          <h3>
+            Institutions &amp; Partners
+          </h3>
+
+          <p>
+            We collaborate with government agencies, healthcare
+            institutions, organizations and other stakeholders to
+            strengthen the diabetes response.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       CTA
+  ================================================== -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>
+          Help us strengthen diabetes care in Somalia.
+        </h2>
+
+        <p>
+          Whether you are a healthcare professional, organization,
+          researcher, volunteer or potential partner, there are
+          meaningful ways to work with SDF.
+        </p>
+
+        <a href="contact.html" class="btn btn-light">
+          Contact SDF
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <div class="footer-brand">
+
+            <img
+              src="sdf-logo.jpg"
+              alt="Somali Diabetes Foundation"
+              class="footer-logo"
+            >
+
+            <div>
+
+              <div class="footer-brand-name">
+                Somali Diabetes Foundation
+              </div>
+
+              <div class="footer-acronym">
+                SDF
+              </div>
+
+            </div>
+
+          </div>
+
+          <p class="footer-about">
+            A nonprofit organization working to advance diabetes
+            awareness, prevention, screening, education, research
+            and patient support for a healthier Somalia.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Explore
+          </h3>
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="story.html">
+            Our Story
+          </a>
+
+          <a href="programs.html">
+            Programs
+          </a>
+
+          <a href="activities.html">
+            Activities
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Connect
+          </h3>
+
+          <a href="mailto:info@sdf.so">
+            info@sdf.so
+          </a>
+
+          <a href="tel:+252771817681">
+            +252 77 181 7681
+          </a>
+
+          <a href="contact.html">
+            Jale Siad Street, Danwadaagaha
+          </a>
+
+          <a href="contact.html">
+            Wadajir District, Mogadishu
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <div>
+          © 2026 Somali Diabetes Foundation. All rights reserved.
+        </div>
+
+        <div>
+          Prevention is Better Than Cure.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

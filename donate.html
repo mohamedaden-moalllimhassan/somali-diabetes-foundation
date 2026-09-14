@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Donate | Somali Diabetes Foundation</title>
 
   <meta
     name="description"
-    content="Support the Somali Diabetes Foundation in improving diabetes awareness, prevention, care, research and community support across Somalia."
+    content="Support the Somali Diabetes Foundation in strengthening diabetes awareness, prevention, care, research and community support across Somalia."
   >
 
   <meta
@@ -16,19 +21,40 @@
     content="Somali Diabetes Foundation, SDF, donate, diabetes Somalia, support diabetes care, Somalia NGO"
   >
 
+  <meta name="theme-color" content="#063b68">
+
   <style>
+
     :root {
-      --navy: #0b2d4d;
-      --blue: #1266a3;
-      --green: #159447;
-      --light: #eef6fb;
-      --soft-green: #eef9f2;
-      --ink: #243746;
-      --muted: #64748b;
+      --navy: #063b68;
+      --dark: #042b4b;
+      --blue: #159ed0;
+      --green: #18b957;
+      --green-dark: #119844;
+
+      --light: #f3f9fb;
+      --soft-green: #effaf3;
+
+      --ink: #18313b;
+      --muted: #647983;
+
       --white: #ffffff;
-      --border: #dce6ee;
-      --shadow: 0 10px 30px rgba(11, 45, 77, 0.08);
+      --border: #dce8ed;
+
+      --gold: #d9a441;
+      --gold-light: #fff7e5;
+
+      --shadow:
+        0 16px 45px rgba(6, 59, 104, 0.10);
+
+      --shadow-hover:
+        0 24px 60px rgba(6, 59, 104, 0.16);
     }
+
+
+    /* =========================
+       RESET
+    ========================= */
 
     * {
       box-sizing: border-box;
@@ -36,109 +62,157 @@
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       color: var(--ink);
-      background: #ffffff;
+      background: var(--white);
       line-height: 1.6;
       overflow-x: hidden;
     }
+
 
     a {
       text-decoration: none;
       color: inherit;
     }
 
+
+    button {
+      font-family: inherit;
+    }
+
+
     img {
       max-width: 100%;
       display: block;
     }
+
 
     .container {
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
+
     /* =========================
        HEADER
     ========================= */
 
     header {
-      background: rgba(255, 255, 255, 0.98);
+      background: rgba(255,255,255,0.97);
       border-bottom: 1px solid var(--border);
+
       position: sticky;
       top: 0;
+
       z-index: 1000;
-      backdrop-filter: blur(8px);
+
+      backdrop-filter: blur(12px);
     }
+
 
     .nav {
       min-height: 84px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
+
 
     .brand {
       display: flex;
       align-items: center;
+
       gap: 12px;
+
       flex-shrink: 0;
     }
 
+
     .brand-logo {
-      width: 68px;
-      height: 68px;
+      width: 66px;
+      height: 66px;
+
       object-fit: cover;
-      border-radius: 11px;
+
+      border-radius: 12px;
+
       background: #eeeeee;
+
       border: 1px solid #e1e1e1;
     }
+
 
     .brand-text {
       display: flex;
       flex-direction: column;
+
       line-height: 1.05;
     }
 
+
     .brand-name {
       color: var(--navy);
+
       font-weight: 800;
       font-size: 20px;
+
       white-space: nowrap;
     }
 
+
     .brand-acronym {
       color: var(--blue);
-      font-size: 16px;
+
+      font-size: 15px;
       font-weight: 900;
+
       letter-spacing: 4px;
+
       margin-top: 5px;
     }
+
 
     nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
       gap: 2px;
+
       flex: 1;
       min-width: 0;
     }
 
+
     nav a {
       color: var(--ink);
+
       font-weight: 700;
       font-size: 14px;
+
       padding: 9px 9px;
+
       border-radius: 8px;
+
       white-space: nowrap;
+
       transition: 0.2s ease;
     }
+
 
     nav a:hover,
     nav a.active {
@@ -146,675 +220,1520 @@
       background: var(--light);
     }
 
+
     nav a.donate {
       color: var(--white);
+
       background: var(--green);
+
       padding: 12px 18px;
+
       margin-left: 5px;
+
       border-radius: 10px;
+
       font-size: 15px;
     }
 
+
     nav a.donate:hover {
       color: var(--white);
-      background: #117c3c;
+      background: var(--green-dark);
     }
+
 
     .menu-toggle {
       display: none;
+
       border: 0;
+
       background: var(--light);
+
       color: var(--navy);
+
       font-size: 25px;
+
       width: 44px;
       height: 44px;
+
       border-radius: 9px;
+
       cursor: pointer;
     }
+
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
+      position: relative;
+
+      overflow: hidden;
+
       background:
         linear-gradient(
           135deg,
-          #f2f8fc 0%,
-          #ffffff 60%,
-          #eff9f2 100%
+          #eef8fc 0%,
+          #ffffff 58%,
+          #effaf3 100%
         );
-      padding: 82px 0 76px;
+
+      padding: 92px 0 88px;
+
       border-bottom: 1px solid var(--border);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 55px;
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 460px;
+      height: 460px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(21,158,208,0.10);
+
+      right: -180px;
+      top: -220px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      color: var(--green);
-      background: var(--soft-green);
-      border: 1px solid #d5efdd;
-      font-weight: 800;
-      font-size: 13px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      margin-bottom: 18px;
-      letter-spacing: 0.3px;
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 330px;
+      height: 330px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(24,185,87,0.12);
+
+      left: -170px;
+      bottom: -200px;
     }
+
+
+    .hero-grid {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        1.15fr
+        0.85fr;
+
+      align-items: center;
+
+      gap: 60px;
+    }
+
+
+    .eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      color: var(--green-dark);
+
+      background: var(--soft-green);
+
+      border: 1px solid #d5efdd;
+
+      font-weight: 800;
+
+      font-size: 13px;
+
+      padding: 7px 13px;
+
+      border-radius: 999px;
+
+      margin-bottom: 18px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.7px;
+    }
+
+
+    .eyebrow::before {
+      content: "";
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+    }
+
 
     .hero h1 {
       color: var(--navy);
-      font-size: clamp(42px, 5vw, 64px);
-      line-height: 1.05;
+
+      font-size:
+        clamp(42px, 5.5vw, 68px);
+
+      line-height: 1.03;
+
       margin-bottom: 20px;
+
       letter-spacing: -1.5px;
     }
 
+
+    .hero h1 span {
+      color: var(--green-dark);
+    }
+
+
     .hero p {
       color: var(--muted);
+
       font-size: 19px;
-      max-width: 680px;
-      margin-bottom: 28px;
+
+      max-width: 700px;
+
+      margin-bottom: 30px;
     }
+
 
     .hero-buttons {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 12px;
     }
 
+
     .btn {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      padding: 13px 21px;
+
+      padding: 14px 22px;
+
       border-radius: 10px;
+
       font-weight: 800;
+
       transition: 0.2s ease;
+
+      cursor: pointer;
     }
+
 
     .btn-primary {
       background: var(--green);
       color: var(--white);
+
+      box-shadow:
+        0 9px 22px rgba(24,185,87,0.18);
     }
 
+
     .btn-primary:hover {
-      background: #117c3c;
-      transform: translateY(-1px);
+      background: var(--green-dark);
+
+      transform: translateY(-2px);
     }
+
 
     .btn-secondary {
       background: var(--white);
-      color: var(--blue);
+
+      color: var(--navy);
+
       border: 1px solid var(--border);
     }
+
 
     .btn-secondary:hover {
       background: var(--light);
+
+      transform: translateY(-2px);
     }
+
 
     .hero-card {
       background: var(--white);
+
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 32px;
+
+      border-radius: 24px;
+
+      padding: 35px;
+
       box-shadow: var(--shadow);
+
+      position: relative;
     }
+
+
+    .hero-card::before {
+      content: "♥";
+
+      position: absolute;
+
+      right: 22px;
+      top: 18px;
+
+      color: rgba(24,185,87,0.18);
+
+      font-size: 30px;
+    }
+
 
     .hero-card-logo {
       width: 115px;
       height: 115px;
+
       object-fit: cover;
-      border-radius: 16px;
+
+      border-radius: 18px;
+
       margin: 0 auto 22px;
+
+      border: 1px solid var(--border);
     }
+
 
     .hero-card h3 {
       color: var(--navy);
+
       text-align: center;
-      font-size: 22px;
+
+      font-size: 23px;
+
       margin-bottom: 10px;
     }
 
+
     .hero-card p {
       text-align: center;
+
       font-size: 15px;
+
       margin: 0;
+
+      color: var(--muted);
     }
 
+
+    .hero-card-highlight {
+      margin-top: 22px;
+
+      padding: 13px 15px;
+
+      background: var(--soft-green);
+
+      border: 1px solid #d7efdf;
+
+      border-radius: 11px;
+
+      text-align: center;
+
+      color: #23623d;
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+
     /* =========================
-       GENERAL SECTIONS
+       GENERAL
     ========================= */
 
     section {
-      padding: 78px 0;
+      padding: 80px 0;
     }
+
 
     .section-heading {
       text-align: center;
-      max-width: 760px;
+
+      max-width: 790px;
+
       margin: 0 auto 42px;
     }
 
+
+    .section-label {
+      color: var(--green-dark);
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 8px;
+    }
+
+
     .section-heading h2 {
       color: var(--navy);
-      font-size: 38px;
+
+      font-size:
+        clamp(30px, 4vw, 40px);
+
       line-height: 1.15;
+
       margin-bottom: 12px;
     }
 
+
     .section-heading p {
       color: var(--muted);
+
       font-size: 17px;
     }
+
+
+    /* =========================
+       WHY DONATE
+    ========================= */
+
+    .why-section {
+      background: var(--white);
+    }
+
+
+    .why-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+
+    .why-card {
+      padding: 28px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      box-shadow: var(--shadow);
+
+      transition: 0.25s ease;
+    }
+
+
+    .why-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow-hover);
+    }
+
+
+    .why-icon {
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 15px;
+
+      background: var(--light);
+
+      color: var(--blue);
+
+      font-size: 25px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .why-card:nth-child(2)
+    .why-icon {
+      background: var(--soft-green);
+
+      color: var(--green-dark);
+    }
+
+
+    .why-card:nth-child(3)
+    .why-icon {
+      background: #fff7e5;
+
+      color: #a87310;
+    }
+
+
+    .why-card h3 {
+      color: var(--navy);
+
+      font-size: 20px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .why-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
 
     /* =========================
        BANK ACCOUNTS
     ========================= */
 
     .banks-section {
-      background: #ffffff;
+      background:
+        linear-gradient(
+          180deg,
+          #f4fafc 0%,
+          #ffffff 100%
+        );
     }
+
 
     .bank-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 24px;
     }
 
+
     .bank-card {
       background: var(--white);
+
       border: 1px solid var(--border);
-      border-radius: 18px;
+
+      border-radius: 20px;
+
       padding: 28px;
+
       box-shadow: var(--shadow);
-      transition: 0.2s ease;
+
+      transition: 0.25s ease;
+
+      overflow: hidden;
     }
+
 
     .bank-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 34px rgba(11, 45, 77, 0.12);
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow-hover);
     }
+
+
+    .bank-top {
+      text-align: center;
+
+      margin-bottom: 22px;
+    }
+
 
     .bank-logo-box {
-      height: 90px;
+      height: 86px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border);
+
       padding-bottom: 18px;
+
+      border-bottom: 1px solid var(--border);
+
+      margin-bottom: 19px;
     }
 
+
     .bank-logo {
-      max-width: 190px;
-      max-height: 70px;
+      max-width: 185px;
+
+      max-height: 68px;
+
       width: auto;
       height: auto;
+
       object-fit: contain;
     }
 
-    .bank-card h3 {
+
+    .bank-name {
       color: var(--navy);
-      font-size: 23px;
-      margin-bottom: 18px;
+
+      font-size: 22px;
+
+      font-weight: 800;
     }
+
+
+    .official-badge {
+      display: inline-block;
+
+      margin-top: 8px;
+
+      padding: 5px 10px;
+
+      border-radius: 999px;
+
+      background: var(--soft-green);
+
+      color: var(--green-dark);
+
+      border: 1px solid #d6eddd;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.5px;
+    }
+
 
     .bank-details {
       display: flex;
+
       flex-direction: column;
-      gap: 11px;
+
+      gap: 0;
     }
+
 
     .detail-row {
       display: flex;
+
       justify-content: space-between;
+
       align-items: flex-start;
-      gap: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #edf1f4;
+
+      gap: 14px;
+
+      padding: 13px 0;
+
+      border-bottom: 1px solid #edf2f5;
     }
+
+
+    .detail-row:last-child {
+      border-bottom: 0;
+    }
+
 
     .detail-label {
       color: var(--muted);
-      font-size: 14px;
+
+      font-size: 13px;
+
       font-weight: 700;
+
       flex-shrink: 0;
     }
 
+
     .detail-value {
       color: var(--navy);
-      font-size: 14px;
+
+      font-size: 13px;
+
       font-weight: 800;
+
       text-align: right;
+
       word-break: break-word;
     }
 
+
     .copy-row {
       display: flex;
+
       align-items: center;
+
       justify-content: flex-end;
-      gap: 8px;
-      max-width: 70%;
+
+      gap: 7px;
+
+      max-width: 72%;
     }
+
 
     .copy-row .detail-value {
       text-align: right;
     }
 
+
     .copy-btn {
       border: 1px solid var(--border);
+
       background: var(--light);
+
       color: var(--blue);
+
       padding: 5px 8px;
+
       border-radius: 6px;
-      font-size: 11px;
+
+      font-size: 10px;
+
       font-weight: 800;
+
       cursor: pointer;
+
       flex-shrink: 0;
+
       transition: 0.2s ease;
     }
 
+
     .copy-btn:hover {
       background: var(--blue);
-      color: #ffffff;
+
+      color: var(--white);
+
+      border-color: var(--blue);
     }
+
 
     .bank-note {
       margin-top: 18px;
-      padding: 12px 14px;
+
+      padding: 13px 14px;
+
       background: var(--soft-green);
-      border: 1px solid #d9efdf;
-      border-radius: 10px;
-      color: #21633b;
-      font-size: 13px;
+
+      border: 1px solid #d8efdf;
+
+      border-radius: 11px;
+
+      color: #23623d;
+
+      font-size: 12px;
+
+      line-height: 1.5;
     }
 
+
     /* =========================
-       INTERNATIONAL DONATIONS
+       DONATION NOTICE
+    ========================= */
+
+    .donation-notice {
+      margin-top: 30px;
+
+      padding: 23px 25px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-left: 5px solid var(--green);
+
+      border-radius: 15px;
+
+      box-shadow: 0 8px 25px rgba(6,59,104,0.06);
+    }
+
+
+    .donation-notice h3 {
+      color: var(--navy);
+
+      font-size: 19px;
+
+      margin-bottom: 7px;
+    }
+
+
+    .donation-notice p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       INTERNATIONAL
     ========================= */
 
     .international {
       background: var(--light);
     }
 
+
     .international-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 25px;
     }
 
+
     .international-card {
+      position: relative;
+
       background: var(--white);
+
       border: 1px solid var(--border);
-      border-radius: 18px;
+
+      border-radius: 20px;
+
       padding: 32px;
+
       box-shadow: var(--shadow);
+
+      transition: 0.2s ease;
     }
 
-    .international-card .icon {
-      width: 52px;
-      height: 52px;
+
+    .international-card:hover {
+      transform: translateY(-3px);
+
+      box-shadow: var(--shadow-hover);
+    }
+
+
+    .international-icon {
+      width: 55px;
+      height: 55px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
-      border-radius: 13px;
+
+      border-radius: 14px;
+
       background: var(--soft-green);
-      color: var(--green);
-      font-size: 24px;
+
+      color: var(--green-dark);
+
+      font-size: 25px;
+
       margin-bottom: 18px;
     }
+
 
     .international-card h3 {
       color: var(--navy);
+
       font-size: 23px;
+
       margin-bottom: 10px;
     }
 
+
     .international-card p {
       color: var(--muted);
+
+      font-size: 15px;
+
       margin-bottom: 18px;
     }
 
-    .status {
+
+    .coming-soon {
       display: inline-block;
+
       padding: 6px 11px;
+
       border-radius: 999px;
-      background: #fff5df;
+
+      background: var(--gold-light);
+
       color: #8a5a00;
-      border: 1px solid #f3dfb2;
-      font-size: 12px;
+
+      border: 1px solid #f0ddb3;
+
+      font-size: 11px;
+
       font-weight: 800;
-      margin-bottom: 15px;
+
+      margin-bottom: 14px;
+
+      text-transform: uppercase;
     }
+
 
     /* =========================
        SUPPORT AREAS
     ========================= */
 
+    .support-section {
+      background: var(--white);
+    }
+
+
     .support-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 20px;
     }
 
+
     .support-card {
+      position: relative;
+
       padding: 25px;
+
       border: 1px solid var(--border);
-      border-radius: 15px;
-      background: #ffffff;
+
+      border-radius: 16px;
+
+      background: var(--white);
+
+      transition: 0.2s ease;
     }
+
+
+    .support-card:hover {
+      border-color: #c8dce5;
+
+      transform: translateY(-3px);
+    }
+
+
+    .support-number {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 50%;
+
+      background: var(--soft-green);
+
+      color: var(--green-dark);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-weight: 900;
+
+      margin-bottom: 14px;
+    }
+
 
     .support-card h3 {
       color: var(--navy);
+
       font-size: 18px;
-      margin-bottom: 8px;
+
+      margin-bottom: 7px;
     }
+
 
     .support-card p {
       color: var(--muted);
+
       font-size: 14px;
     }
+
 
     /* =========================
        TRANSPARENCY
     ========================= */
 
     .transparency {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .transparency-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .transparency h2 {
-      font-size: 38px;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-
-    .transparency p {
-      color: #d7e3ed;
-      font-size: 16px;
-    }
-
-    .transparency-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 18px;
-      padding: 28px;
-    }
-
-    .transparency-box h3 {
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .transparency-box ul {
-      padding-left: 20px;
-      color: #d7e3ed;
-    }
-
-    .transparency-box li {
-      margin-bottom: 9px;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta {
-      padding: 75px 0;
       background:
         linear-gradient(
           135deg,
-          #eff9f2 0%,
+          var(--navy),
+          var(--dark)
+        );
+
+      color: var(--white);
+    }
+
+
+    .transparency-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 50px;
+
+      align-items: center;
+    }
+
+
+    .transparency-label {
+      color: #bcefd0;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 9px;
+    }
+
+
+    .transparency h2 {
+      font-size:
+        clamp(31px, 4vw, 42px);
+
+      line-height: 1.12;
+
+      margin-bottom: 16px;
+    }
+
+
+    .transparency p {
+      color: #d7e5ec;
+
+      font-size: 16px;
+    }
+
+
+    .transparency-box {
+      background:
+        rgba(255,255,255,0.07);
+
+      border: 1px solid
+        rgba(255,255,255,0.14);
+
+      border-radius: 19px;
+
+      padding: 29px;
+    }
+
+
+    .transparency-box h3 {
+      color: var(--white);
+
+      margin-bottom: 14px;
+
+      font-size: 21px;
+    }
+
+
+    .transparency-box ul {
+      padding-left: 20px;
+
+      color: #d7e5ec;
+    }
+
+
+    .transparency-box li {
+      margin-bottom: 10px;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       HOW TO DONATE
+    ========================= */
+
+    .steps-section {
+      background: var(--white);
+    }
+
+
+    .steps-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+
+    .step-card {
+      padding: 28px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      background: var(--white);
+
+      box-shadow: var(--shadow);
+
+      position: relative;
+    }
+
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      color: var(--white);
+
+      font-size: 18px;
+
+      font-weight: 900;
+
+      margin-bottom: 18px;
+
+      box-shadow:
+        0 8px 20px rgba(24,185,87,0.18);
+    }
+
+
+    .step-card h3 {
+      color: var(--navy);
+
+      font-size: 20px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .step-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
+    .cta {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 82px 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          #effaf3 0%,
           #ffffff 100%
         );
+
       text-align: center;
+
+      border-top: 1px solid var(--border);
     }
+
 
     .cta h2 {
       color: var(--navy);
-      font-size: 38px;
-      margin-bottom: 12px;
+
+      font-size:
+        clamp(31px, 5vw, 44px);
+
+      line-height: 1.12;
+
+      margin-bottom: 13px;
     }
+
 
     .cta p {
       color: var(--muted);
-      max-width: 700px;
-      margin: 0 auto 25px;
+
+      max-width: 720px;
+
+      margin: 0 auto 27px;
+
+      font-size: 16px;
     }
+
 
     .cta-buttons {
       display: flex;
+
       justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 12px;
     }
+
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      background: #081f35;
-      color: #d7e3ed;
-      padding: 48px 0 25px;
+      background: var(--dark);
+
+      color: #d7e5ec;
+
+      padding: 50px 0 25px;
     }
+
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
+
+      grid-template-columns:
+        1.35fr
+        1fr
+        1fr;
+
       gap: 40px;
+
       padding-bottom: 35px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,0.12);
     }
+
 
     .footer-brand {
       display: flex;
+
       align-items: center;
+
       gap: 12px;
+
       margin-bottom: 16px;
     }
+
 
     .footer-logo {
       width: 58px;
       height: 58px;
-      border-radius: 9px;
+
       object-fit: cover;
+
+      border-radius: 9px;
     }
+
 
     .footer-brand strong {
       color: var(--white);
+
       font-size: 17px;
     }
 
+
     .footer-description {
-      color: #b9c9d7;
+      color: #b9cbd5;
+
       font-size: 14px;
+
       max-width: 430px;
     }
 
+
     footer h4 {
       color: var(--white);
+
       margin-bottom: 14px;
+
       font-size: 16px;
     }
+
 
     footer ul {
       list-style: none;
     }
 
+
     footer li {
       margin-bottom: 8px;
     }
 
+
     footer a {
-      color: #c7d5e0;
+      color: #c7d7e0;
+
       font-size: 14px;
+
+      transition: 0.2s ease;
     }
+
 
     footer a:hover {
       color: var(--white);
     }
 
+
     .footer-bottom {
       padding-top: 22px;
+
       text-align: center;
-      color: #91a6b7;
+
+      color: #91a8b7;
+
       font-size: 13px;
     }
+
+
+    /* =========================
+       TOAST
+    ========================= */
+
+    .toast {
+      position: fixed;
+
+      left: 50%;
+      bottom: 25px;
+
+      transform:
+        translate(-50%, 30px);
+
+      background: var(--navy);
+
+      color: var(--white);
+
+      padding: 13px 20px;
+
+      border-radius: 10px;
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.18);
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: 0.25s ease;
+
+      z-index: 2000;
+    }
+
+
+    .toast.show {
+      opacity: 1;
+
+      transform:
+        translate(-50%, 0);
+    }
+
 
     /* =========================
        RESPONSIVE
     ========================= */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1080px) {
 
       nav {
         gap: 0;
       }
 
+
       nav a {
         padding: 8px 7px;
+
         font-size: 13px;
       }
+
 
       nav a.donate {
         padding: 10px 13px;
       }
+
     }
+
 
     @media (max-width: 980px) {
 
       .nav {
         min-height: 78px;
+
         flex-wrap: wrap;
+
         padding: 8px 0;
       }
+
 
       .brand-logo {
         width: 60px;
         height: 60px;
       }
 
+
       .brand-name {
         font-size: 18px;
       }
 
+
       .menu-toggle {
         display: block;
+
         margin-left: auto;
       }
 
+
       nav {
         display: none;
+
         width: 100%;
+
         flex-direction: column;
+
         align-items: stretch;
+
         padding: 10px 0 12px;
       }
+
 
       nav.open {
         display: flex;
       }
 
+
       nav a {
         width: 100%;
+
         padding: 12px 13px;
       }
 
+
       nav a.donate {
         margin: 5px 0 0;
+
         text-align: center;
       }
+
 
       .hero-grid {
         grid-template-columns: 1fr;
       }
 
+
       .hero-card {
         max-width: 500px;
+
         margin: 0 auto;
       }
 
+
+      .why-grid,
       .bank-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
 
-      .support-grid {
-        grid-template-columns: 1fr 1fr;
+
+      .support-grid,
+      .steps-grid {
+        grid-template-columns:
+          1fr 1fr;
       }
+
 
       .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
+
     }
+
 
     @media (max-width: 700px) {
 
       .container {
-        width: min(100% - 28px, 1180px);
+        width:
+          min(
+            calc(100% - 28px),
+            1180px
+          );
       }
+
 
       section {
-        padding: 58px 0;
-      }
-
-      .hero {
         padding: 60px 0;
       }
 
-      .hero h1 {
-        font-size: 42px;
+
+      .hero {
+        padding: 65px 0 70px;
       }
+
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
 
       .hero p {
         font-size: 17px;
       }
 
-      .section-heading h2,
-      .transparency h2,
-      .cta h2 {
-        font-size: 31px;
-      }
 
+      .why-grid,
       .bank-grid,
       .international-grid,
       .support-grid,
       .transparency-grid,
+      .steps-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
+
 
       .bank-card {
         padding: 24px;
       }
 
+
+      .transparency-grid {
+        gap: 30px;
+      }
+
+
       .detail-row {
         gap: 10px;
       }
 
+
       .copy-row {
-        max-width: 65%;
+        max-width: 68%;
       }
 
+
       .detail-value {
-        font-size: 13px;
+        font-size: 12px;
       }
+
     }
+
 
     @media (max-width: 430px) {
 
@@ -822,47 +1741,71 @@
         font-size: 16px;
       }
 
+
       .brand-acronym {
-        font-size: 14px;
+        font-size: 13px;
       }
+
+
+      .brand-logo {
+        width: 55px;
+        height: 55px;
+      }
+
 
       .hero h1 {
         font-size: 37px;
       }
+
 
       .hero-buttons,
       .cta-buttons {
         flex-direction: column;
       }
 
+
       .btn {
         width: 100%;
       }
 
+
       .detail-row {
         flex-direction: column;
+
         gap: 4px;
       }
 
+
       .detail-value {
         max-width: 100%;
+
         text-align: left;
       }
 
+
       .copy-row {
         width: 100%;
+
         max-width: 100%;
-        justify-content: space-between;
+
+        justify-content:
+          space-between;
       }
+
 
       .copy-row .detail-value {
         text-align: left;
       }
+
     }
+
   </style>
+
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HEADER
@@ -872,7 +1815,10 @@
 
     <div class="container nav">
 
-      <a href="index.html" class="brand">
+      <a
+        href="index.html"
+        class="brand"
+      >
 
         <img
           src="sdf-logo.jpg"
@@ -881,6 +1827,7 @@
         >
 
         <div class="brand-text">
+
           <span class="brand-name">
             Somali Diabetes Foundation
           </span>
@@ -888,6 +1835,7 @@
           <span class="brand-acronym">
             S D F
           </span>
+
         </div>
 
       </a>
@@ -903,27 +1851,53 @@
       </button>
 
 
-      <nav id="mainNav" aria-label="Main navigation">
+      <nav
+        id="mainNav"
+        aria-label="Main navigation"
+      >
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+          Home
+        </a>
 
-        <a href="about.html">About</a>
+        <a href="about.html">
+          About
+        </a>
 
-        <a href="story.html">Our Story</a>
+        <a href="story.html">
+          Our Story
+        </a>
 
-        <a href="programs.html">Programs</a>
+        <a href="programs.html">
+          Programs
+        </a>
 
-        <a href="impact.html">Impact</a>
+        <a href="impact.html">
+          Impact
+        </a>
 
-        <a href="research.html">Research</a>
+        <a href="research.html">
+          Research
+        </a>
 
-        <a href="activities.html">Activities</a>
+        <a href="activities.html">
+          Activities
+        </a>
 
-        <a href="get-involved.html">Get Involved</a>
+        <a href="get-involved.html">
+          Get Involved
+        </a>
 
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">
+          Contact
+        </a>
 
-        <a href="donate.html" class="active donate">Donate</a>
+        <a
+          href="donate.html"
+          class="active donate"
+        >
+          Donate
+        </a>
 
       </nav>
 
@@ -940,22 +1914,27 @@
 
     <div class="container hero-grid">
 
+
       <div>
 
         <span class="eyebrow">
           SUPPORT SDF
         </span>
 
+
         <h1>
-          Help build a healthier Somalia.
+          Help Build a
+          <span>Healthier Somalia.</span>
         </h1>
 
+
         <p>
-          Your support helps the Somali Diabetes Foundation advance
-          diabetes awareness, prevention, early detection, patient
-          support, professional education, research and stronger
-          diabetes care across Somalia.
+          Your support helps the Somali Diabetes Foundation
+          advance diabetes awareness, prevention, early detection,
+          patient support, professional education, research and
+          stronger diabetes care across Somalia.
         </p>
+
 
         <div class="hero-buttons">
 
@@ -965,6 +1944,7 @@
           >
             Donate by Bank Transfer
           </a>
+
 
           <a
             href="contact.html"
@@ -986,16 +1966,25 @@
           class="hero-card-logo"
         >
 
+
         <h3>
-          Every contribution matters
+          Every Contribution Matters
         </h3>
+
 
         <p>
           Together, we can help improve diabetes prevention,
           care and support for communities across Somalia.
         </p>
 
+
+        <div class="hero-card-highlight">
+          Your support helps strengthen sustainable diabetes
+          awareness, prevention, care and research.
+        </div>
+
       </div>
+
 
     </div>
 
@@ -1003,24 +1992,89 @@
 
 
   <!-- =========================
-       INTRODUCTION
+       WHY SUPPORT SDF
   ========================= -->
 
-  <section>
+  <section class="why-section">
 
     <div class="container">
 
+
       <div class="section-heading">
 
+        <div class="section-label">
+          WHY SUPPORT SDF
+        </div>
+
         <h2>
-          Make a meaningful contribution
+          Your Support Can Create Meaningful Impact
         </h2>
 
         <p>
-          Somali Diabetes Foundation works to strengthen the
-          prevention, detection, management and understanding
-          of diabetes in Somalia.
+          Contributions can help the Somali Diabetes Foundation
+          strengthen diabetes prevention, education, care,
+          research and community support in Somalia.
         </p>
+
+      </div>
+
+
+      <div class="why-grid">
+
+
+        <div class="why-card">
+
+          <div class="why-icon">
+            ♥
+          </div>
+
+          <h3>
+            Support Communities
+          </h3>
+
+          <p>
+            Help strengthen access to diabetes information,
+            education and community support.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <div class="why-icon">
+            +
+          </div>
+
+          <h3>
+            Strengthen Prevention
+          </h3>
+
+          <p>
+            Support awareness, screening, early detection and
+            efforts to prevent diabetes complications.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <div class="why-icon">
+            ★
+          </div>
+
+          <h3>
+            Build Better Evidence
+          </h3>
+
+          <p>
+            Support research, professional education and
+            evidence-informed diabetes care in Somalia.
+          </p>
+
+        </div>
+
 
       </div>
 
@@ -1036,12 +2090,16 @@
   <section
     class="banks-section"
     id="bank-accounts"
-    style="padding-top: 0;"
   >
 
     <div class="container">
 
+
       <div class="section-heading">
+
+        <div class="section-label">
+          OFFICIAL DONATION CHANNELS
+        </div>
 
         <h2>
           Official SDF Bank Accounts
@@ -1064,25 +2122,33 @@
 
         <article class="bank-card">
 
-          <div class="bank-logo-box">
+          <div class="bank-top">
 
-            <img
-              src="images/Premier bank.jpg"
-              alt="Premier Bank"
-              class="bank-logo"
-            >
+            <div class="bank-logo-box">
+
+              <img
+                src="images/Premier bank.jpg"
+                alt="Premier Bank"
+                class="bank-logo"
+              >
+
+            </div>
+
+
+            <div class="bank-name">
+              Premier Bank
+            </div>
+
+
+            <span class="official-badge">
+              Official SDF Account
+            </span>
 
           </div>
-
-          <h3>
-            Premier Bank
-          </h3>
 
 
           <div class="bank-details">
 
-
-            <!-- Branch -->
 
             <div class="detail-row">
 
@@ -1097,8 +2163,6 @@
             </div>
 
 
-            <!-- Account Name -->
-
             <div class="detail-row">
 
               <span class="detail-label">
@@ -1111,8 +2175,6 @@
 
             </div>
 
-
-            <!-- Account Number -->
 
             <div class="detail-row">
 
@@ -1129,7 +2191,12 @@
                 <button
                   class="copy-btn"
                   type="button"
-                  onclick="copyText('020301971001', this)"
+                  onclick="
+                    copyText(
+                      '020301971001',
+                      this
+                    )
+                  "
                 >
                   Copy
                 </button>
@@ -1138,8 +2205,6 @@
 
             </div>
 
-
-            <!-- IBAN -->
 
             <div class="detail-row">
 
@@ -1156,7 +2221,12 @@
                 <button
                   class="copy-btn"
                   type="button"
-                  onclick="copyText('SO140005002020301971001', this)"
+                  onclick="
+                    copyText(
+                      'SO140005002020301971001',
+                      this
+                    )
+                  "
                 >
                   Copy
                 </button>
@@ -1170,8 +2240,10 @@
 
 
           <div class="bank-note">
-            Please use the official SDF account name when making
-            your transfer.
+
+            Please use the official SDF account name when
+            making your transfer.
+
           </div>
 
         </article>
@@ -1183,25 +2255,33 @@
 
         <article class="bank-card">
 
-          <div class="bank-logo-box">
+          <div class="bank-top">
 
-            <img
-              src="images/dahabshiil.jpg"
-              alt="Dahabshiil Bank"
-              class="bank-logo"
-            >
+            <div class="bank-logo-box">
+
+              <img
+                src="images/dahabshiil.jpg"
+                alt="Dahabshiil Bank"
+                class="bank-logo"
+              >
+
+            </div>
+
+
+            <div class="bank-name">
+              Dahabshiil Bank
+            </div>
+
+
+            <span class="official-badge">
+              Official SDF Account
+            </span>
 
           </div>
-
-          <h3>
-            Dahabshiil Bank
-          </h3>
 
 
           <div class="bank-details">
 
-
-            <!-- Branch -->
 
             <div class="detail-row">
 
@@ -1216,8 +2296,6 @@
             </div>
 
 
-            <!-- Account Name -->
-
             <div class="detail-row">
 
               <span class="detail-label">
@@ -1230,8 +2308,6 @@
 
             </div>
 
-
-            <!-- Account Number -->
 
             <div class="detail-row">
 
@@ -1248,7 +2324,12 @@
                 <button
                   class="copy-btn"
                   type="button"
-                  onclick="copyText('315017540901', this)"
+                  onclick="
+                    copyText(
+                      '315017540901',
+                      this
+                    )
+                  "
                 >
                   Copy
                 </button>
@@ -1257,8 +2338,6 @@
 
             </div>
 
-
-            <!-- IBAN -->
 
             <div class="detail-row">
 
@@ -1275,7 +2354,12 @@
                 <button
                   class="copy-btn"
                   type="button"
-                  onclick="copyText('SO530002314315017540901', this)"
+                  onclick="
+                    copyText(
+                      'SO530002314315017540901',
+                      this
+                    )
+                  "
                 >
                   Copy
                 </button>
@@ -1289,8 +2373,10 @@
 
 
           <div class="bank-note">
-            Please use the official SDF account name when making
-            your transfer.
+
+            Please use the official SDF account name when
+            making your transfer.
+
           </div>
 
         </article>
@@ -1302,25 +2388,33 @@
 
         <article class="bank-card">
 
-          <div class="bank-logo-box">
+          <div class="bank-top">
 
-            <img
-              src="images/salaam.jpg"
-              alt="Salaam Somali Bank"
-              class="bank-logo"
-            >
+            <div class="bank-logo-box">
+
+              <img
+                src="images/salaam.jpg"
+                alt="Salaam Somali Bank"
+                class="bank-logo"
+              >
+
+            </div>
+
+
+            <div class="bank-name">
+              Salaam Somali Bank
+            </div>
+
+
+            <span class="official-badge">
+              Official SDF Account
+            </span>
 
           </div>
-
-          <h3>
-            Salaam Somali Bank
-          </h3>
 
 
           <div class="bank-details">
 
-
-            <!-- Branch -->
 
             <div class="detail-row">
 
@@ -1335,8 +2429,6 @@
             </div>
 
 
-            <!-- Account Name -->
-
             <div class="detail-row">
 
               <span class="detail-label">
@@ -1349,8 +2441,6 @@
 
             </div>
 
-
-            <!-- Account Number -->
 
             <div class="detail-row">
 
@@ -1367,7 +2457,12 @@
                 <button
                   class="copy-btn"
                   type="button"
-                  onclick="copyText('2103 37576152', this)"
+                  onclick="
+                    copyText(
+                      '2103 37576152',
+                      this
+                    )
+                  "
                 >
                   Copy
                 </button>
@@ -1376,8 +2471,6 @@
 
             </div>
 
-
-            <!-- IBAN -->
 
             <div class="detail-row">
 
@@ -1394,7 +2487,12 @@
                 <button
                   class="copy-btn"
                   type="button"
-                  onclick="copyText('SO56001132300037576152', this)"
+                  onclick="
+                    copyText(
+                      'SO56001132300037576152',
+                      this
+                    )
+                  "
                 >
                   Copy
                 </button>
@@ -1408,8 +2506,10 @@
 
 
           <div class="bank-note">
-            Please use the official SDF account name when making
-            your transfer.
+
+            Please use the official SDF account name when
+            making your transfer.
+
           </div>
 
         </article>
@@ -1418,35 +2518,15 @@
       </div>
 
 
-      <!-- =========================
-           TRANSPARENCY NOTICE
-      ========================= -->
+      <!-- TRANSPARENCY NOTICE -->
 
-      <div
-        style="
-          margin-top: 30px;
-          padding: 24px;
-          background: #eef6fb;
-          border: 1px solid #dce6ee;
-          border-radius: 16px;
-        "
-      >
+      <div class="donation-notice">
 
-        <h3
-          style="
-            color: #0b2d4d;
-            margin-bottom: 8px;
-          "
-        >
+        <h3>
           Donation Transparency
         </h3>
 
-        <p
-          style="
-            color: #64748b;
-            margin: 0;
-          "
-        >
+        <p>
           Somali Diabetes Foundation is committed to responsible
           and transparent use of donated resources. Donors are
           encouraged to retain their transfer receipt for their
@@ -1455,6 +2535,7 @@
         </p>
 
       </div>
+
 
     </div>
 
@@ -1469,7 +2550,12 @@
 
     <div class="container">
 
+
       <div class="section-heading">
+
+        <div class="section-label">
+          INTERNATIONAL SUPPORT
+        </div>
 
         <h2>
           International Donations
@@ -1477,7 +2563,8 @@
 
         <p>
           SDF is working to establish secure and accessible
-          international giving options for supporters outside Somalia.
+          international giving options for supporters outside
+          Somalia.
         </p>
 
       </div>
@@ -1490,17 +2577,20 @@
 
         <div class="international-card">
 
-          <div class="icon">
+          <div class="international-icon">
             🌍
           </div>
 
-          <span class="status">
-            COMING SOON
+
+          <span class="coming-soon">
+            Coming Soon
           </span>
+
 
           <h3>
             GlobalGiving
           </h3>
+
 
           <p>
             SDF is pursuing an international fundraising pathway
@@ -1508,6 +2598,7 @@
             application and due-diligence process, the official
             SDF GlobalGiving project page will be added here.
           </p>
+
 
           <p>
             This section will be updated with the official SDF
@@ -1521,26 +2612,30 @@
 
         <div class="international-card">
 
-          <div class="icon">
+          <div class="international-icon">
             ✉
           </div>
 
+
           <h3>
-            Direct International Support
+            International Support
           </h3>
+
 
           <p>
             If you are outside Somalia and would like to support
             SDF before our international online donation pathway
-            is active, please contact us for official donation
-            and transfer instructions.
+            is active, please contact us through the official
+            SDF contact form for donation and transfer
+            instructions.
           </p>
 
+
           <a
-            href="mailto:info@sdf.so?subject=International%20Donation%20Inquiry"
+            href="contact.html"
             class="btn btn-primary"
           >
-            Email SDF
+            Contact SDF
           </a>
 
         </div>
@@ -1554,14 +2649,19 @@
 
 
   <!-- =========================
-       SUPPORT AREAS
+       WHAT SUPPORT CAN HELP
   ========================= -->
 
-  <section>
+  <section class="support-section">
 
     <div class="container">
 
+
       <div class="section-heading">
+
+        <div class="section-label">
+          YOUR IMPACT
+        </div>
 
         <h2>
           What Your Support Can Help
@@ -1581,6 +2681,10 @@
 
         <div class="support-card">
 
+          <div class="support-number">
+            1
+          </div>
+
           <h3>
             Public Awareness
           </h3>
@@ -1594,6 +2698,10 @@
 
 
         <div class="support-card">
+
+          <div class="support-number">
+            2
+          </div>
 
           <h3>
             Screening & Prevention
@@ -1609,6 +2717,10 @@
 
         <div class="support-card">
 
+          <div class="support-number">
+            3
+          </div>
+
           <h3>
             Patient Support
           </h3>
@@ -1622,6 +2734,10 @@
 
 
         <div class="support-card">
+
+          <div class="support-number">
+            4
+          </div>
 
           <h3>
             Healthcare Education
@@ -1637,6 +2753,10 @@
 
         <div class="support-card">
 
+          <div class="support-number">
+            5
+          </div>
+
           <h3>
             Research
           </h3>
@@ -1650,6 +2770,10 @@
 
 
         <div class="support-card">
+
+          <div class="support-number">
+            6
+          </div>
 
           <h3>
             Health Advocacy
@@ -1678,16 +2802,23 @@
 
     <div class="container transparency-grid">
 
+
       <div>
 
+        <div class="transparency-label">
+          ACCOUNTABILITY
+        </div>
+
+
         <h2>
-          Supporting SDF means supporting sustainable diabetes care.
+          Supporting SDF Means Supporting Sustainable Diabetes Care.
         </h2>
 
+
         <p>
-          The Somali Diabetes Foundation is committed to responsible,
-          transparent and accountable use of resources in support of
-          its mission and programs.
+          The Somali Diabetes Foundation is committed to
+          responsible, transparent and accountable use of
+          resources in support of its mission and programs.
         </p>
 
       </div>
@@ -1696,8 +2827,9 @@
       <div class="transparency-box">
 
         <h3>
-          Our commitment
+          Our Commitment
         </h3>
+
 
         <ul>
 
@@ -1724,6 +2856,7 @@
 
       </div>
 
+
     </div>
 
   </section>
@@ -1733,14 +2866,19 @@
        HOW TO DONATE
   ========================= -->
 
-  <section>
+  <section class="steps-section">
 
     <div class="container">
 
+
       <div class="section-heading">
 
+        <div class="section-label">
+          SIMPLE PROCESS
+        </div>
+
         <h2>
-          How to make a bank transfer
+          How to Make a Bank Transfer
         </h2>
 
         <p>
@@ -1751,30 +2889,17 @@
       </div>
 
 
-      <div class="support-grid">
+      <div class="steps-grid">
 
 
-        <div class="support-card">
+        <div class="step-card">
 
-          <div
-            style="
-              width:42px;
-              height:42px;
-              border-radius:50%;
-              background:#159447;
-              color:#ffffff;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-              font-weight:800;
-              margin-bottom:15px;
-            "
-          >
+          <div class="step-number">
             1
           </div>
 
           <h3>
-            Choose a bank
+            Choose a Bank
           </h3>
 
           <p>
@@ -1785,27 +2910,14 @@
         </div>
 
 
-        <div class="support-card">
+        <div class="step-card">
 
-          <div
-            style="
-              width:42px;
-              height:42px;
-              border-radius:50%;
-              background:#159447;
-              color:#ffffff;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-              font-weight:800;
-              margin-bottom:15px;
-            "
-          >
+          <div class="step-number">
             2
           </div>
 
           <h3>
-            Make your transfer
+            Make Your Transfer
           </h3>
 
           <p>
@@ -1816,27 +2928,14 @@
         </div>
 
 
-        <div class="support-card">
+        <div class="step-card">
 
-          <div
-            style="
-              width:42px;
-              height:42px;
-              border-radius:50%;
-              background:#159447;
-              color:#ffffff;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-              font-weight:800;
-              margin-bottom:15px;
-            "
-          >
+          <div class="step-number">
             3
           </div>
 
           <h3>
-            Keep your receipt
+            Keep Your Receipt
           </h3>
 
           <p>
@@ -1856,36 +2955,41 @@
 
 
   <!-- =========================
-       CTA
+       FINAL CTA
   ========================= -->
 
   <section class="cta">
 
     <div class="container">
 
+
       <h2>
-        Have a question about supporting SDF?
+        Together, We Can Build a Healthier Somalia.
       </h2>
 
+
       <p>
-        Contact the Somali Diabetes Foundation for donation,
-        partnership, research or general enquiries.
+        Every contribution can help strengthen diabetes
+        awareness, prevention, care, research and community
+        support in Somalia.
       </p>
+
 
       <div class="cta-buttons">
 
         <a
-          href="contact.html"
+          href="#bank-accounts"
           class="btn btn-primary"
         >
-          Contact SDF
+          Donate by Bank Transfer
         </a>
 
+
         <a
-          href="mailto:info@sdf.so"
+          href="contact.html"
           class="btn btn-secondary"
         >
-          Email SDF
+          Contact SDF
         </a>
 
       </div>
@@ -1906,13 +3010,15 @@
       <div class="footer-grid">
 
 
+        <!-- ABOUT -->
+
         <div>
 
           <div class="footer-brand">
 
             <img
               src="sdf-logo.jpg"
-              alt="Somali Diabetes Foundation logo"
+              alt="Somali Diabetes Foundation Logo"
               class="footer-logo"
             >
 
@@ -1922,13 +3028,16 @@
 
           </div>
 
+
           <p class="footer-description">
             Working to strengthen diabetes awareness, prevention,
-            care, research and community support in Somalia.
+            care, research, advocacy and community support in Somalia.
           </p>
 
         </div>
 
+
+        <!-- EXPLORE -->
 
         <div>
 
@@ -1973,6 +3082,8 @@
         </div>
 
 
+        <!-- CONNECT -->
+
         <div>
 
           <h4>
@@ -2006,8 +3117,8 @@
             </li>
 
             <li>
-              <a href="mailto:info@sdf.so">
-                info@sdf.so
+              <a href="donate.html">
+                Donate
               </a>
             </li>
 
@@ -2021,7 +3132,8 @@
 
       <div class="footer-bottom">
 
-        © 2026 Somali Diabetes Foundation (SDF). All rights reserved.
+        © 2026 Somali Diabetes Foundation (SDF).
+        All rights reserved.
 
       </div>
 
@@ -2030,113 +3142,239 @@
   </footer>
 
 
+  <!-- COPY TOAST -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  >
+    Copied successfully.
+  </div>
+
+
   <!-- =========================
        JAVASCRIPT
   ========================= -->
 
   <script>
 
-    /* MOBILE MENU */
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
     const menuToggle =
-      document.querySelector('.menu-toggle');
+      document.querySelector(".menu-toggle");
+
 
     const mainNav =
-      document.getElementById('mainNav');
+      document.getElementById("mainNav");
 
 
-    menuToggle.addEventListener('click', function () {
+    menuToggle.addEventListener(
+      "click",
+      function () {
 
-      const isOpen =
-        mainNav.classList.toggle('open');
+        const isOpen =
+          mainNav.classList.toggle("open");
 
-      menuToggle.setAttribute(
-        'aria-expanded',
-        isOpen
-      );
 
-      menuToggle.textContent =
-        isOpen ? '✕' : '☰';
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
 
-    });
+
+        menuToggle.textContent =
+          isOpen ? "✕" : "☰";
+
+      }
+    );
 
 
     document
-      .querySelectorAll('#mainNav a')
-      .forEach(function(link) {
+      .querySelectorAll("#mainNav a")
+      .forEach(
+        function(link) {
 
-        link.addEventListener('click', function() {
+          link.addEventListener(
+            "click",
+            function() {
 
-          mainNav.classList.remove('open');
+              mainNav.classList.remove(
+                "open"
+              );
 
-          menuToggle.setAttribute(
-            'aria-expanded',
-            'false'
+
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+
+              menuToggle.textContent =
+                "☰";
+
+            }
           );
 
-          menuToggle.textContent = '☰';
-
-        });
-
-      });
+        }
+      );
 
 
-    /* COPY BANK DETAILS */
+    /* =========================
+       COPY BANK DETAILS
+    ========================= */
 
-    function copyText(text, button) {
+    function copyText(
+      text,
+      button
+    ) {
 
-      navigator.clipboard.writeText(text)
-        .then(function() {
+      const originalText =
+        button.textContent;
 
-          const originalText =
-            button.textContent;
 
-          button.textContent = 'Copied!';
+      function showCopied() {
 
-          setTimeout(function() {
+        button.textContent =
+          "Copied!";
+
+
+        showToast(
+          "Bank detail copied successfully."
+        );
+
+
+        setTimeout(
+          function() {
 
             button.textContent =
               originalText;
 
-          }, 1500);
+          },
+          1600
+        );
 
-        })
-        .catch(function() {
+      }
 
-          const temporaryInput =
-            document.createElement('input');
 
-          temporaryInput.value = text;
+      if (
+        navigator.clipboard &&
+        navigator.clipboard.writeText
+      ) {
 
-          document.body.appendChild(
-            temporaryInput
+        navigator.clipboard
+          .writeText(text)
+          .then(showCopied)
+          .catch(
+            function() {
+
+              fallbackCopy(
+                text,
+                showCopied
+              );
+
+            }
           );
 
-          temporaryInput.select();
+      } else {
 
-          document.execCommand('copy');
+        fallbackCopy(
+          text,
+          showCopied
+        );
 
-          document.body.removeChild(
-            temporaryInput
+      }
+
+    }
+
+
+    function fallbackCopy(
+      text,
+      callback
+    ) {
+
+      const temporaryInput =
+        document.createElement(
+          "input"
+        );
+
+
+      temporaryInput.value =
+        text;
+
+
+      document.body.appendChild(
+        temporaryInput
+      );
+
+
+      temporaryInput.select();
+
+
+      try {
+
+        document.execCommand(
+          "copy"
+        );
+
+        callback();
+
+      } catch (error) {
+
+        showToast(
+          "Please copy the bank detail manually."
+        );
+
+      }
+
+
+      document.body.removeChild(
+        temporaryInput
+      );
+
+    }
+
+
+    /* =========================
+       TOAST
+    ========================= */
+
+    function showToast(message) {
+
+      const toast =
+        document.getElementById(
+          "toast"
+        );
+
+
+      toast.textContent =
+        message;
+
+
+      toast.classList.add(
+        "show"
+      );
+
+
+      setTimeout(
+        function() {
+
+          toast.classList.remove(
+            "show"
           );
 
-          const originalText =
-            button.textContent;
-
-          button.textContent = 'Copied!';
-
-          setTimeout(function() {
-
-            button.textContent =
-              originalText;
-
-          }, 1500);
-
-        });
+        },
+        2200
+      );
 
     }
 
   </script>
+
 
 </body>
 </html>

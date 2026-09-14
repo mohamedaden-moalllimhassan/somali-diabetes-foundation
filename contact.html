@@ -47,6 +47,7 @@
       color: var(--ink);
       background: var(--white);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -62,8 +63,8 @@
     }
 
     .container {
-      width: min(1120px, 92%);
-      margin: auto;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
     /* =========================
@@ -71,19 +72,20 @@
     ========================= */
 
     header {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.98);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 1000;
+      backdrop-filter: blur(8px);
     }
 
     .nav {
-      min-height: 82px;
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 20px;
     }
 
     .brand {
@@ -93,41 +95,85 @@
       flex-shrink: 0;
     }
 
-    .brand img {
-      width: 62px;
-      height: 62px;
-      object-fit: contain;
-      border-radius: 8px;
+    .brand-logo {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 11px;
+      background: #eeeeee;
+      border: 1px solid #e1e1e1;
     }
 
     .brand-text {
-      font-weight: 800;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-name {
       color: var(--navy);
-      line-height: 1.15;
-      font-size: 15px;
-      max-width: 190px;
+      font-weight: 800;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .brand-acronym {
+      color: var(--blue);
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-top: 5px;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: flex-end;
-      gap: 5px;
+      gap: 2px;
+      flex: 1;
+      min-width: 0;
     }
 
     nav a {
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 700;
       font-size: 14px;
-      padding: 9px 10px;
-      border-radius: 7px;
+      padding: 9px 9px;
+      border-radius: 8px;
+      white-space: nowrap;
       transition: 0.2s ease;
     }
 
     nav a:hover,
     nav a.active {
-      background: var(--light);
       color: var(--blue);
+      background: var(--light);
+    }
+
+    nav a.donate {
+      color: var(--white);
+      background: var(--green);
+      padding: 12px 18px;
+      margin-left: 5px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    nav a.donate:hover {
+      color: var(--white);
+      background: #119844;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: var(--light);
+      color: var(--navy);
+      font-size: 25px;
+      width: 44px;
+      height: 44px;
+      border-radius: 9px;
+      cursor: pointer;
     }
 
     /* =========================
@@ -262,7 +308,7 @@
     }
 
     /* =========================
-       INQUIRY FORM
+       FORM
     ========================= */
 
     .form-section {
@@ -351,6 +397,12 @@
       transform: translateY(-1px);
     }
 
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
+    }
+
     .form-note {
       margin-top: 13px;
       font-size: 13px;
@@ -426,7 +478,7 @@
     }
 
     /* =========================
-       OFFICIAL LOCATION
+       LOCATION
     ========================= */
 
     .location-section {
@@ -453,8 +505,6 @@
       gap: 28px;
       align-items: stretch;
     }
-
-    /* MAP DISPLAY */
 
     .map-card {
       min-height: 420px;
@@ -522,8 +572,6 @@
       background: #119844;
       transform: translateY(-1px);
     }
-
-    /* LOCATION DETAILS */
 
     .location-card {
       background: var(--light);
@@ -615,48 +663,63 @@
        SUPPORT CTA
     ========================= */
 
-    .support-section {
-      background: var(--light);
-    }
-
-    .support-box {
-      background: linear-gradient(
-        135deg,
-        var(--navy),
-        #0b5b89
-      );
-      color: var(--white);
-      border-radius: 20px;
-      padding: 55px 45px;
+    .support-cta {
+      background:
+        linear-gradient(
+          135deg,
+          #eff9f2 0%,
+          #ffffff 100%
+        );
       text-align: center;
-      box-shadow: var(--shadow);
     }
 
-    .support-box h2 {
-      font-size: 36px;
-      margin-bottom: 13px;
+    .support-cta h2 {
+      color: var(--navy);
+      font-size: 38px;
+      margin-bottom: 12px;
     }
 
-    .support-box p {
-      max-width: 720px;
+    .support-cta p {
+      color: var(--muted);
+      max-width: 700px;
       margin: 0 auto 25px;
-      color: #e2f0f5;
-      font-size: 17px;
     }
 
-    .support-btn {
-      display: inline-block;
-      background: var(--green);
-      color: var(--white);
-      padding: 14px 28px;
-      border-radius: 8px;
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 21px;
+      border-radius: 9px;
       font-weight: 800;
       transition: 0.2s ease;
     }
 
-    .support-btn:hover {
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
       background: #119844;
       transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--light);
     }
 
     /* =========================
@@ -664,30 +727,31 @@
     ========================= */
 
     footer {
-      background: #03263f;
-      color: #d8e8ee;
-      padding: 45px 0 25px;
+      background: #042b4b;
+      color: #d7e5ec;
+      padding: 48px 0 24px;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr 0.8fr;
+      grid-template-columns: 1.3fr 1fr 1fr;
       gap: 40px;
-      margin-bottom: 35px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
-    .footer-brand img {
+    .footer-logo {
       width: 58px;
       height: 58px;
-      object-fit: contain;
-      border-radius: 7px;
+      object-fit: cover;
+      border-radius: 9px;
     }
 
     .footer-brand strong {
@@ -695,42 +759,39 @@
       font-size: 17px;
     }
 
-    footer p {
-      color: #b9ced7;
+    .footer-description {
+      color: #b9cbd5;
       font-size: 14px;
+      max-width: 430px;
     }
 
-    footer h3 {
+    footer h4 {
       color: var(--white);
-      margin-bottom: 13px;
-      font-size: 17px;
+      margin-bottom: 14px;
+      font-size: 16px;
     }
 
-    .footer-links {
-      display: grid;
-      gap: 8px;
+    footer ul {
+      list-style: none;
     }
 
-    .footer-links a {
-      color: #b9ced7;
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: #c7d7e0;
       font-size: 14px;
-      transition: 0.2s ease;
     }
 
-    .footer-links a:hover {
-      color: var(--green);
+    footer a:hover {
+      color: var(--white);
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-bottom p {
+      padding-top: 22px;
+      text-align: center;
+      color: #91a8b7;
       font-size: 13px;
     }
 
@@ -738,61 +799,91 @@
        RESPONSIVE
     ========================= */
 
-    @media (max-width: 900px) {
-
-      .nav {
-        padding: 14px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
+    @media (max-width: 1050px) {
 
       nav {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .contact-grid,
-      .form-layout,
-      .location-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 70px 0;
-      }
-
-      .hero h1 {
-        font-size: 46px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .container {
-        width: min(94%, 1120px);
-      }
-
-      .brand img {
-        width: 55px;
-        height: 55px;
-      }
-
-      .brand-text {
-        font-size: 14px;
-      }
-
-      nav {
-        gap: 3px;
+        gap: 0;
       }
 
       nav a {
+        padding: 8px 7px;
         font-size: 13px;
-        padding: 7px 8px;
+      }
+
+      nav a.donate {
+        padding: 10px 13px;
+      }
+    }
+
+    @media (max-width: 980px) {
+
+      .nav {
+        min-height: 78px;
+        flex-wrap: wrap;
+        padding: 8px 0;
+      }
+
+      .brand-logo {
+        width: 60px;
+        height: 60px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 0 12px;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        width: 100%;
+        padding: 12px 13px;
+      }
+
+      nav a.donate {
+        margin: 5px 0 0;
+        text-align: center;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      section {
+        padding: 58px 0;
       }
 
       .hero {
@@ -800,7 +891,7 @@
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 42px;
       }
 
       .hero p {
@@ -808,12 +899,14 @@
       }
 
       .section-title {
-        font-size: 29px;
+        font-size: 31px;
       }
 
-      .contact-card,
-      .form-card,
-      .location-card {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-card {
         padding: 25px;
       }
 
@@ -823,19 +916,42 @@
       }
 
       .map-content h2 {
-        font-size: 27px;
+        font-size: 28px;
       }
 
-      .support-box {
-        padding: 40px 25px;
+      .location-card {
+        padding: 28px;
       }
 
-      .support-box h2 {
-        font-size: 29px;
+      .support-cta h2 {
+        font-size: 31px;
       }
 
-      .footer-bottom {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .brand-acronym {
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 37px;
+      }
+
+      .cta-buttons {
         flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
   </style>
@@ -848,28 +964,88 @@
   ========================= -->
 
   <header>
+
     <div class="container nav">
 
       <a href="index.html" class="brand">
-        <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation logo">
-        <span class="brand-text">
-          Somali Diabetes Foundation
-        </span>
+
+        <img
+          src="sdf-logo.jpg"
+          alt="Somali Diabetes Foundation Logo"
+          class="brand-logo"
+        >
+
+        <div class="brand-text">
+
+          <span class="brand-name">
+            Somali Diabetes Foundation
+          </span>
+
+          <span class="brand-acronym">
+            S D F
+          </span>
+
+        </div>
+
       </a>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="story.html">Our Story</a>
-        <a href="index.html#programs">Programs</a>
-        <a href="index.html#research">Research</a>
-        <a href="activities.html">Activities</a>
-        <a href="index.html#involve">Get Involved</a>
-        <a href="index.html#donate">Donate</a>
-        <a href="contact.html" class="active">Contact</a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <nav id="mainNav" aria-label="Main navigation">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="story.html">
+          Our Story
+        </a>
+
+        <a href="programs.html">
+          Programs
+        </a>
+
+        <a href="impact.html">
+          Impact
+        </a>
+
+        <a href="research.html">
+          Research
+        </a>
+
+        <a href="activities.html">
+          Activities
+        </a>
+
+        <a href="get-involved.html">
+          Get Involved
+        </a>
+
+        <a href="contact.html" class="active">
+          Contact
+        </a>
+
+        <a href="donate.html" class="donate">
+          Donate
+        </a>
+
       </nav>
 
     </div>
+
   </header>
 
 
@@ -878,21 +1054,29 @@
   ========================= -->
 
   <section class="hero">
+
     <div class="container">
+
       <div class="hero-content">
 
-        <span class="eyebrow">Connect With SDF</span>
+        <span class="eyebrow">
+          GET IN TOUCH
+        </span>
 
-        <h1>Contact the Somali Diabetes Foundation</h1>
+        <h1>
+          Contact the Somali Diabetes Foundation
+        </h1>
 
         <p>
-          Whether you would like to partner with us, volunteer,
-          collaborate on research, support our work, or simply learn more,
-          we would be pleased to hear from you.
+          Whether you want to partner with us, support our work,
+          collaborate on research, volunteer, or simply learn more
+          about SDF, we would be pleased to hear from you.
         </p>
 
       </div>
+
     </div>
+
   </section>
 
 
@@ -901,28 +1085,37 @@
   ========================= -->
 
   <section>
+
     <div class="container">
 
-      <h2 class="section-title">Get in Touch</h2>
+      <h2 class="section-title">
+        Contact Information
+      </h2>
 
       <p class="section-intro">
         Reach the Somali Diabetes Foundation through our official
-        communication channels.
+        contact channels.
       </p>
 
+
       <div class="contact-grid">
+
 
         <!-- EMAIL -->
 
         <div class="contact-card">
 
-          <div class="contact-icon">✉</div>
+          <div class="contact-icon">
+            ✉
+          </div>
 
-          <h3>Email</h3>
+          <h3>
+            Email
+          </h3>
 
           <p>
-            For general inquiries, partnerships, research,
-            volunteering and organizational communication.
+            For general inquiries, partnerships, research and
+            organizational communication.
           </p>
 
           <a href="mailto:info@sdf.so">
@@ -936,13 +1129,17 @@
 
         <div class="contact-card">
 
-          <div class="contact-icon">☎</div>
+          <div class="contact-icon">
+            ☎
+          </div>
 
-          <h3>Phone</h3>
+          <h3>
+            Phone
+          </h3>
 
           <p>
-            Contact the Somali Diabetes Foundation
-            directly by phone.
+            Contact the Somali Diabetes Foundation directly
+            during normal working hours.
           </p>
 
           <a href="tel:+252771817681">
@@ -956,9 +1153,13 @@
 
         <div class="contact-card">
 
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon">
+            ⌖
+          </div>
 
-          <h3>Office Location</h3>
+          <h3>
+            Location
+          </h3>
 
           <p>
             Jale Siad Street, Danwadaagaha,
@@ -968,7 +1169,7 @@
           <a
             href="https://maps.app.goo.gl/HjfJZLxNPZpREEMu5"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             class="contact-button"
           >
             View on Google Maps
@@ -976,223 +1177,318 @@
 
         </div>
 
+
       </div>
 
     </div>
+
   </section>
 
 
   <!-- =========================
-       INQUIRY FORM
+       CONTACT FORM
   ========================= -->
 
   <section class="form-section">
 
-    <div class="container">
-
-      <div class="form-layout">
-
-        <!-- FORM -->
-
-        <div class="form-card">
-
-          <h2>Send Us an Inquiry</h2>
-
-          <p>
-            Complete the form below. Your email application will open
-            with the inquiry prepared for SDF.
-          </p>
-
-          <form id="contactForm">
-
-            <div class="field">
-              <label for="name">
-                Full Name *
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Enter your full name"
-              >
-            </div>
+    <div class="container form-layout">
 
 
-            <div class="field">
-              <label for="email">
-                Email Address *
-              </label>
+      <!-- FORM -->
 
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="Enter your email address"
-              >
-            </div>
+      <div class="form-card">
 
+        <h2>
+          Send us a message
+        </h2>
 
-            <div class="field">
-              <label for="phone">
-                Phone Number
-              </label>
-
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Enter your phone number"
-              >
-            </div>
+        <p>
+          Complete the form below and your message will be sent
+          directly to the Somali Diabetes Foundation.
+        </p>
 
 
-            <div class="field">
-              <label for="organization">
-                Organization / Institution
-              </label>
-
-              <input
-                type="text"
-                id="organization"
-                name="organization"
-                placeholder="Organization or institution"
-              >
-            </div>
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mbgjnakr"
+          method="POST"
+        >
 
 
-            <div class="field">
-              <label for="inquiry">
-                Inquiry Type *
-              </label>
+          <!-- FULL NAME -->
 
-              <select
-                id="inquiry"
-                name="inquiry"
-                required
-              >
-                <option value="">Select an inquiry type</option>
-                <option value="General Inquiry">
-                  General Inquiry
-                </option>
-                <option value="Partner with SDF">
-                  Partner with SDF
-                </option>
-                <option value="Volunteer">
-                  Volunteer
-                </option>
-                <option value="Research Collaboration">
-                  Research Collaboration
-                </option>
-                <option value="Support / Donate">
-                  Support / Donate
-                </option>
-                <option value="Media / Communications">
-                  Media / Communications
-                </option>
-                <option value="Other">
-                  Other
-                </option>
-              </select>
-            </div>
+          <div class="field">
 
+            <label for="full-name">
+              Full Name *
+            </label>
 
-            <div class="field">
-              <label for="message">
-                Message *
-              </label>
-
-              <textarea
-                id="message"
-                name="message"
-                required
-                placeholder="Write your message here..."
-              ></textarea>
-            </div>
-
-
-            <button
-              type="submit"
-              class="submit-btn"
+            <input
+              type="text"
+              id="full-name"
+              name="name"
+              placeholder="Your full name"
+              autocomplete="name"
+              required
             >
-              Send Inquiry
-            </button>
-
-            <p class="form-note">
-              This form uses your email application to send the message
-              directly to SDF.
-            </p>
-
-          </form>
-
-        </div>
-
-
-        <!-- WAYS TO ENGAGE -->
-
-        <div>
-
-          <h2 class="section-title">
-            Ways to Engage
-          </h2>
-
-          <p class="section-intro">
-            There are several ways individuals, organizations and
-            institutions can contribute to the mission of SDF.
-          </p>
-
-          <div class="engagement">
-
-            <div class="engagement-card">
-              <h3>Partner with SDF</h3>
-
-              <p>
-                Work with us to strengthen diabetes awareness,
-                prevention, screening, treatment and community
-                health initiatives in Somalia.
-              </p>
-            </div>
-
-
-            <div class="engagement-card">
-              <h3>Volunteer</h3>
-
-              <p>
-                Support community awareness activities,
-                screening initiatives, education and other
-                SDF programs.
-              </p>
-            </div>
-
-
-            <div class="engagement-card">
-              <h3>Research Collaboration</h3>
-
-              <p>
-                Collaborate with SDF on diabetes research,
-                noncommunicable diseases, public health,
-                clinical education and health-system strengthening.
-              </p>
-            </div>
-
-
-            <div class="engagement-card">
-              <h3>Support & Donate</h3>
-
-              <p>
-                Help advance diabetes awareness, prevention,
-                patient support, education and access to better
-                diabetes care.
-              </p>
-            </div>
 
           </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="field">
+
+            <label for="email">
+              Email Address *
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <!-- PHONE -->
+
+          <div class="field">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+252 ..."
+              autocomplete="tel"
+            >
+
+          </div>
+
+
+          <!-- ORGANIZATION -->
+
+          <div class="field">
+
+            <label for="organization">
+              Organization
+            </label>
+
+            <input
+              type="text"
+              id="organization"
+              name="organization"
+              placeholder="Organization name"
+              autocomplete="organization"
+            >
+
+          </div>
+
+
+          <!-- INQUIRY TYPE -->
+
+          <div class="field">
+
+            <label for="inquiry">
+              Inquiry Type *
+            </label>
+
+            <select
+              id="inquiry"
+              name="inquiry_type"
+              required
+            >
+
+              <option value="">
+                Select an inquiry type
+              </option>
+
+              <option value="General Inquiry">
+                General Inquiry
+              </option>
+
+              <option value="Partnership">
+                Partnership
+              </option>
+
+              <option value="Research Collaboration">
+                Research Collaboration
+              </option>
+
+              <option value="Volunteering">
+                Volunteering
+              </option>
+
+              <option value="Donation">
+                Donation
+              </option>
+
+              <option value="Patient Support">
+                Patient Support
+              </option>
+
+              <option value="Media Inquiry">
+                Media Inquiry
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- MESSAGE -->
+
+          <div class="field">
+
+            <label for="message">
+              Message *
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <!-- EMAIL SUBJECT -->
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Contact Form Message - Somali Diabetes Foundation"
+          >
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="submit-btn"
+            id="submit-btn"
+          >
+            Send Message
+          </button>
+
+
+          <p class="form-note">
+            Your message will be securely submitted to the
+            Somali Diabetes Foundation.
+          </p>
+
+
+        </form>
+
+      </div>
+
+
+      <!-- WAYS TO ENGAGE -->
+
+      <div>
+
+        <h2 class="section-title">
+          Ways to Engage
+        </h2>
+
+        <p class="section-intro">
+          There are many ways to contribute to the mission of
+          the Somali Diabetes Foundation.
+        </p>
+
+
+        <div class="engagement">
+
+
+          <div class="engagement-card">
+
+            <h3>
+              Partnership
+            </h3>
+
+            <p>
+              Explore institutional, humanitarian, healthcare and
+              development partnerships with SDF.
+            </p>
+
+          </div>
+
+
+          <div class="engagement-card">
+
+            <h3>
+              Research Collaboration
+            </h3>
+
+            <p>
+              Connect with SDF on diabetes research, evidence
+              generation, data collection and knowledge sharing.
+            </p>
+
+          </div>
+
+
+          <div class="engagement-card">
+
+            <h3>
+              Volunteer
+            </h3>
+
+            <p>
+              Support community awareness, education, screening
+              and other SDF activities.
+            </p>
+
+          </div>
+
+
+          <div class="engagement-card">
+
+            <h3>
+              Professional Engagement
+            </h3>
+
+            <p>
+              Healthcare professionals and specialists can
+              contribute through education, training and technical
+              collaboration.
+            </p>
+
+          </div>
+
+
+          <div class="engagement-card">
+
+            <h3>
+              Support SDF
+            </h3>
+
+            <p>
+              Individuals and organizations can support SDF's
+              programs through donations and resource mobilization.
+            </p>
+
+          </div>
+
 
         </div>
 
       </div>
+
 
     </div>
 
@@ -1207,22 +1503,23 @@
 
     <div class="container">
 
-      <h2>Follow SDF</h2>
+      <h2>
+        Connect With SDF
+      </h2>
 
       <p>
-        Follow the Somali Diabetes Foundation for updates,
-        activities, awareness campaigns, community initiatives
-        and organizational news.
+        Follow the Somali Diabetes Foundation for updates about
+        our activities, diabetes awareness initiatives, education,
+        community engagement and organizational developments.
       </p>
 
       <a
         href="https://www.facebook.com/profile.php?id=61569013594389"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
         class="facebook-btn"
       >
-        <span>f</span>
-        Visit SDF on Facebook
+        Facebook
       </a>
 
     </div>
@@ -1231,17 +1528,17 @@
 
 
   <!-- =========================
-       OFFICIAL LOCATION
+       LOCATION
   ========================= -->
 
-  <section class="location-section" id="location">
+  <section class="location-section">
 
     <div class="container">
 
       <div class="location-header">
 
         <span class="location-eyebrow">
-          Our Office
+          OUR LOCATION
         </span>
 
         <h2 class="section-title">
@@ -1249,8 +1546,9 @@
         </h2>
 
         <p class="section-intro">
-          Our official office is located in Wadajir District,
-          Mogadishu, Somalia.
+          Our official location is in Mogadishu, Somalia.
+          Visitors and partners are welcome to contact SDF
+          before visiting.
         </p>
 
       </div>
@@ -1258,33 +1556,33 @@
 
       <div class="location-grid">
 
-        <!-- LOCATION VISUAL -->
+
+        <!-- MAP -->
 
         <div class="map-card">
 
           <div class="map-content">
 
             <div class="map-pin">
-              📍
+              ⌖
             </div>
 
             <h2>
-              Somali Diabetes Foundation
+              SDF Office
             </h2>
 
             <p>
-              Jale Siad Street<br>
-              Danwadaagaha, Wadajir District<br>
-              Mogadishu, Somalia
+              Jale Siad Street, Danwadaagaha,
+              Wadajir District, Mogadishu, Somalia.
             </p>
 
             <a
               href="https://maps.app.goo.gl/HjfJZLxNPZpREEMu5"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               class="map-btn"
             >
-              Open Exact Location in Google Maps
+              Open Google Maps
             </a>
 
           </div>
@@ -1301,25 +1599,35 @@
           </div>
 
           <h3>
-            Official SDF Office
+            Official SDF Location
           </h3>
 
           <div class="location-address">
 
-            <strong>Address</strong><br>
+            <strong>
+              Address
+            </strong>
 
-            Jale Siad Street<br>
-            Danwadaagaha<br>
-            Wadajir District<br>
-            Mogadishu, Somalia
+            <br>
+
+            Jale Siad Street,
+            Danwadaagaha,
+            Wadajir District,
+            Mogadishu, Somalia.
 
           </div>
 
+
           <div class="location-divider"></div>
+
 
           <div class="location-contact">
 
-            <strong>Email</strong><br>
+            <strong>
+              Email
+            </strong>
+
+            <br>
 
             <a href="mailto:info@sdf.so">
               info@sdf.so
@@ -1327,7 +1635,11 @@
 
             <br><br>
 
-            <strong>Phone</strong><br>
+            <strong>
+              Phone
+            </strong>
+
+            <br>
 
             <a href="tel:+252771817681">
               +252 77 181 7681
@@ -1341,22 +1653,23 @@
             <a
               href="https://maps.app.goo.gl/HjfJZLxNPZpREEMu5"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               class="location-action"
             >
               Get Directions
             </a>
 
             <a
-              href="tel:+252771817681"
+              href="mailto:info@sdf.so"
               class="location-action secondary"
             >
-              Call SDF
+              Email SDF
             </a>
 
           </div>
 
         </div>
+
 
       </div>
 
@@ -1369,25 +1682,33 @@
        SUPPORT CTA
   ========================= -->
 
-  <section class="support-section">
+  <section class="support-cta">
 
     <div class="container">
 
-      <div class="support-box">
+      <h2>
+        Together, we can build a healthier Somalia.
+      </h2>
 
-        <h2>
-          Help Build a Healthier Somalia
-        </h2>
+      <p>
+        Whether through partnership, volunteering, research,
+        advocacy or financial support, your contribution can
+        help strengthen diabetes care and prevention in Somalia.
+      </p>
 
-        <p>
-          Together, we can strengthen diabetes awareness,
-          prevention, screening, patient support, research
-          and access to better diabetes care across Somalia.
-        </p>
+
+      <div class="cta-buttons">
 
         <a
-          href="index.html#donate"
-          class="support-btn"
+          href="get-involved.html"
+          class="btn btn-primary"
+        >
+          Get Involved
+        </a>
+
+        <a
+          href="donate.html"
+          class="btn btn-secondary"
         >
           Support SDF
         </a>
@@ -1409,7 +1730,8 @@
 
       <div class="footer-grid">
 
-        <!-- BRAND -->
+
+        <!-- ABOUT -->
 
         <div>
 
@@ -1417,7 +1739,8 @@
 
             <img
               src="sdf-logo.jpg"
-              alt="Somali Diabetes Foundation logo"
+              alt="Somali Diabetes Foundation Logo"
+              class="footer-logo"
             >
 
             <strong>
@@ -1426,96 +1749,116 @@
 
           </div>
 
-          <p>
-            Advancing diabetes awareness, prevention,
-            screening, education, research and patient
-            support for a healthier Somalia.
+          <p class="footer-description">
+            Working to strengthen diabetes awareness, prevention,
+            care, research, advocacy and community support in Somalia.
           </p>
 
         </div>
 
 
-        <!-- QUICK LINKS -->
+        <!-- EXPLORE -->
 
         <div>
 
-          <h3>Quick Links</h3>
+          <h4>
+            Explore
+          </h4>
 
-          <div class="footer-links">
+          <ul>
 
-            <a href="index.html">
-              Home
-            </a>
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
 
-            <a href="about.html">
-              About
-            </a>
+            <li>
+              <a href="about.html">
+                About
+              </a>
+            </li>
 
-            <a href="story.html">
-              Our Story
-            </a>
+            <li>
+              <a href="story.html">
+                Our Story
+              </a>
+            </li>
 
-            <a href="activities.html">
-              Activities
-            </a>
+            <li>
+              <a href="programs.html">
+                Programs
+              </a>
+            </li>
 
-            <a href="contact.html">
-              Contact
-            </a>
+            <li>
+              <a href="impact.html">
+                Impact
+              </a>
+            </li>
 
-          </div>
+          </ul>
 
         </div>
 
 
-        <!-- CONTACT -->
+        <!-- CONNECT -->
 
         <div>
 
-          <h3>Contact</h3>
+          <h4>
+            Connect
+          </h4>
 
-          <div class="footer-links">
+          <ul>
 
-            <a href="mailto:info@sdf.so">
-              info@sdf.so
-            </a>
+            <li>
+              <a href="research.html">
+                Research
+              </a>
+            </li>
 
-            <a href="tel:+252771817681">
-              +252 77 181 7681
-            </a>
+            <li>
+              <a href="activities.html">
+                Activities
+              </a>
+            </li>
 
-            <a
-              href="https://maps.app.goo.gl/HjfJZLxNPZpREEMu5"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mogadishu, Somalia
-            </a>
+            <li>
+              <a href="get-involved.html">
+                Get Involved
+              </a>
+            </li>
 
-            <a
-              href="https://www.facebook.com/profile.php?id=61569013594389"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
+            <li>
+              <a href="contact.html">
+                Contact
+              </a>
+            </li>
 
-          </div>
+            <li>
+              <a href="mailto:info@sdf.so">
+                info@sdf.so
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+252771817681">
+                +252 77 181 7681
+              </a>
+            </li>
+
+          </ul>
 
         </div>
+
 
       </div>
 
 
       <div class="footer-bottom">
 
-        <p>
-          © 2026 Somali Diabetes Foundation. All rights reserved.
-        </p>
-
-        <p>
-          Mogadishu, Somalia
-        </p>
+        © 2026 Somali Diabetes Foundation (SDF). All rights reserved.
 
       </div>
 
@@ -1525,60 +1868,81 @@
 
 
   <!-- =========================
-       CONTACT FORM SCRIPT
+       JAVASCRIPT
   ========================= -->
 
   <script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuToggle =
+      document.querySelector(".menu-toggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        mainNav.classList.toggle("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+      menuToggle.textContent =
+        isOpen ? "✕" : "☰";
+
+    });
+
+
     document
-      .getElementById("contactForm")
-      .addEventListener("submit", function(event) {
+      .querySelectorAll("#mainNav a")
+      .forEach(function (link) {
 
-        event.preventDefault();
+        link.addEventListener("click", function () {
 
-        const name =
-          document.getElementById("name").value.trim();
+          mainNav.classList.remove("open");
 
-        const email =
-          document.getElementById("email").value.trim();
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
-        const phone =
-          document.getElementById("phone").value.trim();
+          menuToggle.textContent = "☰";
 
-        const organization =
-          document.getElementById("organization").value.trim();
-
-        const inquiry =
-          document.getElementById("inquiry").value;
-
-        const message =
-          document.getElementById("message").value.trim();
-
-
-        const subject =
-          "SDF Website Inquiry - " + inquiry;
-
-
-        const body =
-          "Full Name: " + name + "\n\n" +
-          "Email Address: " + email + "\n\n" +
-          "Phone Number: " + (phone || "Not provided") + "\n\n" +
-          "Organization / Institution: " +
-          (organization || "Not provided") + "\n\n" +
-          "Inquiry Type: " + inquiry + "\n\n" +
-          "Message:\n" + message;
-
-
-        const mailto =
-          "mailto:info@sdf.so" +
-          "?subject=" +
-          encodeURIComponent(subject) +
-          "&body=" +
-          encodeURIComponent(body);
-
-
-        window.location.href = mailto;
+        });
 
       });
+
+
+    /* =========================
+       FORMSPREE SUBMISSION
+    ========================= */
+
+    const contactForm =
+      document.getElementById("contact-form");
+
+    const submitButton =
+      document.getElementById("submit-btn");
+
+
+    contactForm.addEventListener(
+      "submit",
+      function () {
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+          "Sending...";
+
+      }
+    );
+
   </script>
 
 </body>

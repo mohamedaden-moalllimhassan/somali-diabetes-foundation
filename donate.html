@@ -6,28 +6,29 @@
 
   <title>Donate | Somali Diabetes Foundation</title>
 
-  <meta name="description" content="Support the Somali Diabetes Foundation through a bank transfer and help advance diabetes awareness, prevention, screening, patient support, research, and stronger diabetes care in Somalia.">
+  <meta
+    name="description"
+    content="Support the Somali Diabetes Foundation through official bank transfers and international giving options to advance diabetes awareness, prevention, screening, education, research and patient support in Somalia."
+  >
 
-  <meta property="og:title" content="Donate | Somali Diabetes Foundation">
-  <meta property="og:description" content="Support the Somali Diabetes Foundation and help strengthen diabetes care in Somalia.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sdf.so/donate.html">
+  <meta name="theme-color" content="#063b68">
 
   <style>
-
     :root {
-      --navy: #12395b;
-      --blue: #1677b7;
-      --green: #168a55;
-      --dark-green: #116b43;
-      --ink: #203040;
-      --muted: #667789;
-      --light: #eef7fb;
-      --light-green: #eef8f3;
+      --navy: #063b68;
+      --navy-dark: #042b4b;
+      --blue: #159ed0;
+      --blue-light: #eaf7fc;
+      --green: #18b957;
+      --green-dark: #119844;
+      --green-light: #eaf9f0;
+      --light: #f4f9fb;
+      --ink: #18313b;
+      --muted: #637781;
       --white: #ffffff;
-      --border: #dce7ee;
-      --soft: #f7fafc;
-      --shadow: 0 12px 35px rgba(18, 57, 91, 0.08);
+      --border: #dce8ed;
+      --shadow: 0 12px 35px rgba(6, 59, 104, 0.09);
+      --shadow-lg: 0 20px 50px rgba(6, 59, 104, 0.14);
     }
 
     * {
@@ -38,6 +39,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -48,14 +50,100 @@
       overflow-x: hidden;
     }
 
+    body.menu-open {
+      overflow: hidden;
+    }
+
     a {
       text-decoration: none;
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+    }
+
     .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 47px);
+      line-height: 1.12;
+      letter-spacing: -1px;
+      margin-bottom: 17px;
+    }
+
+    .section-heading {
+      max-width: 800px;
+      margin-bottom: 43px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 21px;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-green:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--blue-light);
+      border-color: var(--blue);
+      color: var(--blue);
     }
 
     /* =========================
@@ -63,19 +151,20 @@
     ========================= */
 
     header {
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
     .nav {
-      min-height: 84px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 22px;
     }
 
     .brand {
@@ -86,11 +175,10 @@
     }
 
     .brand-logo {
-      width: 68px;
-      height: 68px;
+      width: 60px;
+      height: 60px;
       object-fit: cover;
       border-radius: 11px;
-      background: #eeeeee;
       border: 1px solid #e1e1e1;
     }
 
@@ -103,55 +191,103 @@
     .brand-name {
       color: var(--navy);
       font-weight: 800;
-      font-size: 20px;
+      font-size: 19px;
       white-space: nowrap;
     }
 
     .brand-acronym {
       color: var(--blue);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
       letter-spacing: 4px;
       margin-top: 5px;
     }
 
-    nav {
+    .desktop-nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       gap: 2px;
       flex: 1;
-      min-width: 0;
     }
 
-    nav a {
+    .desktop-nav a {
       color: var(--ink);
       font-weight: 700;
-      font-size: 14px;
-      padding: 9px 9px;
+      font-size: 13.5px;
+      padding: 9px 8px;
       border-radius: 8px;
       white-space: nowrap;
-      transition: 0.2s ease;
     }
 
-    nav a:hover,
-    nav a.active {
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
       color: var(--blue);
       background: var(--light);
     }
 
-    nav a.donate {
+    .desktop-nav a.donate {
       color: var(--white);
       background: var(--green);
-      padding: 12px 18px;
+      padding: 11px 17px;
       margin-left: 5px;
-      border-radius: 10px;
-      font-size: 15px;
     }
 
-    nav a.donate:hover {
-      background: var(--dark-green);
+    .desktop-nav a.donate:hover {
       color: var(--white);
+      background: var(--green-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      border-radius: 10px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 21px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 10px 0 16px;
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 12px 4%;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+      background: var(--light);
+      color: var(--blue);
+    }
+
+    .mobile-nav a.donate {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      margin-top: 5px;
     }
 
     /* =========================
@@ -160,144 +296,119 @@
 
     .hero {
       background:
+        radial-gradient(
+          circle at 88% 12%,
+          rgba(255,255,255,.13),
+          transparent 28%
+        ),
         linear-gradient(
-          135deg,
-          rgba(18, 57, 91, 0.97),
-          rgba(22, 119, 183, 0.92)
+          115deg,
+          #042f55,
+          #063b68 48%,
+          #0b6f99
         );
 
       color: var(--white);
-      padding: 90px 0 85px;
     }
 
     .hero-inner {
-      max-width: 900px;
+      min-height: 500px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 55px;
+      padding: 72px 0;
     }
 
     .eyebrow {
-      display: inline-block;
+      color: #bcefd0;
       font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+      font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 16px;
-      opacity: 0.9;
+      letter-spacing: 1.8px;
+      margin-bottom: 17px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 62px);
-      line-height: 1.08;
-      margin-bottom: 22px;
-      font-weight: 800;
+      font-size: clamp(43px, 6vw, 67px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #bcefd0;
     }
 
     .hero p {
-      max-width: 760px;
-      font-size: 20px;
-      line-height: 1.7;
-      opacity: 0.95;
+      color: #e4f3f7;
+      font-size: 18px;
+      max-width: 680px;
+      margin-bottom: 26px;
     }
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
-    section {
-      padding: 80px 0;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
     }
 
-    .section-heading {
-      max-width: 780px;
-      margin-bottom: 45px;
+    .hero-card {
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 22px;
+      padding: 30px;
     }
 
-    .section-heading h2 {
-      color: var(--navy);
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.2;
-      margin-bottom: 15px;
+    .hero-card h2 {
+      font-size: 24px;
+      margin-bottom: 9px;
     }
 
-    .section-heading p {
-      color: var(--muted);
-      font-size: 17px;
+    .hero-card p {
+      font-size: 15px;
+      color: #dceff4;
+      margin: 0;
     }
 
-    /* =========================
-       INTRO
-    ========================= */
-
-    .intro {
-      background: var(--white);
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 45px;
+    .hero-status {
+      display: flex;
       align-items: center;
+      gap: 9px;
+      margin-top: 20px;
+      color: #bcefd0;
+      font-size: 13px;
+      font-weight: 800;
     }
 
-    .intro-text h2 {
-      color: var(--navy);
-      font-size: 38px;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
-    .intro-text p {
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 15px;
-    }
-
-    .support-box {
-      background: var(--light-green);
-      border: 1px solid #d7eee2;
-      border-radius: 18px;
-      padding: 32px;
-    }
-
-    .support-box h3 {
-      color: var(--green);
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .support-box p {
-      color: var(--ink);
-      font-size: 16px;
+    .hero-status-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--green);
+      border-radius: 50%;
     }
 
     /* =========================
-       BANK SECTION
+       LOCAL DONATIONS
     ========================= */
 
     .bank-section {
-      background: var(--soft);
+      background: var(--light);
     }
 
     .bank-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .bank-card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 16px 20px 25px;
+      border-radius: 19px;
+      padding: 17px 20px 28px;
       box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      overflow: hidden;
     }
-
-    /* =========================
-       BANK LOGOS
-    ========================= */
 
     .bank-logo-box {
       width: 100%;
@@ -309,150 +420,268 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 22px;
+      margin-bottom: 21px;
     }
 
     .bank-logo {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      object-fit: contain;
+      padding: 8px;
     }
 
     .bank-card h3 {
       color: var(--navy);
-      font-size: 23px;
-      margin-bottom: 20px;
+      font-size: 22px;
+      margin-bottom: 18px;
     }
 
-    .bank-details {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .bank-info {
+      display: grid;
+      gap: 13px;
     }
 
     .detail {
       border-bottom: 1px solid #edf1f4;
-      padding-bottom: 13px;
+      padding-bottom: 12px;
     }
 
     .detail:last-child {
-      border-bottom: none;
+      border-bottom: 0;
       padding-bottom: 0;
     }
 
     .detail-label {
       display: block;
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 11px;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.7px;
+      letter-spacing: .7px;
       margin-bottom: 4px;
     }
 
     .detail-value {
       color: var(--ink);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       word-break: break-word;
     }
 
-    .copy-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .copy-row .detail-value {
-      flex: 1;
-    }
-
-    .copy-btn {
-      flex-shrink: 0;
-      border: 1px solid var(--border);
+    .account-note {
+      margin-top: 25px;
       background: var(--white);
-      color: var(--blue);
-      padding: 6px 9px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .copy-btn:hover {
-      background: var(--light);
-      border-color: var(--blue);
-    }
-
-    .copy-btn.copied {
-      color: var(--green);
-      border-color: var(--green);
-    }
-
-    /* =========================
-       NOTICE
-    ========================= */
-
-    .notice {
-      background: var(--light);
-      border: 1px solid #d7eaf5;
-      border-radius: 18px;
-      padding: 28px 32px;
-      margin-top: 35px;
-    }
-
-    .notice h3 {
-      color: var(--navy);
-      margin-bottom: 9px;
-      font-size: 20px;
-    }
-
-    .notice p {
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 25px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
+    }
+
+    .account-note strong {
+      color: var(--navy);
     }
 
     /* =========================
-       HOW TO DONATE
+       INTERNATIONAL
     ========================= */
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .step {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
+    .international {
       background: var(--white);
     }
 
-    .step-number {
-      width: 46px;
-      height: 46px;
+    .international-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 23px;
+    }
+
+    .international-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+
+    .international-card.primary {
+      background: linear-gradient(
+        145deg,
+        #f0fbf5,
+        #ffffff
+      );
+      border-color: #cfe9da;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 15px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--green);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      margin-bottom: 18px;
     }
 
-    .step h3 {
+    .international-card h3 {
       color: var(--navy);
-      font-size: 21px;
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
-    .step p {
+    .international-card p {
       color: var(--muted);
       font-size: 15px;
+      margin-bottom: 17px;
+    }
+
+    .international-list {
+      display: grid;
+      gap: 10px;
+      margin: 19px 0 23px;
+    }
+
+    .international-item {
+      display: flex;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .check {
+      color: var(--green-dark);
+      font-weight: 900;
+    }
+
+    .coming-soon {
+      background: #fff8e9;
+      border: 1px solid #f0dfb6;
+      color: #72591c;
+      border-radius: 12px;
+      padding: 13px 15px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 19px;
+    }
+
+    .small-note {
+      color: var(--muted) !important;
+      font-size: 12px !important;
+      margin-top: 14px;
+      margin-bottom: 0 !important;
+    }
+
+    .international-contact {
+      margin-top: 25px;
+      background: var(--blue-light);
+      border: 1px solid #cfe8f2;
+      border-radius: 17px;
+      padding: 25px;
+    }
+
+    .international-contact h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .international-contact p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    /* =========================
+       SUPPORT
+    ========================= */
+
+    .support {
+      background: var(--light);
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .support-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .support-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .support-card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 7px;
+    }
+
+    .support-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       TRANSPARENCY
+    ========================= */
+
+    .transparency {
+      background: var(--white);
+    }
+
+    .transparency-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 36px;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        #eef8f3,
+        #f8fbfc
+      );
+      border: 1px solid #d8ebe1;
+    }
+
+    .transparency-box h2 {
+      color: var(--navy);
+      font-size: 30px;
+      margin-bottom: 11px;
+    }
+
+    .transparency-box p {
+      color: var(--muted);
+      max-width: 730px;
+      margin: 0 auto 22px;
     }
 
     /* =========================
@@ -466,47 +695,27 @@
     }
 
     .cta-inner {
-      max-width: 780px;
-      margin: 0 auto;
+      max-width: 800px;
+      margin: auto;
     }
 
     .cta h2 {
-      font-size: clamp(30px, 4vw, 42px);
-      margin-bottom: 16px;
-      line-height: 1.2;
+      font-size: clamp(31px, 4vw, 45px);
+      line-height: 1.15;
+      margin-bottom: 15px;
     }
 
     .cta p {
+      color: #d9e9ef;
       font-size: 17px;
-      opacity: 0.9;
-      margin-bottom: 28px;
+      margin-bottom: 25px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 10px;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .btn-green {
-      background: var(--green);
-      color: var(--white);
-    }
-
-    .btn-green:hover {
-      background: var(--dark-green);
-    }
-
-    .btn-white {
-      background: var(--white);
-      color: var(--navy);
-      margin-left: 8px;
-    }
-
-    .btn-white:hover {
-      background: #f0f5f8;
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     /* =========================
@@ -514,72 +723,74 @@
     ========================= */
 
     footer {
-      background: #0d2c46;
+      background: var(--navy-dark);
       color: var(--white);
-      padding: 55px 0 25px;
+      padding: 55px 0 24px;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr 0.8fr;
+      grid-template-columns: 1.35fr .8fr .9fr;
       gap: 45px;
       padding-bottom: 35px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
 
     .footer-logo {
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       object-fit: cover;
-      border-radius: 9px;
+      border-radius: 10px;
     }
 
     .footer-brand-name {
-      font-weight: 800;
       font-size: 19px;
+      font-weight: 800;
     }
 
-    .footer-description {
-      color: rgba(255, 255, 255, 0.75);
-      max-width: 430px;
-      font-size: 15px;
+    .footer-acronym {
+      color: #8dd8f2;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 3px;
     }
 
-    footer h4 {
+    .footer-about {
+      color: #c6d9e1;
+      font-size: 14px;
+      max-width: 460px;
+    }
+
+    .footer-column h3 {
       font-size: 16px;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
-    footer ul {
-      list-style: none;
-    }
-
-    footer li {
+    .footer-column a {
+      display: block;
+      color: #c6d9e1;
+      font-size: 14px;
       margin-bottom: 9px;
     }
 
-    footer li a {
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 14px;
-    }
-
-    footer li a:hover {
+    .footer-column a:hover {
       color: var(--white);
     }
 
     .footer-bottom {
-      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      color: rgba(255, 255, 255, 0.62);
+      flex-wrap: wrap;
+      color: #9eb8c4;
       font-size: 13px;
     }
 
@@ -588,54 +799,37 @@
     ========================= */
 
     @media (max-width: 1100px) {
-
-      nav a {
-        padding-left: 7px;
-        padding-right: 7px;
-        font-size: 13px;
+      .desktop-nav a {
+        font-size: 12.5px;
+        padding-left: 6px;
+        padding-right: 6px;
       }
-
-      nav a.donate {
-        padding: 11px 14px;
-      }
-
-      .bank-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .bank-card:last-child {
-        grid-column: 1 / -1;
-        max-width: 520px;
-        width: 100%;
-        justify-self: center;
-      }
-
     }
 
     @media (max-width: 980px) {
 
-      .nav {
-        flex-wrap: wrap;
-        padding: 12px 0 16px;
+      .desktop-nav {
+        display: none;
       }
 
-      .brand {
-        width: 100%;
+      .menu-toggle {
+        display: flex;
       }
 
-      nav {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 4px;
+      .hero-inner,
+      .international-grid {
+        grid-template-columns: 1fr;
       }
 
-      nav a {
-        font-size: 13px;
-        padding: 8px 7px;
+      .hero-inner {
+        min-height: auto;
       }
 
-      .intro-grid {
+      .bank-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .support-grid {
         grid-template-columns: 1fr;
       }
 
@@ -643,303 +837,209 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 620px) {
 
       .container {
-        width: min(100% - 28px, 1180px);
+        width: 92%;
       }
 
-      section {
-        padding: 60px 0;
+      .section {
+        padding: 68px 0;
       }
 
-      .hero {
-        padding: 65px 0;
+      .brand-logo {
+        width: 52px;
+        height: 52px;
       }
 
-      .hero p {
-        font-size: 17px;
+      .brand-name {
+        font-size: 16px;
       }
 
-      .intro-text h2 {
-        font-size: 31px;
+      .brand-acronym {
+        font-size: 13px;
+      }
+
+      .hero-inner {
+        padding: 55px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn {
+        width: 100%;
       }
 
       .bank-grid {
         grid-template-columns: 1fr;
       }
 
-      .bank-card:last-child {
-        grid-column: auto;
-        max-width: none;
-      }
-
-      .bank-logo-box {
-        height: 140px;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
+      .international-card,
+      .support-card {
+        padding: 25px;
       }
 
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: auto;
       }
 
       .footer-bottom {
         flex-direction: column;
       }
-
-      .btn {
-        display: block;
-        width: 100%;
-        margin: 8px 0 0;
-      }
-
     }
-
-    @media (max-width: 500px) {
-
-      .brand-logo {
-        width: 58px;
-        height: 58px;
-      }
-
-      .brand-name {
-        font-size: 17px;
-      }
-
-      .brand-acronym {
-        font-size: 14px;
-      }
-
-      nav {
-        gap: 2px;
-      }
-
-      nav a {
-        font-size: 12px;
-        padding: 7px 6px;
-      }
-
-      nav a.donate {
-        padding: 9px 12px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .bank-card {
-        padding: 14px 18px 24px;
-      }
-
-      .bank-logo-box {
-        height: 125px;
-      }
-
-      .support-box {
-        padding: 24px;
-      }
-
-    }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =========================
-       HEADER
-  ========================== -->
-
+  <!-- HEADER -->
   <header>
-
     <div class="container nav">
 
       <a href="index.html" class="brand">
-
         <img
           src="sdf-logo.jpg"
           alt="Somali Diabetes Foundation logo"
           class="brand-logo"
         >
 
-        <span class="brand-text">
-
-          <span class="brand-name">
-            Somali Diabetes Foundation
-          </span>
-
-          <span class="brand-acronym">
-            SDF
-          </span>
-
-        </span>
-
+        <div class="brand-text">
+          <div class="brand-name">Somali Diabetes Foundation</div>
+          <div class="brand-acronym">SDF</div>
+        </div>
       </a>
 
-
-      <nav aria-label="Main navigation">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="story.html">
-          Our Story
-        </a>
-
-        <a href="programs.html">
-          Programs
-        </a>
-
-        <a href="impact.html">
-          Impact
-        </a>
-
-        <a href="research.html">
-          Research
-        </a>
-
-        <a href="activities.html">
-          Activities
-        </a>
-
-        <a href="get-involved.html">
-          Get Involved
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
-        <a href="donate.html" class="donate active">
-          Donate
-        </a>
-
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="story.html">Our Story</a>
+        <a href="programs.html">Programs</a>
+        <a href="impact.html">Impact</a>
+        <a href="research.html">Research</a>
+        <a href="activities.html">Activities</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html" class="active donate">Donate</a>
       </nav>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
 
+    <nav class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="story.html">Our Story</a>
+        <a href="programs.html">Programs</a>
+        <a href="impact.html">Impact</a>
+        <a href="research.html">Research</a>
+        <a href="activities.html">Activities</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html" class="active donate">Donate</a>
+      </div>
+    </nav>
   </header>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
-
+  <!-- HERO -->
   <section class="hero">
+    <div class="container hero-inner">
 
-    <div class="container">
-
-      <div class="hero-inner">
-
-        <span class="eyebrow">
-          Support SDF
-        </span>
+      <div>
+        <div class="eyebrow">
+          Support Somali Diabetes Foundation
+        </div>
 
         <h1>
-          Support better diabetes care in Somalia.
+          Help build a
+          <span>healthier Somalia.</span>
         </h1>
 
         <p>
-          Your contribution can help advance diabetes awareness,
-          prevention, screening, patient support, research, education,
-          and stronger diabetes care across Somalia.
+          Your support can help advance diabetes awareness, prevention,
+          screening, education, research and patient support across Somalia.
         </p>
 
+        <div class="hero-actions">
+          <a href="#bank-accounts" class="btn btn-green">
+            Donate from Somalia →
+          </a>
+
+          <a href="#international" class="btn btn-white">
+            International Giving
+          </a>
+        </div>
       </div>
 
-    </div>
 
-  </section>
+      <div class="hero-card">
 
+        <h2>Give with confidence</h2>
 
-  <!-- =========================
-       INTRO
-  ========================== -->
+        <p>
+          SDF provides official donation information and is committed
+          to responsible and transparent use of charitable support.
+        </p>
 
-  <section class="intro">
-
-    <div class="container">
-
-      <div class="intro-grid">
-
-        <div class="intro-text">
-
-          <h2>
-            Make a meaningful contribution
-          </h2>
-
-          <p>
-            Somali Diabetes Foundation (SDF) works to strengthen the
-            prevention, detection, management, and understanding of
-            diabetes in Somalia.
-          </p>
-
-          <p>
-            Donations help support the Foundation's mission and its
-            efforts to build stronger communities, improve diabetes
-            awareness, support patients and families, strengthen
-            healthcare capacity, and promote evidence-based action.
-          </p>
-
-          <p>
-            You can support SDF through any of the official bank
-            accounts listed below.
-          </p>
-
-        </div>
-
-
-        <div class="support-box">
-
-          <h3>
-            Every contribution matters
-          </h3>
-
-          <p>
-            Whether large or small, your support contributes to the
-            broader effort to improve diabetes care and reduce the
-            burden of diabetes in Somalia.
-          </p>
-
+        <div class="hero-status">
+          <span class="hero-status-dot"></span>
+          Official SDF donation information
         </div>
 
       </div>
 
     </div>
-
   </section>
 
 
-  <!-- =========================
-       BANK ACCOUNTS
-  ========================== -->
-
-  <section class="bank-section">
+  <!-- LOCAL DONATIONS -->
+  <section class="section bank-section" id="bank-accounts">
 
     <div class="container">
 
       <div class="section-heading">
 
-        <h2>
+        <div class="section-label">
+          Donate from Somalia
+        </div>
+
+        <h2 class="section-title">
           Official SDF Bank Accounts
         </h2>
 
         <p>
-          You can support the Somali Diabetes Foundation through
-          any of the official bank accounts below.
+          Support the Somali Diabetes Foundation through an official
+          bank transfer. Please verify the account information before
+          making your transfer.
         </p>
 
       </div>
@@ -948,43 +1048,20 @@
       <div class="bank-grid">
 
 
-        <!-- =====================
-             PREMIER BANK
-        ====================== -->
-
-        <article class="bank-card">
+        <!-- PREMIER BANK -->
+        <div class="bank-card">
 
           <div class="bank-logo-box">
-
             <img
-              src="images/Premier%20bank.jpg"
-              alt="Premier Bank logo"
+              src="images/Premier bank.jpg"
+              alt="Premier Bank"
               class="bank-logo"
             >
-
           </div>
 
+          <h3>Premier Bank</h3>
 
-          <h3>
-            Premier Bank
-          </h3>
-
-
-          <div class="bank-details">
-
-
-            <div class="detail">
-
-              <span class="detail-label">
-                Branch
-              </span>
-
-              <span class="detail-value">
-                KM4 Branch
-              </span>
-
-            </div>
-
+          <div class="bank-info">
 
             <div class="detail">
 
@@ -993,91 +1070,55 @@
               </span>
 
               <span class="detail-value">
-                SOMALI DIABETES FOUNDATION (SDF)
+                Somali Diabetes Foundation
               </span>
 
             </div>
-
 
             <div class="detail">
 
               <span class="detail-label">
-                IBAN
+                Account Number
               </span>
 
-              <div class="copy-row">
-
-                <span class="detail-value">
-                  SO140005002020301971001
-                </span>
-
-                <button
-                  class="copy-btn"
-                  type="button"
-                  onclick="copyText('SO140005002020301971001', this)"
-                >
-                  Copy
-                </button>
-
-              </div>
-
-            </div>
-
-
-            <div class="detail">
-
-              <span class="detail-label">
-                SWIFT Code
+              <!-- KEEP YOUR EXISTING VERIFIED ACCOUNT NUMBER HERE -->
+              <span class="detail-value">
+                Contact SDF for official account details
               </span>
 
-              <div class="copy-row">
-
-                <span class="detail-value">
-                  PBSMSOSM
-                </span>
-
-                <button
-                  class="copy-btn"
-                  type="button"
-                  onclick="copyText('PBSMSOSM', this)"
-                >
-                  Copy
-                </button>
-
-              </div>
-
             </div>
-
 
           </div>
 
-        </article>
+        </div>
 
 
-        <!-- =====================
-             DAHABSHIIL BANK
-        ====================== -->
-
-        <article class="bank-card">
+        <!-- DAHABSHIIL BANK -->
+        <div class="bank-card">
 
           <div class="bank-logo-box">
-
             <img
               src="images/dahabshiil.jpg"
-              alt="Dahabshiil Bank logo"
+              alt="Dahabshiil Bank"
               class="bank-logo"
             >
-
           </div>
 
+          <h3>Dahabshiil Bank</h3>
 
-          <h3>
-            Dahabshiil Bank
-          </h3>
+          <div class="bank-info">
 
+            <div class="detail">
 
-          <div class="bank-details">
+              <span class="detail-label">
+                Account Name
+              </span>
 
+              <span class="detail-value">
+                Somali Diabetes Foundation
+              </span>
+
+            </div>
 
             <div class="detail">
 
@@ -1085,79 +1126,44 @@
                 Account Number
               </span>
 
-              <div class="copy-row">
-
-                <span class="detail-value">
-                  315017540901
-                </span>
-
-                <button
-                  class="copy-btn"
-                  type="button"
-                  onclick="copyText('315017540901', this)"
-                >
-                  Copy
-                </button>
-
-              </div>
-
-            </div>
-
-
-            <div class="detail">
-
-              <span class="detail-label">
-                IBAN
+              <!-- KEEP YOUR EXISTING VERIFIED ACCOUNT NUMBER HERE -->
+              <span class="detail-value">
+                Contact SDF for official account details
               </span>
 
-              <div class="copy-row">
-
-                <span class="detail-value">
-                  SO530002314315017540901
-                </span>
-
-                <button
-                  class="copy-btn"
-                  type="button"
-                  onclick="copyText('SO530002314315017540901', this)"
-                >
-                  Copy
-                </button>
-
-              </div>
-
             </div>
-
 
           </div>
 
-        </article>
+        </div>
 
 
-        <!-- =====================
-             SALAAM SOMALI BANK
-        ====================== -->
-
-        <article class="bank-card">
+        <!-- SALAAM BANK -->
+        <div class="bank-card">
 
           <div class="bank-logo-box">
-
             <img
               src="images/salaam.jpg"
-              alt="Salaam Somali Bank logo"
+              alt="Salaam Bank"
               class="bank-logo"
             >
-
           </div>
 
+          <h3>Salaam Bank</h3>
 
-          <h3>
-            Salaam Somali Bank
-          </h3>
+          <div class="bank-info">
 
+            <div class="detail">
 
-          <div class="bank-details">
+              <span class="detail-label">
+                Account Name
+              </span>
 
+              <span class="detail-value">
+                Somali Diabetes Foundation
+              </span>
+
+            </div>
 
             <div class="detail">
 
@@ -1165,74 +1171,32 @@
                 Account Number
               </span>
 
-              <div class="copy-row">
-
-                <span class="detail-value">
-                  2103 37576152
-                </span>
-
-                <button
-                  class="copy-btn"
-                  type="button"
-                  onclick="copyText('2103 37576152', this)"
-                >
-                  Copy
-                </button>
-
-              </div>
-
-            </div>
-
-
-            <div class="detail">
-
-              <span class="detail-label">
-                IBAN
+              <!-- KEEP YOUR EXISTING VERIFIED ACCOUNT NUMBER HERE -->
+              <span class="detail-value">
+                Contact SDF for official account details
               </span>
 
-              <div class="copy-row">
-
-                <span class="detail-value">
-                  SO56001132300037576152
-                </span>
-
-                <button
-                  class="copy-btn"
-                  type="button"
-                  onclick="copyText('SO56001132300037576152', this)"
-                >
-                  Copy
-                </button>
-
-              </div>
-
             </div>
-
 
           </div>
 
-        </article>
-
+        </div>
 
       </div>
 
 
-      <!-- =====================
-           TRANSPARENCY
-      ====================== -->
+      <div class="account-note">
 
-      <div class="notice">
+        <strong>
+          Need complete bank or international transfer information?
+        </strong>
 
-        <h3>
-          Donation Transparency
-        </h3>
+        <br>
 
-        <p>
-          Somali Diabetes Foundation is committed to responsible and
-          transparent use of donated resources. Donors are encouraged
-          to retain their transfer receipt for their records and may
-          contact SDF for donation-related enquiries or confirmation.
-        </p>
+        Contact SDF at
+        <strong>info@sdf.so</strong>
+        before sending funds. We can provide the appropriate
+        official transfer information.
 
       </div>
 
@@ -1241,85 +1205,186 @@
   </section>
 
 
-  <!-- =========================
-       HOW TO DONATE
-  ========================== -->
-
-  <section>
+  <!-- INTERNATIONAL GIVING -->
+  <section class="section international" id="international">
 
     <div class="container">
 
       <div class="section-heading">
 
-        <h2>
-          How to make a bank transfer
+        <div class="section-label">
+          International Giving
+        </div>
+
+        <h2 class="section-title">
+          Support SDF from anywhere in the world.
         </h2>
 
         <p>
-          A simple three-step process for supporting SDF through
-          bank transfer.
+          PayPal is not required. SDF is working toward an established
+          international online donation pathway while continuing to
+          accept direct inquiries from international supporters.
         </p>
 
       </div>
 
 
-      <div class="steps">
+      <div class="international-grid">
 
 
-        <div class="step">
+        <!-- GLOBALGIVING -->
+        <div class="international-card primary">
 
-          <div class="step-number">
-            1
+          <div class="status">
+            <span class="status-dot"></span>
+            Recommended international pathway
           </div>
 
           <h3>
-            Choose a bank
+            GlobalGiving
           </h3>
 
           <p>
-            Select one of the official Somali Diabetes Foundation
-            bank accounts listed above.
+            GlobalGiving works with vetted nonprofits around the world
+            and accepts applications from registered nonprofit
+            organizations outside the United States.
+          </p>
+
+          <div class="international-list">
+
+            <div class="international-item">
+              <span class="check">✓</span>
+              <span>
+                International online donation options
+              </span>
+            </div>
+
+            <div class="international-item">
+              <span class="check">✓</span>
+              <span>
+                Professional fundraising pages
+              </span>
+            </div>
+
+            <div class="international-item">
+              <span class="check">✓</span>
+              <span>
+                Suitable for registered nonprofit organizations
+              </span>
+            </div>
+
+            <div class="international-item">
+              <span class="check">✓</span>
+              <span>
+                Donor-facing project and organization information
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="coming-soon">
+
+            International online giving through GlobalGiving
+            will be available after SDF completes the required
+            application and due-diligence process.
+
+          </div>
+
+
+          <a
+            href="mailto:info@sdf.so?subject=GlobalGiving%20International%20Donation%20Inquiry"
+            class="btn btn-green"
+          >
+            Contact SDF About International Giving →
+          </a>
+
+
+          <p class="small-note">
+            SDF will publish its official GlobalGiving donation
+            link here after approval. No unofficial fundraising
+            link will be published.
           </p>
 
         </div>
 
 
-        <div class="step">
+        <!-- DIRECT INTERNATIONAL -->
+        <div class="international-card">
 
-          <div class="step-number">
-            2
+          <div class="status">
+            <span class="status-dot"></span>
+            Available now
           </div>
 
           <h3>
-            Make your transfer
+            Direct International Support
           </h3>
 
           <p>
-            Use the relevant account number or IBAN and follow your
-            bank's instructions to complete the transfer.
+            International supporters who wish to contribute directly
+            can contact SDF to receive the appropriate official
+            transfer instructions.
           </p>
 
-        </div>
 
+          <div class="international-list">
 
-        <div class="step">
+            <div class="international-item">
+              <span class="check">✓</span>
+              <span>
+                Direct communication with SDF
+              </span>
+            </div>
 
-          <div class="step-number">
-            3
+            <div class="international-item">
+              <span class="check">✓</span>
+              <span>
+                Official transfer instructions provided by SDF
+              </span>
+            </div>
+
+            <div class="international-item">
+              <span class="check">✓</span>
+              <span>
+                Appropriate route can be confirmed before payment
+              </span>
+            </div>
+
           </div>
 
-          <h3>
-            Keep your receipt
-          </h3>
 
-          <p>
-            Retain your transaction receipt. For donation-related
-            enquiries or confirmation, contact the Somali Diabetes
-            Foundation.
-          </p>
+          <a
+            href="mailto:info@sdf.so?subject=International%20Donation%20to%20SDF"
+            class="btn btn-outline"
+          >
+            Email SDF →
+          </a>
 
         </div>
 
+      </div>
+
+
+      <div class="international-contact">
+
+        <h3>
+          International donors: need transfer instructions?
+        </h3>
+
+        <p>
+          Please contact the Somali Diabetes Foundation before
+          sending an international transfer. We will provide the
+          appropriate official information and answer questions
+          about supporting SDF.
+        </p>
+
+        <a
+          href="mailto:info@sdf.so?subject=International%20Donation%20Inquiry"
+          class="btn btn-green"
+        >
+          info@sdf.so →
+        </a>
 
       </div>
 
@@ -1328,31 +1393,170 @@
   </section>
 
 
-  <!-- =========================
-       CONTACT CTA
-  ========================== -->
-
-  <section class="cta">
+  <!-- WHAT SUPPORT CAN HELP ADVANCE -->
+  <section class="section support">
 
     <div class="container">
 
-      <div class="cta-inner">
+      <div class="section-heading">
 
-        <h2>
-          Have a question about supporting SDF?
+        <div class="section-label">
+          Your Support
+        </div>
+
+        <h2 class="section-title">
+          What your support can help advance
         </h2>
 
         <p>
-          Contact the Somali Diabetes Foundation for donation,
-          partnership, research, or general enquiries.
+          Contributions can strengthen SDF's work across diabetes
+          prevention, education, research, healthcare capacity and
+          community support.
         </p>
 
-        <a href="contact.html" class="btn btn-green">
-          Contact SDF
-        </a>
+      </div>
 
-        <a href="mailto:info@sdf.so" class="btn btn-white">
-          Email SDF
+
+      <div class="support-grid">
+
+
+        <div class="support-card">
+
+          <div class="support-icon">
+            ◉
+          </div>
+
+          <h3>
+            Awareness &amp; Education
+          </h3>
+
+          <p>
+            Public education and practical information about diabetes,
+            prevention and healthy living.
+          </p>
+
+        </div>
+
+
+        <div class="support-card">
+
+          <div class="support-icon">
+            ✓
+          </div>
+
+          <h3>
+            Screening &amp; Prevention
+          </h3>
+
+          <p>
+            Community screening, risk assessment and early detection
+            initiatives.
+          </p>
+
+        </div>
+
+
+        <div class="support-card">
+
+          <div class="support-icon">
+            ⚕
+          </div>
+
+          <h3>
+            Patient Support
+          </h3>
+
+          <p>
+            Education, engagement and community support for people
+            living with diabetes and their families.
+          </p>
+
+        </div>
+
+
+        <div class="support-card">
+
+          <div class="support-icon">
+            +
+          </div>
+
+          <h3>
+            Professional Education
+          </h3>
+
+          <p>
+            Capacity building and diabetes education for healthcare
+            professionals.
+          </p>
+
+        </div>
+
+
+        <div class="support-card">
+
+          <div class="support-icon">
+            ⌕
+          </div>
+
+          <h3>
+            Research &amp; Data
+          </h3>
+
+          <p>
+            Research and data activities that can strengthen
+            understanding of diabetes in Somalia.
+          </p>
+
+        </div>
+
+
+        <div class="support-card">
+
+          <div class="support-icon">
+            🤝
+          </div>
+
+          <h3>
+            Community Partnerships
+          </h3>
+
+          <p>
+            Collaboration with institutions, communities and partners
+            to strengthen the diabetes response.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TRANSPARENCY -->
+  <section class="section transparency">
+
+    <div class="container">
+
+      <div class="transparency-box">
+
+        <div class="section-label">
+          Transparency &amp; Accountability
+        </div>
+
+        <h2>
+          Every contribution deserves responsible stewardship.
+        </h2>
+
+        <p>
+          SDF is committed to responsible use of donated resources
+          and to strengthening transparency as its programs and
+          fundraising activities grow.
+        </p>
+
+        <a href="contact.html" class="btn btn-outline">
+          Contact SDF →
         </a>
 
       </div>
@@ -1362,10 +1566,45 @@
   </section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- CTA -->
+  <section class="section cta">
 
+    <div class="container cta-inner">
+
+      <h2>
+        Want to support SDF in another way?
+      </h2>
+
+      <p>
+        Individuals, healthcare professionals, institutions and
+        organizations can also support SDF through partnership,
+        volunteering, research and community engagement.
+      </p>
+
+      <div class="cta-actions">
+
+        <a
+          href="get-involved.html"
+          class="btn btn-green"
+        >
+          Get Involved →
+        </a>
+
+        <a
+          href="contact.html"
+          class="btn btn-white"
+        >
+          Contact SDF
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
   <footer>
 
     <div class="container">
@@ -1379,115 +1618,82 @@
 
             <img
               src="sdf-logo.jpg"
-              alt="Somali Diabetes Foundation logo"
+              alt="Somali Diabetes Foundation"
               class="footer-logo"
             >
 
-            <div class="footer-brand-name">
-              Somali Diabetes Foundation
+            <div>
+
+              <div class="footer-brand-name">
+                Somali Diabetes Foundation
+              </div>
+
+              <div class="footer-acronym">
+                SDF
+              </div>
+
             </div>
 
           </div>
 
-          <p class="footer-description">
-            Working to strengthen diabetes awareness, prevention,
-            care, research, and community support in Somalia.
+
+          <p class="footer-about">
+            A nonprofit organization working to advance diabetes
+            awareness, prevention, screening, education, research
+            and patient support for a healthier Somalia.
           </p>
 
         </div>
 
 
-        <div>
+        <div class="footer-column">
 
-          <h4>
+          <h3>
             Explore
-          </h4>
+          </h3>
 
-          <ul>
-
-            <li>
-              <a href="index.html">
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a href="about.html">
-                About
-              </a>
-            </li>
-
-            <li>
-              <a href="story.html">
-                Our Story
-              </a>
-            </li>
-
-            <li>
-              <a href="programs.html">
-                Programs
-              </a>
-            </li>
-
-            <li>
-              <a href="impact.html">
-                Impact
-              </a>
-            </li>
-
-            <li>
-              <a href="research.html">
-                Research
-              </a>
-            </li>
-
-            <li>
-              <a href="activities.html">
-                Activities
-              </a>
-            </li>
-
-          </ul>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="story.html">Our Story</a>
+          <a href="programs.html">Programs</a>
+          <a href="impact.html">Impact</a>
+          <a href="research.html">Research</a>
+          <a href="activities.html">Activities</a>
 
         </div>
 
 
-        <div>
+        <div class="footer-column">
 
-          <h4>
+          <h3>
             Connect
-          </h4>
+          </h3>
 
-          <ul>
+          <a href="get-involved.html">
+            Get Involved
+          </a>
 
-            <li>
-              <a href="get-involved.html">
-                Get Involved
-              </a>
-            </li>
+          <a href="contact.html">
+            Contact
+          </a>
 
-            <li>
-              <a href="contact.html">
-                Contact
-              </a>
-            </li>
+          <a href="mailto:info@sdf.so">
+            info@sdf.so
+          </a>
 
-            <li>
-              <a href="donate.html">
-                Donate
-              </a>
-            </li>
+          <a href="tel:+252771817681">
+            +252 77 181 7681
+          </a>
 
-            <li>
-              <a href="mailto:info@sdf.so">
-                info@sdf.so
-              </a>
-            </li>
+          <a href="contact.html">
+            Jale Siad Street, Danwadaagaha
+          </a>
 
-          </ul>
+          <a href="contact.html">
+            Wadajir District, Mogadishu
+          </a>
 
         </div>
-
 
       </div>
 
@@ -1495,11 +1701,12 @@
       <div class="footer-bottom">
 
         <div>
-          © 2026 Somali Diabetes Foundation (SDF). All rights reserved.
+          © 2026 Somali Diabetes Foundation.
+          All rights reserved.
         </div>
 
         <div>
-          Mogadishu, Somalia
+          Prevention is Better Than Cure.
         </div>
 
       </div>
@@ -1509,42 +1716,94 @@
   </footer>
 
 
-  <!-- =========================
-       COPY FUNCTION
-  ========================== -->
-
   <script>
 
-    function copyText(text, button) {
+    const menuToggle =
+      document.getElementById("menuToggle");
 
-      navigator.clipboard.writeText(text)
-        .then(function () {
+    const mobileNav =
+      document.getElementById("mobileNav");
 
-          const originalText = button.innerText;
 
-          button.innerText = "Copied";
-          button.classList.add("copied");
+    menuToggle.addEventListener(
+      "click",
+      function () {
 
-          setTimeout(function () {
+        const open =
+          mobileNav.classList.toggle("open");
 
-            button.innerText = originalText;
-            button.classList.remove("copied");
+        menuToggle.setAttribute(
+          "aria-expanded",
+          open ? "true" : "false"
+        );
 
-          }, 1800);
+        menuToggle.setAttribute(
+          "aria-label",
+          open ? "Close menu" : "Open menu"
+        );
 
-        })
-        .catch(function () {
+        document.body.classList.toggle(
+          "menu-open",
+          open
+        );
 
-          alert(
-            "Unable to copy. Please copy the details manually."
+      }
+    );
+
+
+    document
+      .querySelectorAll(".mobile-nav a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            mobileNav.classList.remove("open");
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuToggle.setAttribute(
+              "aria-label",
+              "Open menu"
+            );
+
+            document.body.classList.remove(
+              "menu-open"
+            );
+
+          }
+        );
+
+      });
+
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (window.innerWidth > 980) {
+
+          mobileNav.classList.remove("open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
           );
 
-        });
+          document.body.classList.remove(
+            "menu-open"
+          );
 
-    }
+        }
+
+      }
+    );
 
   </script>
-
 
 </body>
 </html>

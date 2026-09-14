@@ -6,8 +6,15 @@
 
   <title>Donate | Somali Diabetes Foundation</title>
 
-  <meta name="description" content="Support the Somali Diabetes Foundation in improving diabetes awareness, prevention, care, research and community support across Somalia.">
-  <meta name="keywords" content="Somali Diabetes Foundation, SDF, donate, diabetes Somalia, support diabetes care, Somalia NGO">
+  <meta
+    name="description"
+    content="Support the Somali Diabetes Foundation in improving diabetes awareness, prevention, care, research and community support across Somalia."
+  >
+
+  <meta
+    name="keywords"
+    content="Somali Diabetes Foundation, SDF, donate, diabetes Somalia, support diabetes care, Somalia NGO"
+  >
 
   <style>
     :root {
@@ -171,7 +178,12 @@
 
     .hero {
       background:
-        linear-gradient(135deg, #f2f8fc 0%, #ffffff 60%, #eff9f2 100%);
+        linear-gradient(
+          135deg,
+          #f2f8fc 0%,
+          #ffffff 60%,
+          #eff9f2 100%
+        );
       padding: 82px 0 76px;
       border-bottom: 1px solid var(--border);
     }
@@ -277,7 +289,7 @@
     }
 
     /* =========================
-       SECTIONS
+       GENERAL SECTIONS
     ========================= */
 
     section {
@@ -303,7 +315,7 @@
     }
 
     /* =========================
-       BANKS
+       BANK ACCOUNTS
     ========================= */
 
     .banks-section {
@@ -384,6 +396,36 @@
       word-break: break-word;
     }
 
+    .copy-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      max-width: 70%;
+    }
+
+    .copy-row .detail-value {
+      text-align: right;
+    }
+
+    .copy-btn {
+      border: 1px solid var(--border);
+      background: var(--light);
+      color: var(--blue);
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
     .bank-note {
       margin-top: 18px;
       padding: 12px 14px;
@@ -395,7 +437,7 @@
     }
 
     /* =========================
-       INTERNATIONAL
+       INTERNATIONAL DONATIONS
     ========================= */
 
     .international {
@@ -466,7 +508,7 @@
       padding: 25px;
       border: 1px solid var(--border);
       border-radius: 15px;
-      background: #fff;
+      background: #ffffff;
     }
 
     .support-card h3 {
@@ -535,7 +577,11 @@
     .cta {
       padding: 75px 0;
       background:
-        linear-gradient(135deg, #eff9f2 0%, #ffffff 100%);
+        linear-gradient(
+          135deg,
+          #eff9f2 0%,
+          #ffffff 100%
+        );
       text-align: center;
     }
 
@@ -636,6 +682,7 @@
     ========================= */
 
     @media (max-width: 1050px) {
+
       nav {
         gap: 0;
       }
@@ -651,6 +698,7 @@
     }
 
     @media (max-width: 980px) {
+
       .nav {
         min-height: 78px;
         flex-wrap: wrap;
@@ -716,6 +764,7 @@
     }
 
     @media (max-width: 700px) {
+
       .container {
         width: min(100% - 28px, 1180px);
       }
@@ -758,12 +807,17 @@
         gap: 10px;
       }
 
+      .copy-row {
+        max-width: 65%;
+      }
+
       .detail-value {
-        max-width: 62%;
+        font-size: 13px;
       }
     }
 
     @media (max-width: 430px) {
+
       .brand-name {
         font-size: 16px;
       }
@@ -787,11 +841,21 @@
 
       .detail-row {
         flex-direction: column;
-        gap: 3px;
+        gap: 4px;
       }
 
       .detail-value {
         max-width: 100%;
+        text-align: left;
+      }
+
+      .copy-row {
+        width: 100%;
+        max-width: 100%;
+        justify-content: space-between;
+      }
+
+      .copy-row .detail-value {
         text-align: left;
       }
     }
@@ -805,22 +869,41 @@
   ========================= -->
 
   <header>
+
     <div class="container nav">
 
       <a href="index.html" class="brand">
-        <img src="sdf-logo.jpg" alt="Somali Diabetes Foundation Logo" class="brand-logo">
+
+        <img
+          src="sdf-logo.jpg"
+          alt="Somali Diabetes Foundation Logo"
+          class="brand-logo"
+        >
 
         <div class="brand-text">
-          <span class="brand-name">Somali Diabetes Foundation</span>
-          <span class="brand-acronym">S D F</span>
+          <span class="brand-name">
+            Somali Diabetes Foundation
+          </span>
+
+          <span class="brand-acronym">
+            S D F
+          </span>
         </div>
+
       </a>
 
-      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        type="button"
+      >
         ☰
       </button>
 
-      <nav id="mainNav">
+
+      <nav id="mainNav" aria-label="Main navigation">
 
         <a href="index.html">Home</a>
 
@@ -843,7 +926,9 @@
         <a href="donate.html" class="active donate">Donate</a>
 
       </nav>
+
     </div>
+
   </header>
 
 
@@ -857,24 +942,34 @@
 
       <div>
 
-        <span class="eyebrow">SUPPORT SDF</span>
+        <span class="eyebrow">
+          SUPPORT SDF
+        </span>
 
-        <h1>Help build a healthier Somalia.</h1>
+        <h1>
+          Help build a healthier Somalia.
+        </h1>
 
         <p>
           Your support helps the Somali Diabetes Foundation advance
-          diabetes awareness, prevention, early detection, patient support,
-          professional education, research and stronger diabetes care
-          across Somalia.
+          diabetes awareness, prevention, early detection, patient
+          support, professional education, research and stronger
+          diabetes care across Somalia.
         </p>
 
         <div class="hero-buttons">
 
-          <a href="#bank-accounts" class="btn btn-primary">
+          <a
+            href="#bank-accounts"
+            class="btn btn-primary"
+          >
             Donate by Bank Transfer
           </a>
 
-          <a href="contact.html" class="btn btn-secondary">
+          <a
+            href="contact.html"
+            class="btn btn-secondary"
+          >
             Contact SDF
           </a>
 
@@ -891,7 +986,9 @@
           class="hero-card-logo"
         >
 
-        <h3>Every contribution matters</h3>
+        <h3>
+          Every contribution matters
+        </h3>
 
         <p>
           Together, we can help improve diabetes prevention,
@@ -906,20 +1003,53 @@
 
 
   <!-- =========================
-       BANK ACCOUNTS
+       INTRODUCTION
   ========================= -->
 
-  <section class="banks-section" id="bank-accounts">
+  <section>
 
     <div class="container">
 
       <div class="section-heading">
 
-        <h2>Official SDF Bank Accounts</h2>
+        <h2>
+          Make a meaningful contribution
+        </h2>
 
         <p>
-          Donations within Somalia can be made directly to the
-          official Somali Diabetes Foundation bank accounts below.
+          Somali Diabetes Foundation works to strengthen the
+          prevention, detection, management and understanding
+          of diabetes in Somalia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       OFFICIAL BANK ACCOUNTS
+  ========================= -->
+
+  <section
+    class="banks-section"
+    id="bank-accounts"
+    style="padding-top: 0;"
+  >
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          Official SDF Bank Accounts
+        </h2>
+
+        <p>
+          You can support the Somali Diabetes Foundation
+          through any of the official bank accounts below.
         </p>
 
       </div>
@@ -928,9 +1058,11 @@
       <div class="bank-grid">
 
 
-        <!-- PREMIER BANK -->
+        <!-- =========================
+             PREMIER BANK
+        ========================= -->
 
-        <div class="bank-card">
+        <article class="bank-card">
 
           <div class="bank-logo-box">
 
@@ -942,46 +1074,114 @@
 
           </div>
 
-          <h3>Premier Bank</h3>
+          <h3>
+            Premier Bank
+          </h3>
+
 
           <div class="bank-details">
 
+
+            <!-- Branch -->
+
             <div class="detail-row">
-              <span class="detail-label">Account Name</span>
+
+              <span class="detail-label">
+                Branch
+              </span>
+
+              <span class="detail-value">
+                KM4 Branch
+              </span>
+
+            </div>
+
+
+            <!-- Account Name -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                Account Name
+              </span>
 
               <span class="detail-value">
                 SOMALI DIABETES FOUNDATION (SDF)
               </span>
+
             </div>
+
+
+            <!-- Account Number -->
 
             <div class="detail-row">
-              <span class="detail-label">Account Number</span>
 
-              <span class="detail-value">
-                YOUR VERIFIED PREMIER BANK ACCOUNT NUMBER
+              <span class="detail-label">
+                Account Number
               </span>
+
+              <div class="copy-row">
+
+                <span class="detail-value">
+                  020301971001
+                </span>
+
+                <button
+                  class="copy-btn"
+                  type="button"
+                  onclick="copyText('020301971001', this)"
+                >
+                  Copy
+                </button>
+
+              </div>
+
             </div>
+
+
+            <!-- IBAN -->
 
             <div class="detail-row">
-              <span class="detail-label">Branch</span>
 
-              <span class="detail-value">
-                YOUR VERIFIED PREMIER BANK BRANCH
+              <span class="detail-label">
+                IBAN
               </span>
+
+              <div class="copy-row">
+
+                <span class="detail-value">
+                  SO140005002020301971001
+                </span>
+
+                <button
+                  class="copy-btn"
+                  type="button"
+                  onclick="copyText('SO140005002020301971001', this)"
+                >
+                  Copy
+                </button>
+
+              </div>
+
             </div>
+
 
           </div>
+
 
           <div class="bank-note">
-            Please verify the account number and branch before publishing.
+            Please use the official SDF account name when making
+            your transfer.
           </div>
 
-        </div>
+        </article>
 
 
-        <!-- DAHABSHIIL BANK -->
+        <!-- =========================
+             DAHABSHIIL BANK
+        ========================= -->
 
-        <div class="bank-card">
+        <article class="bank-card">
 
           <div class="bank-logo-box">
 
@@ -993,93 +1193,266 @@
 
           </div>
 
-          <h3>Dahabshiil Bank</h3>
+          <h3>
+            Dahabshiil Bank
+          </h3>
+
 
           <div class="bank-details">
 
-            <div class="detail-row">
-              <span class="detail-label">Account Name</span>
 
-              <span class="detail-value">
-                SOMALI DIABETES FOUNDATION (SDF)
+            <!-- Branch -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                Branch
               </span>
-            </div>
-
-            <div class="detail-row">
-              <span class="detail-label">Account Number</span>
-
-              <span class="detail-value">
-                YOUR VERIFIED DAHABSHIIL ACCOUNT NUMBER
-              </span>
-            </div>
-
-            <div class="detail-row">
-              <span class="detail-label">Branch</span>
 
               <span class="detail-value">
                 Km5 Zobe
               </span>
+
             </div>
 
+
+            <!-- Account Name -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                Account Name
+              </span>
+
+              <span class="detail-value">
+                SOMALI DIABETES FOUNDATION (SDF)
+              </span>
+
+            </div>
+
+
+            <!-- Account Number -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                Account Number
+              </span>
+
+              <div class="copy-row">
+
+                <span class="detail-value">
+                  315017540901
+                </span>
+
+                <button
+                  class="copy-btn"
+                  type="button"
+                  onclick="copyText('315017540901', this)"
+                >
+                  Copy
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- IBAN -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                IBAN
+              </span>
+
+              <div class="copy-row">
+
+                <span class="detail-value">
+                  SO530002314315017540901
+                </span>
+
+                <button
+                  class="copy-btn"
+                  type="button"
+                  onclick="copyText('SO530002314315017540901', this)"
+                >
+                  Copy
+                </button>
+
+              </div>
+
+            </div>
+
+
           </div>
+
 
           <div class="bank-note">
-            Please use the official SDF account name when making your transfer.
+            Please use the official SDF account name when making
+            your transfer.
           </div>
 
-        </div>
+        </article>
 
 
-        <!-- SALAAM BANK -->
+        <!-- =========================
+             SALAAM SOMALI BANK
+        ========================= -->
 
-        <div class="bank-card">
+        <article class="bank-card">
 
           <div class="bank-logo-box">
 
             <img
               src="images/salaam.jpg"
-              alt="Salaam Bank"
+              alt="Salaam Somali Bank"
               class="bank-logo"
             >
 
           </div>
 
-          <h3>Salaam Bank</h3>
+          <h3>
+            Salaam Somali Bank
+          </h3>
+
 
           <div class="bank-details">
 
-            <div class="detail-row">
-              <span class="detail-label">Account Name</span>
 
-              <span class="detail-value">
-                SOMALI DIABETES FOUNDATION (SDF)
+            <!-- Branch -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                Branch
               </span>
-            </div>
-
-            <div class="detail-row">
-              <span class="detail-label">Account Number</span>
-
-              <span class="detail-value">
-                YOUR VERIFIED SALAAM BANK ACCOUNT NUMBER
-              </span>
-            </div>
-
-            <div class="detail-row">
-              <span class="detail-label">Branch</span>
 
               <span class="detail-value">
                 Km5 Zobe
               </span>
+
             </div>
 
+
+            <!-- Account Name -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                Account Name
+              </span>
+
+              <span class="detail-value">
+                SOMALI DIABETES FOUNDATION (SDF)
+              </span>
+
+            </div>
+
+
+            <!-- Account Number -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                Account Number
+              </span>
+
+              <div class="copy-row">
+
+                <span class="detail-value">
+                  2103 37576152
+                </span>
+
+                <button
+                  class="copy-btn"
+                  type="button"
+                  onclick="copyText('2103 37576152', this)"
+                >
+                  Copy
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- IBAN -->
+
+            <div class="detail-row">
+
+              <span class="detail-label">
+                IBAN
+              </span>
+
+              <div class="copy-row">
+
+                <span class="detail-value">
+                  SO56001132300037576152
+                </span>
+
+                <button
+                  class="copy-btn"
+                  type="button"
+                  onclick="copyText('SO56001132300037576152', this)"
+                >
+                  Copy
+                </button>
+
+              </div>
+
+            </div>
+
+
           </div>
+
 
           <div class="bank-note">
-            Please use the official SDF account name when making your transfer.
+            Please use the official SDF account name when making
+            your transfer.
           </div>
 
-        </div>
+        </article>
 
+
+      </div>
+
+
+      <!-- =========================
+           TRANSPARENCY NOTICE
+      ========================= -->
+
+      <div
+        style="
+          margin-top: 30px;
+          padding: 24px;
+          background: #eef6fb;
+          border: 1px solid #dce6ee;
+          border-radius: 16px;
+        "
+      >
+
+        <h3
+          style="
+            color: #0b2d4d;
+            margin-bottom: 8px;
+          "
+        >
+          Donation Transparency
+        </h3>
+
+        <p
+          style="
+            color: #64748b;
+            margin: 0;
+          "
+        >
+          Somali Diabetes Foundation is committed to responsible
+          and transparent use of donated resources. Donors are
+          encouraged to retain their transfer receipt for their
+          records and may contact SDF for donation-related
+          enquiries or confirmation.
+        </p>
 
       </div>
 
@@ -1098,7 +1471,9 @@
 
       <div class="section-heading">
 
-        <h2>International Donations</h2>
+        <h2>
+          International Donations
+        </h2>
 
         <p>
           SDF is working to establish secure and accessible
@@ -1115,11 +1490,17 @@
 
         <div class="international-card">
 
-          <div class="icon">🌍</div>
+          <div class="icon">
+            🌍
+          </div>
 
-          <span class="status">COMING SOON</span>
+          <span class="status">
+            COMING SOON
+          </span>
 
-          <h3>GlobalGiving</h3>
+          <h3>
+            GlobalGiving
+          </h3>
 
           <p>
             SDF is pursuing an international fundraising pathway
@@ -1129,8 +1510,8 @@
           </p>
 
           <p>
-            GlobalGiving supports registered nonprofits around the
-            world and provides secure online donation options.
+            This section will be updated with the official SDF
+            fundraising link once the pathway is active.
           </p>
 
         </div>
@@ -1140,9 +1521,13 @@
 
         <div class="international-card">
 
-          <div class="icon">✉</div>
+          <div class="icon">
+            ✉
+          </div>
 
-          <h3>Direct International Support</h3>
+          <h3>
+            Direct International Support
+          </h3>
 
           <p>
             If you are outside Somalia and would like to support
@@ -1169,7 +1554,7 @@
 
 
   <!-- =========================
-       WHAT YOUR SUPPORT CAN HELP
+       SUPPORT AREAS
   ========================= -->
 
   <section>
@@ -1178,11 +1563,14 @@
 
       <div class="section-heading">
 
-        <h2>What Your Support Can Help</h2>
+        <h2>
+          What Your Support Can Help
+        </h2>
 
         <p>
-          Contributions can help SDF strengthen its work in diabetes
-          prevention, education, care, research and community support.
+          Contributions can help SDF strengthen its work in
+          diabetes prevention, education, care, research and
+          community support.
         </p>
 
       </div>
@@ -1193,7 +1581,9 @@
 
         <div class="support-card">
 
-          <h3>Public Awareness</h3>
+          <h3>
+            Public Awareness
+          </h3>
 
           <p>
             Supporting diabetes education and public awareness
@@ -1205,7 +1595,9 @@
 
         <div class="support-card">
 
-          <h3>Screening & Prevention</h3>
+          <h3>
+            Screening & Prevention
+          </h3>
 
           <p>
             Helping promote early detection, risk awareness and
@@ -1217,7 +1609,9 @@
 
         <div class="support-card">
 
-          <h3>Patient Support</h3>
+          <h3>
+            Patient Support
+          </h3>
 
           <p>
             Supporting initiatives that improve access to diabetes
@@ -1229,7 +1623,9 @@
 
         <div class="support-card">
 
-          <h3>Healthcare Education</h3>
+          <h3>
+            Healthcare Education
+          </h3>
 
           <p>
             Contributing to professional education and capacity
@@ -1241,7 +1637,9 @@
 
         <div class="support-card">
 
-          <h3>Research</h3>
+          <h3>
+            Research
+          </h3>
 
           <p>
             Supporting research and data collection to strengthen
@@ -1253,7 +1651,9 @@
 
         <div class="support-card">
 
-          <h3>Health Advocacy</h3>
+          <h3>
+            Health Advocacy
+          </h3>
 
           <p>
             Helping advance stronger diabetes policies, health
@@ -1280,7 +1680,9 @@
 
       <div>
 
-        <h2>Supporting SDF means supporting sustainable diabetes care.</h2>
+        <h2>
+          Supporting SDF means supporting sustainable diabetes care.
+        </h2>
 
         <p>
           The Somali Diabetes Foundation is committed to responsible,
@@ -1293,12 +1695,15 @@
 
       <div class="transparency-box">
 
-        <h3>Our commitment</h3>
+        <h3>
+          Our commitment
+        </h3>
 
         <ul>
 
           <li>
-            Resources are directed toward SDF's mission and approved activities.
+            Resources are directed toward SDF's mission and
+            approved activities.
           </li>
 
           <li>
@@ -1306,8 +1711,8 @@
           </li>
 
           <li>
-            Program activities and results will be reported as the
-            organization grows.
+            Program activities and results will be reported as
+            the organization grows.
           </li>
 
           <li>
@@ -1325,6 +1730,132 @@
 
 
   <!-- =========================
+       HOW TO DONATE
+  ========================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          How to make a bank transfer
+        </h2>
+
+        <p>
+          A simple three-step process for supporting SDF
+          through bank transfer.
+        </p>
+
+      </div>
+
+
+      <div class="support-grid">
+
+
+        <div class="support-card">
+
+          <div
+            style="
+              width:42px;
+              height:42px;
+              border-radius:50%;
+              background:#159447;
+              color:#ffffff;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-weight:800;
+              margin-bottom:15px;
+            "
+          >
+            1
+          </div>
+
+          <h3>
+            Choose a bank
+          </h3>
+
+          <p>
+            Select one of the official Somali Diabetes Foundation
+            bank accounts listed above.
+          </p>
+
+        </div>
+
+
+        <div class="support-card">
+
+          <div
+            style="
+              width:42px;
+              height:42px;
+              border-radius:50%;
+              background:#159447;
+              color:#ffffff;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-weight:800;
+              margin-bottom:15px;
+            "
+          >
+            2
+          </div>
+
+          <h3>
+            Make your transfer
+          </h3>
+
+          <p>
+            Use the relevant account number or IBAN and follow
+            your bank's instructions to complete the transfer.
+          </p>
+
+        </div>
+
+
+        <div class="support-card">
+
+          <div
+            style="
+              width:42px;
+              height:42px;
+              border-radius:50%;
+              background:#159447;
+              color:#ffffff;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-weight:800;
+              margin-bottom:15px;
+            "
+          >
+            3
+          </div>
+
+          <h3>
+            Keep your receipt
+          </h3>
+
+          <p>
+            Retain your transaction receipt. For donation-related
+            enquiries or confirmation, contact the Somali Diabetes
+            Foundation.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
        CTA
   ========================= -->
 
@@ -1332,22 +1863,29 @@
 
     <div class="container">
 
-      <h2>Want to support SDF?</h2>
+      <h2>
+        Have a question about supporting SDF?
+      </h2>
 
       <p>
-        Whether you are an individual, organization, healthcare
-        professional or potential partner, we would be pleased
-        to hear from you.
+        Contact the Somali Diabetes Foundation for donation,
+        partnership, research or general enquiries.
       </p>
 
       <div class="cta-buttons">
 
-        <a href="#bank-accounts" class="btn btn-primary">
-          View Bank Accounts
+        <a
+          href="contact.html"
+          class="btn btn-primary"
+        >
+          Contact SDF
         </a>
 
-        <a href="contact.html" class="btn btn-secondary">
-          Contact SDF
+        <a
+          href="mailto:info@sdf.so"
+          class="btn btn-secondary"
+        >
+          Email SDF
         </a>
 
       </div>
@@ -1374,7 +1912,7 @@
 
             <img
               src="sdf-logo.jpg"
-              alt="SDF Logo"
+              alt="Somali Diabetes Foundation logo"
               class="footer-logo"
             >
 
@@ -1385,9 +1923,8 @@
           </div>
 
           <p class="footer-description">
-            Working toward a healthier Somalia through diabetes
-            prevention, awareness, management, research, advocacy,
-            professional education and community support.
+            Working to strengthen diabetes awareness, prevention,
+            care, research and community support in Somalia.
           </p>
 
         </div>
@@ -1395,19 +1932,41 @@
 
         <div>
 
-          <h4>Quick Links</h4>
+          <h4>
+            Explore
+          </h4>
 
           <ul>
 
-            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
 
-            <li><a href="about.html">About</a></li>
+            <li>
+              <a href="about.html">
+                About
+              </a>
+            </li>
 
-            <li><a href="story.html">Our Story</a></li>
+            <li>
+              <a href="story.html">
+                Our Story
+              </a>
+            </li>
 
-            <li><a href="programs.html">Programs</a></li>
+            <li>
+              <a href="programs.html">
+                Programs
+              </a>
+            </li>
 
-            <li><a href="impact.html">Impact</a></li>
+            <li>
+              <a href="impact.html">
+                Impact
+              </a>
+            </li>
 
           </ul>
 
@@ -1416,24 +1975,34 @@
 
         <div>
 
-          <h4>Connect With SDF</h4>
+          <h4>
+            Connect
+          </h4>
 
           <ul>
 
             <li>
-              <a href="research.html">Research</a>
+              <a href="research.html">
+                Research
+              </a>
             </li>
 
             <li>
-              <a href="activities.html">Activities</a>
+              <a href="activities.html">
+                Activities
+              </a>
             </li>
 
             <li>
-              <a href="get-involved.html">Get Involved</a>
+              <a href="get-involved.html">
+                Get Involved
+              </a>
             </li>
 
             <li>
-              <a href="contact.html">Contact</a>
+              <a href="contact.html">
+                Contact
+              </a>
             </li>
 
             <li>
@@ -1462,38 +2031,110 @@
 
 
   <!-- =========================
-       MOBILE MENU
+       JAVASCRIPT
   ========================= -->
 
   <script>
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.getElementById('mainNav');
+    /* MOBILE MENU */
+
+    const menuToggle =
+      document.querySelector('.menu-toggle');
+
+    const mainNav =
+      document.getElementById('mainNav');
+
 
     menuToggle.addEventListener('click', function () {
 
-      const isOpen = mainNav.classList.toggle('open');
+      const isOpen =
+        mainNav.classList.toggle('open');
 
-      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
 
-      menuToggle.textContent = isOpen ? '✕' : '☰';
+      menuToggle.textContent =
+        isOpen ? '✕' : '☰';
 
     });
 
 
-    document.querySelectorAll('#mainNav a').forEach(function(link) {
+    document
+      .querySelectorAll('#mainNav a')
+      .forEach(function(link) {
 
-      link.addEventListener('click', function() {
+        link.addEventListener('click', function() {
 
-        mainNav.classList.remove('open');
+          mainNav.classList.remove('open');
 
-        menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
 
-        menuToggle.textContent = '☰';
+          menuToggle.textContent = '☰';
+
+        });
 
       });
 
-    });
+
+    /* COPY BANK DETAILS */
+
+    function copyText(text, button) {
+
+      navigator.clipboard.writeText(text)
+        .then(function() {
+
+          const originalText =
+            button.textContent;
+
+          button.textContent = 'Copied!';
+
+          setTimeout(function() {
+
+            button.textContent =
+              originalText;
+
+          }, 1500);
+
+        })
+        .catch(function() {
+
+          const temporaryInput =
+            document.createElement('input');
+
+          temporaryInput.value = text;
+
+          document.body.appendChild(
+            temporaryInput
+          );
+
+          temporaryInput.select();
+
+          document.execCommand('copy');
+
+          document.body.removeChild(
+            temporaryInput
+          );
+
+          const originalText =
+            button.textContent;
+
+          button.textContent = 'Copied!';
+
+          setTimeout(function() {
+
+            button.textContent =
+              originalText;
+
+          }, 1500);
+
+        });
+
+    }
 
   </script>
 

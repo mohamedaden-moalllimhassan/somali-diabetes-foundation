@@ -13,7 +13,7 @@
 
   <meta
     name="keywords"
-    content="Somali Diabetes Foundation, SDF, diabetes Somalia, Mogadishu, diabetes research, diabetes awareness, Jale Siad Street, Wadajir"
+    content="Somali Diabetes Foundation, SDF, diabetes Somalia, Mogadishu, diabetes research, diabetes awareness, Wadajir, Somalia"
   >
 
   <meta name="theme-color" content="#063b68">
@@ -21,15 +21,20 @@
   <style>
     :root {
       --navy: #063b68;
+      --dark: #042b4b;
       --blue: #159ed0;
       --green: #18b957;
-      --light: #f4f9fb;
+      --green-dark: #119844;
+      --light: #f3f9fb;
+      --soft-green: #effaf3;
       --ink: #18313b;
-      --muted: #637781;
+      --muted: #647983;
       --white: #ffffff;
       --border: #dce8ed;
-      --dark: #042b4b;
-      --shadow: 0 12px 35px rgba(6, 59, 104, 0.10);
+      --danger: #c62828;
+      --success: #087a3d;
+      --shadow: 0 18px 50px rgba(6, 59, 104, 0.10);
+      --shadow-hover: 0 24px 60px rgba(6, 59, 104, 0.15);
     }
 
     * {
@@ -72,12 +77,12 @@
     ========================= */
 
     header {
-      background: rgba(255, 255, 255, 0.98);
+      background: rgba(255, 255, 255, 0.97);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
@@ -96,10 +101,10 @@
     }
 
     .brand-logo {
-      width: 68px;
-      height: 68px;
+      width: 66px;
+      height: 66px;
       object-fit: cover;
-      border-radius: 11px;
+      border-radius: 12px;
       background: #eeeeee;
       border: 1px solid #e1e1e1;
     }
@@ -119,7 +124,7 @@
 
     .brand-acronym {
       color: var(--blue);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
       letter-spacing: 4px;
       margin-top: 5px;
@@ -161,7 +166,7 @@
 
     nav a.donate:hover {
       color: var(--white);
-      background: #119844;
+      background: var(--green-dark);
     }
 
     .menu-toggle {
@@ -181,176 +186,354 @@
     ========================= */
 
     .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      padding: 88px 0 92px;
       background:
         linear-gradient(
-          rgba(6, 59, 104, 0.95),
-          rgba(6, 59, 104, 0.95)
+          120deg,
+          rgba(4, 43, 75, 0.98),
+          rgba(6, 59, 104, 0.93)
         ),
         url("sdf-logo.jpg") center/cover no-repeat;
-      color: var(--white);
-      padding: 90px 0 85px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      right: -150px;
+      top: -180px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(24,185,87,0.25);
+      border-radius: 50%;
+      right: 90px;
+      bottom: -180px;
     }
 
     .hero-content {
-      max-width: 820px;
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
     }
 
     .eyebrow {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       color: #bcefd0;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.7px;
       font-size: 13px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 10px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.05;
+      font-size: clamp(40px, 6vw, 66px);
+      line-height: 1.04;
       margin-bottom: 20px;
+      letter-spacing: -1.2px;
     }
 
     .hero p {
       font-size: 19px;
-      color: #e8f4f8;
+      color: #e7f3f7;
       max-width: 760px;
     }
 
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 21px;
+      border-radius: 9px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .hero-button.primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .hero-button.primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero-button.secondary {
+      background: rgba(255,255,255,0.10);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .hero-button.secondary:hover {
+      background: rgba(255,255,255,0.17);
+    }
+
     /* =========================
-       GENERAL SECTIONS
+       CONTACT CHANNELS
     ========================= */
 
-    section {
-      padding: 75px 0;
+    .channels-section {
+      padding: 58px 0 35px;
+      background: var(--white);
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 34px;
+    }
+
+    .section-heading .small-title {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
     }
 
     .section-title {
       color: var(--navy);
-      font-size: 34px;
-      line-height: 1.2;
+      font-size: clamp(30px, 4vw, 38px);
+      line-height: 1.15;
       margin-bottom: 12px;
     }
 
     .section-intro {
       color: var(--muted);
-      max-width: 760px;
-      margin-bottom: 35px;
       font-size: 17px;
     }
 
-    /* =========================
-       CONTACT INFORMATION
-    ========================= */
-
-    .contact-grid {
+    .channel-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
+      max-width: 850px;
+      margin: 0 auto;
     }
 
-    .contact-card {
+    .channel-card {
+      position: relative;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
+      border-radius: 18px;
+      padding: 28px;
       box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: 0.25s ease;
     }
 
-    .contact-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: var(--light);
-      color: var(--blue);
+    .channel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .channel-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 23px;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .contact-card h3 {
-      color: var(--navy);
-      margin-bottom: 9px;
-      font-size: 21px;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .contact-card a {
-      color: var(--blue);
-      font-weight: 700;
-      word-break: break-word;
-    }
-
-    .contact-card a:hover {
-      color: var(--green);
-    }
-
-    .contact-button {
-      display: inline-block;
-      margin-top: 4px;
-      padding: 10px 16px;
       background: var(--light);
-      border-radius: 7px;
-      color: var(--navy) !important;
-      font-weight: 800 !important;
+      color: var(--blue);
+      font-size: 25px;
+      font-weight: 800;
     }
 
-    .contact-button:hover {
-      background: var(--green);
-      color: var(--white) !important;
+    .channel-card.location .channel-icon {
+      color: var(--green-dark);
+      background: var(--soft-green);
+    }
+
+    .channel-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .channel-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .channel-card a {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .channel-card a:hover {
+      color: var(--green-dark);
     }
 
     /* =========================
-       FORM
+       DIRECT MESSAGE SECTION
     ========================= */
 
-    .form-section {
-      background: var(--light);
+    .message-section {
+      position: relative;
+      padding: 78px 0;
+      background:
+        linear-gradient(
+          135deg,
+          #f1f8fb 0%,
+          #f8fcfa 100%
+        );
+      overflow: hidden;
     }
 
-    .form-layout {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 35px;
-      align-items: start;
+    .message-section::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(21,158,208,0.055);
+      left: -220px;
+      top: 100px;
+    }
+
+    .message-section::after {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: rgba(24,185,87,0.055);
+      right: -180px;
+      bottom: -120px;
+    }
+
+    .message-header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 35px;
+    }
+
+    .message-header .small-title {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .message-header h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 5vw, 44px);
+      line-height: 1.12;
+      margin-bottom: 12px;
+    }
+
+    .message-header p {
+      color: var(--muted);
+      font-size: 17px;
     }
 
     .form-card {
+      position: relative;
+      z-index: 2;
+      width: min(850px, 100%);
+      margin: 0 auto;
       background: var(--white);
-      border-radius: 18px;
-      padding: 35px;
-      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 38px;
       border: 1px solid var(--border);
+      box-shadow: 0 25px 70px rgba(6,59,104,0.12);
     }
 
-    .form-card h2 {
+    .form-top {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 28px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-top-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .form-top h3 {
       color: var(--navy);
-      margin-bottom: 8px;
-      font-size: 29px;
+      font-size: 23px;
+      margin-bottom: 2px;
     }
 
-    .form-card > p {
+    .form-top p {
       color: var(--muted);
-      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 18px;
     }
 
     .field {
       margin-bottom: 18px;
     }
 
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
     label {
       display: block;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--navy);
       margin-bottom: 7px;
       font-size: 14px;
+    }
+
+    .required {
+      color: var(--green-dark);
     }
 
     input,
@@ -358,8 +541,8 @@
     textarea {
       width: 100%;
       border: 1px solid #cbdce3;
-      border-radius: 9px;
-      padding: 13px 14px;
+      border-radius: 11px;
+      padding: 14px 15px;
       font-size: 15px;
       color: var(--ink);
       background: var(--white);
@@ -367,96 +550,165 @@
       transition: 0.2s ease;
     }
 
+    input::placeholder,
+    textarea::placeholder {
+      color: #9aabb2;
+    }
+
+    input:hover,
+    select:hover,
+    textarea:hover {
+      border-color: #abc5d0;
+    }
+
     input:focus,
     select:focus,
     textarea:focus {
       border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(21, 158, 208, 0.12);
+      box-shadow: 0 0 0 4px rgba(21,158,208,0.11);
     }
 
     textarea {
-      min-height: 150px;
+      min-height: 175px;
       resize: vertical;
+    }
+
+    [data-fs-field][aria-invalid="true"] {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 3px rgba(198,40,40,0.08);
+    }
+
+    .field-error {
+      display: block;
+      min-height: 0;
+      margin-top: 5px;
+      color: var(--danger);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .form-status {
+      display: none;
+      border-radius: 12px;
+      padding: 15px 17px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .form-status[data-fs-active] {
+      display: block;
+    }
+
+    .success-message {
+      background: #eaf9f0;
+      border: 1px solid #bce7cb;
+      color: var(--success);
+    }
+
+    .error-message {
+      background: #fff0f0;
+      border: 1px solid #f0c4c4;
+      color: var(--danger);
+    }
+
+    .submit-area {
+      margin-top: 4px;
     }
 
     .submit-btn {
       width: 100%;
       border: none;
-      border-radius: 9px;
-      padding: 14px 20px;
+      border-radius: 11px;
+      padding: 15px 20px;
       background: var(--green);
       color: var(--white);
       font-weight: 800;
       font-size: 16px;
       cursor: pointer;
       transition: 0.2s ease;
+      box-shadow: 0 8px 20px rgba(24,185,87,0.18);
     }
 
     .submit-btn:hover {
-      background: #119844;
-      transform: translateY(-1px);
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(24,185,87,0.24);
     }
 
     .submit-btn:disabled {
       opacity: 0.65;
       cursor: wait;
       transform: none;
+      box-shadow: none;
     }
 
     .form-note {
       margin-top: 13px;
-      font-size: 13px;
       color: var(--muted);
+      font-size: 12px;
       text-align: center;
     }
 
     /* =========================
-       WAYS TO ENGAGE
-    ========================= */
-
-    .engagement {
-      display: grid;
-      gap: 18px;
-    }
-
-    .engagement-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--green);
-      border-radius: 12px;
-      padding: 21px 23px;
-    }
-
-    .engagement-card h3 {
-      color: var(--navy);
-      margin-bottom: 5px;
-      font-size: 19px;
-    }
-
-    .engagement-card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* =========================
-       SOCIAL MEDIA
+       SOCIAL
     ========================= */
 
     .social-section {
+      position: relative;
       background: var(--navy);
       color: var(--white);
       text-align: center;
+      padding: 72px 0;
+      overflow: hidden;
+    }
+
+    .social-section::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      left: -110px;
+      top: -130px;
+    }
+
+    .social-section::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      border: 1px solid rgba(24,185,87,0.15);
+      right: -160px;
+      bottom: -190px;
+    }
+
+    .social-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-label {
+      color: #bcefd0;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
     }
 
     .social-section h2 {
-      font-size: 34px;
+      font-size: clamp(30px, 5vw, 40px);
       margin-bottom: 10px;
     }
 
     .social-section p {
       color: #d9e9ef;
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 25px;
+      font-size: 16px;
     }
 
     .facebook-btn {
@@ -466,8 +718,8 @@
       gap: 9px;
       background: var(--white);
       color: var(--navy);
-      padding: 13px 24px;
-      border-radius: 8px;
+      padding: 13px 25px;
+      border-radius: 9px;
       font-weight: 800;
       transition: 0.2s ease;
     }
@@ -475,6 +727,7 @@
     .facebook-btn:hover {
       background: var(--green);
       color: var(--white);
+      transform: translateY(-2px);
     }
 
     /* =========================
@@ -483,10 +736,13 @@
 
     .location-section {
       background: var(--white);
+      padding: 78px 0;
     }
 
     .location-header {
-      max-width: 800px;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 35px;
     }
 
     .location-eyebrow {
@@ -501,26 +757,24 @@
 
     .location-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 28px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 25px;
       align-items: stretch;
     }
 
     .map-card {
-      min-height: 420px;
-      border-radius: 18px;
+      min-height: 390px;
+      border-radius: 20px;
       overflow: hidden;
       position: relative;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-
       background:
         linear-gradient(
-          rgba(6, 59, 104, 0.90),
-          rgba(6, 59, 104, 0.90)
+          rgba(6,59,104,0.91),
+          rgba(6,59,104,0.91)
         ),
         url("sdf-logo.jpg") center/cover no-repeat;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -534,8 +788,8 @@
     }
 
     .map-pin {
-      width: 68px;
-      height: 68px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background: var(--green);
       display: flex;
@@ -543,7 +797,7 @@
       justify-content: center;
       margin: 0 auto 20px;
       font-size: 30px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
     }
 
     .map-content h2 {
@@ -559,24 +813,26 @@
     }
 
     .map-btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--green);
       color: var(--white);
       padding: 13px 24px;
-      border-radius: 8px;
+      border-radius: 9px;
       font-weight: 800;
       transition: 0.2s ease;
     }
 
     .map-btn:hover {
-      background: #119844;
-      transform: translateY(-1px);
+      background: var(--green-dark);
+      transform: translateY(-2px);
     }
 
     .location-card {
       background: var(--light);
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 35px;
       box-shadow: var(--shadow);
       display: flex;
@@ -585,61 +841,69 @@
     }
 
     .location-icon {
-      width: 54px;
-      height: 54px;
+      width: 56px;
+      height: 56px;
       background: var(--white);
-      border-radius: 13px;
+      color: var(--green-dark);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 25px;
+      font-size: 26px;
       margin-bottom: 18px;
     }
 
     .location-card h3 {
       color: var(--navy);
-      font-size: 24px;
-      margin-bottom: 18px;
+      font-size: 25px;
+      margin-bottom: 17px;
       line-height: 1.25;
     }
 
-    .location-address,
-    .location-contact {
+    .location-address {
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
-    .location-address strong,
-    .location-contact strong {
+    .location-address strong {
       color: var(--navy);
-    }
-
-    .location-contact a {
-      color: var(--blue);
-      font-weight: 700;
-    }
-
-    .location-contact a:hover {
-      color: var(--green);
     }
 
     .location-divider {
       height: 1px;
       background: var(--border);
-      margin: 23px 0;
+      margin: 24px 0;
+    }
+
+    .phone-block {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .phone-block strong {
+      color: var(--navy);
+    }
+
+    .phone-block a {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .phone-block a:hover {
+      color: var(--green-dark);
     }
 
     .location-actions {
       display: grid;
       gap: 10px;
-      margin-top: 24px;
+      margin-top: 25px;
     }
 
     .location-action {
       display: block;
       text-align: center;
       padding: 12px 15px;
-      border-radius: 8px;
+      border-radius: 9px;
       font-weight: 800;
       background: var(--green);
       color: var(--white);
@@ -647,7 +911,7 @@
     }
 
     .location-action:hover {
-      background: #119844;
+      background: var(--green-dark);
       transform: translateY(-1px);
     }
 
@@ -656,11 +920,11 @@
     }
 
     .location-action.secondary:hover {
-      background: #052f53;
+      background: var(--dark);
     }
 
     /* =========================
-       SUPPORT CTA
+       CTA
     ========================= */
 
     .support-cta {
@@ -671,18 +935,22 @@
           #ffffff 100%
         );
       text-align: center;
+      padding: 75px 0;
+      border-top: 1px solid var(--border);
     }
 
     .support-cta h2 {
       color: var(--navy);
-      font-size: 38px;
-      margin-bottom: 12px;
+      font-size: clamp(31px, 5vw, 42px);
+      line-height: 1.15;
+      margin-bottom: 13px;
     }
 
     .support-cta p {
       color: var(--muted);
-      max-width: 700px;
-      margin: 0 auto 25px;
+      max-width: 720px;
+      margin: 0 auto 27px;
+      font-size: 16px;
     }
 
     .cta-buttons {
@@ -696,7 +964,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 21px;
+      padding: 13px 22px;
       border-radius: 9px;
       font-weight: 800;
       transition: 0.2s ease;
@@ -708,8 +976,8 @@
     }
 
     .btn-primary:hover {
-      background: #119844;
-      transform: translateY(-1px);
+      background: var(--green-dark);
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
@@ -720,6 +988,7 @@
 
     .btn-secondary:hover {
       background: var(--light);
+      transform: translateY(-2px);
     }
 
     /* =========================
@@ -727,14 +996,14 @@
     ========================= */
 
     footer {
-      background: #042b4b;
+      background: var(--dark);
       color: #d7e5ec;
       padding: 48px 0 24px;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-columns: 1.35fr 1fr 1fr;
       gap: 40px;
       padding-bottom: 35px;
       border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -782,10 +1051,17 @@
     footer a {
       color: #c7d7e0;
       font-size: 14px;
+      transition: 0.2s ease;
     }
 
     footer a:hover {
       color: var(--white);
+    }
+
+    .footer-phone {
+      margin-top: 13px;
+      display: inline-block;
+      color: #b9cbd5 !important;
     }
 
     .footer-bottom {
@@ -799,7 +1075,7 @@
        RESPONSIVE
     ========================= */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1080px) {
 
       nav {
         gap: 0;
@@ -859,14 +1135,6 @@
         text-align: center;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .form-layout {
-        grid-template-columns: 1fr;
-      }
-
       .location-grid {
         grid-template-columns: 1fr;
       }
@@ -876,55 +1144,47 @@
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
 
       .container {
         width: min(100% - 28px, 1180px);
       }
 
-      section {
-        padding: 58px 0;
-      }
-
       .hero {
-        padding: 60px 0;
+        padding: 65px 0 70px;
       }
 
       .hero h1 {
-        font-size: 42px;
+        font-size: 43px;
       }
 
       .hero p {
         font-size: 17px;
       }
 
-      .section-title {
-        font-size: 31px;
-      }
-
-      .contact-grid {
+      .channel-grid {
         grid-template-columns: 1fr;
       }
 
       .form-card {
-        padding: 25px;
+        padding: 25px 20px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
       }
 
       .map-card {
-        min-height: 360px;
-        padding: 25px;
-      }
-
-      .map-content h2 {
-        font-size: 28px;
+        min-height: 350px;
+        padding: 28px;
       }
 
       .location-card {
         padding: 28px;
-      }
-
-      .support-cta h2 {
-        font-size: 31px;
       }
 
       .footer-grid {
@@ -932,18 +1192,47 @@
       }
     }
 
-    @media (max-width: 430px) {
+    @media (max-width: 500px) {
 
       .brand-name {
         font-size: 16px;
       }
 
       .brand-acronym {
-        font-size: 14px;
+        font-size: 13px;
+      }
+
+      .brand-logo {
+        width: 55px;
+        height: 55px;
       }
 
       .hero h1 {
         font-size: 37px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-button {
+        width: 100%;
+      }
+
+      .channel-card {
+        padding: 23px;
+      }
+
+      .form-top {
+        align-items: flex-start;
+      }
+
+      .form-top h3 {
+        font-size: 20px;
+      }
+
+      .support-cta {
+        padding: 60px 0;
       }
 
       .cta-buttons {
@@ -989,7 +1278,6 @@
 
       </a>
 
-
       <button
         class="menu-toggle"
         type="button"
@@ -998,7 +1286,6 @@
       >
         ☰
       </button>
-
 
       <nav id="mainNav" aria-label="Main navigation">
 
@@ -1064,14 +1351,33 @@
         </span>
 
         <h1>
-          Contact the Somali Diabetes Foundation
+          Let's Start a Conversation
         </h1>
 
         <p>
           Whether you want to partner with us, support our work,
-          collaborate on research, volunteer, or simply learn more
-          about SDF, we would be pleased to hear from you.
+          collaborate on research, volunteer, or learn more about
+          the Somali Diabetes Foundation, we would be pleased to
+          hear from you.
         </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#direct-message"
+            class="hero-button primary"
+          >
+            Send a Direct Message
+          </a>
+
+          <a
+            href="#location"
+            class="hero-button secondary"
+          >
+            Find Our Office
+          </a>
+
+        </div>
 
       </div>
 
@@ -1081,102 +1387,91 @@
 
 
   <!-- =========================
-       CONTACT INFORMATION
+       CONTACT CHANNELS
   ========================= -->
 
-  <section>
+  <section class="channels-section">
 
     <div class="container">
 
-      <h2 class="section-title">
-        Contact Information
-      </h2>
+      <div class="section-heading">
 
-      <p class="section-intro">
-        Reach the Somali Diabetes Foundation through our official
-        contact channels.
-      </p>
-
-
-      <div class="contact-grid">
-
-
-        <!-- EMAIL -->
-
-        <div class="contact-card">
-
-          <div class="contact-icon">
-            ✉
-          </div>
-
-          <h3>
-            Email
-          </h3>
-
-          <p>
-            For general inquiries, partnerships, research and
-            organizational communication.
-          </p>
-
-          <a href="mailto:info@sdf.so">
-            info@sdf.so
-          </a>
-
+        <div class="small-title">
+          CONTACT SDF
         </div>
 
+        <h2 class="section-title">
+          We're Here to Hear From You
+        </h2>
+
+        <p class="section-intro">
+          You can contact the Somali Diabetes Foundation directly
+          by phone or visit our office in Mogadishu.
+        </p>
+
+      </div>
+
+
+      <div class="channel-grid">
 
         <!-- PHONE -->
 
-        <div class="contact-card">
+        <div class="channel-card">
 
-          <div class="contact-icon">
+          <div class="channel-icon">
             ☎
           </div>
 
-          <h3>
-            Phone
-          </h3>
+          <div>
 
-          <p>
-            Contact the Somali Diabetes Foundation directly
-            during normal working hours.
-          </p>
+            <h3>
+              Phone
+            </h3>
 
-          <a href="tel:+252771817681">
-            +252 77 181 7681
-          </a>
+            <p>
+              Contact the Somali Diabetes Foundation directly
+              during normal working hours.
+            </p>
+
+            <a href="tel:+252771817681">
+              +252 77 181 7681
+            </a>
+
+          </div>
 
         </div>
 
 
         <!-- LOCATION -->
 
-        <div class="contact-card">
+        <div class="channel-card location">
 
-          <div class="contact-icon">
+          <div class="channel-icon">
             ⌖
           </div>
 
-          <h3>
-            Location
-          </h3>
+          <div>
 
-          <p>
-            Jale Siad Street, Danwadaagaha,
-            Wadajir District, Mogadishu, Somalia.
-          </p>
+            <h3>
+              Office Location
+            </h3>
 
-          <a
-            href="https://maps.app.goo.gl/HjfJZLxNPZpREEMu5"
-            target="_blank"
-            rel="noopener"
-            class="contact-button"
-          >
-            View on Google Maps
-          </a>
+            <p>
+              Jale Siad Street, Danwadaagaha,
+              Wadajir District, Mogadishu, Somalia.
+            </p>
+
+            <a
+              href="https://maps.app.goo.gl/HjfJZLxNPZpREEMu5"
+              target="_blank"
+              rel="noopener"
+            >
+              View on Google Maps →
+            </a>
+
+          </div>
 
         </div>
-
 
       </div>
 
@@ -1186,26 +1481,81 @@
 
 
   <!-- =========================
-       CONTACT FORM
+       DIRECT MESSAGE
   ========================= -->
 
-  <section class="form-section">
+  <section
+    class="message-section"
+    id="direct-message"
+  >
 
-    <div class="container form-layout">
+    <div class="container">
 
+      <div class="message-header">
 
-      <!-- FORM -->
-
-      <div class="form-card">
+        <div class="small-title">
+          DIRECT MESSAGE
+        </div>
 
         <h2>
-          Send us a message
+          Send a Message to SDF
         </h2>
 
         <p>
           Complete the form below and your message will be sent
-          directly to the Somali Diabetes Foundation.
+          directly to the Somali Diabetes Foundation team.
         </p>
+
+      </div>
+
+
+      <div class="form-card">
+
+        <div class="form-top">
+
+          <div class="form-top-icon">
+            ✉
+          </div>
+
+          <div>
+
+            <h3>
+              Contact Form
+            </h3>
+
+            <p>
+              Please provide your details and tell us how we can help.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div
+          class="form-status success-message"
+          data-fs-success
+          role="status"
+          aria-live="polite"
+        >
+          Thank you. Your message has been successfully sent to
+          the Somali Diabetes Foundation.
+        </div>
+
+
+        <!-- ERROR MESSAGE -->
+
+        <div
+          class="form-status error-message"
+          data-fs-error
+          role="alert"
+          aria-live="assertive"
+        >
+          We could not send your message. Please check the form
+          and try again.
+        </div>
 
 
         <form
@@ -1214,281 +1564,234 @@
           method="POST"
         >
 
+          <div class="form-grid">
 
-          <!-- FULL NAME -->
 
-          <div class="field">
+            <!-- FULL NAME -->
 
-            <label for="full-name">
-              Full Name *
-            </label>
+            <div class="field">
+
+              <label for="full-name">
+                Full Name
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="full-name"
+                name="name"
+                placeholder="Your full name"
+                autocomplete="name"
+                data-fs-field
+                required
+              >
+
+              <span
+                class="field-error"
+                data-fs-error="name"
+              ></span>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="field">
+
+              <label for="email">
+                Email Address
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                autocomplete="email"
+                data-fs-field
+                required
+              >
+
+              <span
+                class="field-error"
+                data-fs-error="email"
+              ></span>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="field">
+
+              <label for="phone">
+                Phone Number
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+252 ..."
+                autocomplete="tel"
+                data-fs-field
+              >
+
+              <span
+                class="field-error"
+                data-fs-error="phone"
+              ></span>
+
+            </div>
+
+
+            <!-- ORGANIZATION -->
+
+            <div class="field">
+
+              <label for="organization">
+                Organization
+              </label>
+
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                placeholder="Organization name"
+                autocomplete="organization"
+                data-fs-field
+              >
+
+              <span
+                class="field-error"
+                data-fs-error="organization"
+              ></span>
+
+            </div>
+
+
+            <!-- INQUIRY -->
+
+            <div class="field full">
+
+              <label for="inquiry">
+                Inquiry Type
+                <span class="required">*</span>
+              </label>
+
+              <select
+                id="inquiry"
+                name="inquiry_type"
+                data-fs-field
+                required
+              >
+
+                <option value="">
+                  Select an inquiry type
+                </option>
+
+                <option value="General Inquiry">
+                  General Inquiry
+                </option>
+
+                <option value="Partnership">
+                  Partnership
+                </option>
+
+                <option value="Research Collaboration">
+                  Research Collaboration
+                </option>
+
+                <option value="Volunteering">
+                  Volunteering
+                </option>
+
+                <option value="Donation">
+                  Donation
+                </option>
+
+                <option value="Patient Support">
+                  Patient Support
+                </option>
+
+                <option value="Media Inquiry">
+                  Media Inquiry
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+              <span
+                class="field-error"
+                data-fs-error="inquiry_type"
+              ></span>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="field full">
+
+              <label for="message">
+                Message
+                <span class="required">*</span>
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                data-fs-field
+                required
+              ></textarea>
+
+              <span
+                class="field-error"
+                data-fs-error="message"
+              ></span>
+
+            </div>
+
+
+            <!-- SUBJECT -->
 
             <input
-              type="text"
-              id="full-name"
-              name="name"
-              placeholder="Your full name"
-              autocomplete="name"
-              required
+              type="hidden"
+              name="_subject"
+              value="New Contact Form Message - Somali Diabetes Foundation"
             >
 
-          </div>
 
+            <!-- SUBMIT -->
 
-          <!-- EMAIL -->
+            <div class="field full submit-area">
 
-          <div class="field">
+              <button
+                type="submit"
+                class="submit-btn"
+                id="submit-btn"
+                data-fs-submit-btn
+              >
+                Send Direct Message
+              </button>
 
-            <label for="email">
-              Email Address *
-            </label>
+              <p class="form-note">
+                Your message will be securely submitted to
+                the Somali Diabetes Foundation.
+              </p>
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="your@email.com"
-              autocomplete="email"
-              required
-            >
-
-          </div>
-
-
-          <!-- PHONE -->
-
-          <div class="field">
-
-            <label for="phone">
-              Phone Number
-            </label>
-
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="+252 ..."
-              autocomplete="tel"
-            >
+            </div>
 
           </div>
-
-
-          <!-- ORGANIZATION -->
-
-          <div class="field">
-
-            <label for="organization">
-              Organization
-            </label>
-
-            <input
-              type="text"
-              id="organization"
-              name="organization"
-              placeholder="Organization name"
-              autocomplete="organization"
-            >
-
-          </div>
-
-
-          <!-- INQUIRY TYPE -->
-
-          <div class="field">
-
-            <label for="inquiry">
-              Inquiry Type *
-            </label>
-
-            <select
-              id="inquiry"
-              name="inquiry_type"
-              required
-            >
-
-              <option value="">
-                Select an inquiry type
-              </option>
-
-              <option value="General Inquiry">
-                General Inquiry
-              </option>
-
-              <option value="Partnership">
-                Partnership
-              </option>
-
-              <option value="Research Collaboration">
-                Research Collaboration
-              </option>
-
-              <option value="Volunteering">
-                Volunteering
-              </option>
-
-              <option value="Donation">
-                Donation
-              </option>
-
-              <option value="Patient Support">
-                Patient Support
-              </option>
-
-              <option value="Media Inquiry">
-                Media Inquiry
-              </option>
-
-              <option value="Other">
-                Other
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <!-- MESSAGE -->
-
-          <div class="field">
-
-            <label for="message">
-              Message *
-            </label>
-
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Write your message here..."
-              required
-            ></textarea>
-
-          </div>
-
-
-          <!-- EMAIL SUBJECT -->
-
-          <input
-            type="hidden"
-            name="_subject"
-            value="New Contact Form Message - Somali Diabetes Foundation"
-          >
-
-
-          <!-- SUBMIT -->
-
-          <button
-            type="submit"
-            class="submit-btn"
-            id="submit-btn"
-          >
-            Send Message
-          </button>
-
-
-          <p class="form-note">
-            Your message will be securely submitted to the
-            Somali Diabetes Foundation.
-          </p>
-
 
         </form>
 
       </div>
-
-
-      <!-- WAYS TO ENGAGE -->
-
-      <div>
-
-        <h2 class="section-title">
-          Ways to Engage
-        </h2>
-
-        <p class="section-intro">
-          There are many ways to contribute to the mission of
-          the Somali Diabetes Foundation.
-        </p>
-
-
-        <div class="engagement">
-
-
-          <div class="engagement-card">
-
-            <h3>
-              Partnership
-            </h3>
-
-            <p>
-              Explore institutional, humanitarian, healthcare and
-              development partnerships with SDF.
-            </p>
-
-          </div>
-
-
-          <div class="engagement-card">
-
-            <h3>
-              Research Collaboration
-            </h3>
-
-            <p>
-              Connect with SDF on diabetes research, evidence
-              generation, data collection and knowledge sharing.
-            </p>
-
-          </div>
-
-
-          <div class="engagement-card">
-
-            <h3>
-              Volunteer
-            </h3>
-
-            <p>
-              Support community awareness, education, screening
-              and other SDF activities.
-            </p>
-
-          </div>
-
-
-          <div class="engagement-card">
-
-            <h3>
-              Professional Engagement
-            </h3>
-
-            <p>
-              Healthcare professionals and specialists can
-              contribute through education, training and technical
-              collaboration.
-            </p>
-
-          </div>
-
-
-          <div class="engagement-card">
-
-            <h3>
-              Support SDF
-            </h3>
-
-            <p>
-              Individuals and organizations can support SDF's
-              programs through donations and resource mobilization.
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
 
     </div>
 
@@ -1501,7 +1804,11 @@
 
   <section class="social-section">
 
-    <div class="container">
+    <div class="container social-content">
+
+      <div class="social-label">
+        STAY CONNECTED
+      </div>
 
       <h2>
         Connect With SDF
@@ -1531,7 +1838,10 @@
        LOCATION
   ========================= -->
 
-  <section class="location-section">
+  <section
+    class="location-section"
+    id="location"
+  >
 
     <div class="container">
 
@@ -1557,7 +1867,7 @@
       <div class="location-grid">
 
 
-        <!-- MAP -->
+        <!-- MAP CARD -->
 
         <div class="map-card">
 
@@ -1621,19 +1931,7 @@
           <div class="location-divider"></div>
 
 
-          <div class="location-contact">
-
-            <strong>
-              Email
-            </strong>
-
-            <br>
-
-            <a href="mailto:info@sdf.so">
-              info@sdf.so
-            </a>
-
-            <br><br>
+          <div class="phone-block">
 
             <strong>
               Phone
@@ -1660,16 +1958,15 @@
             </a>
 
             <a
-              href="mailto:info@sdf.so"
+              href="tel:+252771817681"
               class="location-action secondary"
             >
-              Email SDF
+              Call SDF
             </a>
 
           </div>
 
         </div>
-
 
       </div>
 
@@ -1687,7 +1984,7 @@
     <div class="container">
 
       <h2>
-        Together, we can build a healthier Somalia.
+        Together, We Can Build a Healthier Somalia
       </h2>
 
       <p>
@@ -1695,7 +1992,6 @@
         advocacy or financial support, your contribution can
         help strengthen diabetes care and prevention in Somalia.
       </p>
-
 
       <div class="cta-buttons">
 
@@ -1836,19 +2132,14 @@
               </a>
             </li>
 
-            <li>
-              <a href="mailto:info@sdf.so">
-                info@sdf.so
-              </a>
-            </li>
-
-            <li>
-              <a href="tel:+252771817681">
-                +252 77 181 7681
-              </a>
-            </li>
-
           </ul>
+
+          <a
+            href="tel:+252771817681"
+            class="footer-phone"
+          >
+            +252 77 181 7681
+          </a>
 
         </div>
 
@@ -1858,7 +2149,8 @@
 
       <div class="footer-bottom">
 
-        © 2026 Somali Diabetes Foundation (SDF). All rights reserved.
+        © 2026 Somali Diabetes Foundation (SDF).
+        All rights reserved.
 
       </div>
 
@@ -1921,29 +2213,29 @@
 
 
     /* =========================
-       FORMSPREE SUBMISSION
+       FORMSPREE AJAX
     ========================= */
 
-    const contactForm =
-      document.getElementById("contact-form");
-
-    const submitButton =
-      document.getElementById("submit-btn");
-
-
-    contactForm.addEventListener(
-      "submit",
+    window.formspree =
+      window.formspree ||
       function () {
+        (formspree.q = formspree.q || []).push(arguments);
+      };
 
-        submitButton.disabled = true;
-
-        submitButton.textContent =
-          "Sending...";
-
+    formspree(
+      "initForm",
+      {
+        formElement: "#contact-form",
+        formId: "mbgjnakr"
       }
     );
 
   </script>
+
+  <script
+    src="https://unpkg.com/@formspree/ajax@1"
+    defer
+  ></script>
 
 </body>
 </html>
